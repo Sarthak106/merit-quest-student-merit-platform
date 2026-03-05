@@ -5,6 +5,8 @@ import Dashboard from './pages/Dashboard';
 import Unauthorized from './pages/Unauthorized';
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
+import StudentManagement from './pages/school/StudentManagement';
+import BulkUpload from './pages/school/BulkUpload';
 
 export default function App() {
   return (
@@ -29,8 +31,8 @@ export default function App() {
         <Route path="/merit" element={<Placeholder title="Merit Lists" />} />
         <Route path="/scholarships" element={<Placeholder title="Scholarships" />} />
         <Route path="/alerts" element={<Placeholder title="Alerts" />} />
-        <Route path="/students" element={<Placeholder title="Student Management" />} />
-        <Route path="/upload" element={<Placeholder title="Bulk Upload" />} />
+        <Route path="/students" element={<StudentManagement />} />
+        <Route path="/upload" element={<BulkUpload />} />
         <Route path="/certificates" element={<Placeholder title="Certificates" />} />
         <Route path="/verification" element={<Placeholder title="Verification Queue" />} />
         <Route path="/analytics" element={<Placeholder title="Analytics" />} />
