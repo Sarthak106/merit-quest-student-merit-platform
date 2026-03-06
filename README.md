@@ -11,12 +11,13 @@
 [![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org)
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose)
+[![Redis](https://img.shields.io/badge/Redis-7-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
 <br />
 
 <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square" alt="Status" />
-<img src="https://img.shields.io/badge/Phase-4%20of%208-blue?style=flat-square" alt="Phase" />
+<img src="https://img.shields.io/badge/Phase-5%20of%208-blue?style=flat-square" alt="Phase" />
 <img src="https://img.shields.io/github/last-commit/ayush-mishra7/merit-quest-full-stack-student-merit-platform?style=flat-square&color=green" alt="Last Commit" />
 
 ---
@@ -211,7 +212,11 @@ merit-quest/
 │   │   │   ├── dto/               # ApiResponse wrapper
 │   │   │   ├── exception/         # Global exception handler
 │   │   │   └── model/             # Enums (Role, Gender, VerificationStatus, etc.)
-│   │   ├── config/                # SecurityConfig, AsyncConfig
+│   │   ├── analytics/              # Analytics dashboards backend
+│   │   │   ├── controller/        # AnalyticsController (9 endpoints)
+│   │   │   ├── dto/               # OverviewStats, TopPerformer, GradeDistribution, etc.
+│   │   │   └── service/           # AnalyticsService (Redis @Cacheable)
+│   │   ├── config/                # SecurityConfig, AsyncConfig, RedisConfig
 │   │   ├── notification/          # NotificationService interface
 │   │   ├── student/               # Student data management
 │   │   │   ├── controller/        # StudentController, BulkUploadController, CertificateController
@@ -245,7 +250,8 @@ merit-quest/
 │   ├── src/
 │   │   ├── components/            # Layout, Sidebar, ProtectedRoute
 │   │   ├── pages/                 # Login, Dashboard, StudentManagement,
-│   │   │                          # BulkUpload, VerificationQueue, AuditLogViewer, MeritLists
+│   │   │                          # BulkUpload, VerificationQueue, AuditLogViewer,
+│   │   │                          # MeritLists, AnalyticsDashboard, StudentPerformance
 │   │   ├── services/              # Axios API client with JWT interceptor
 │   │   ├── store/                 # Zustand auth store (persisted)
 │   │   └── utils/                 # Role-based navigation config
@@ -283,6 +289,7 @@ merit-quest/
 | OpenCSV | CSV Processing |
 | MinIO SDK | S3-compatible Storage |
 | Lombok | Boilerplate Reduction |
+| Spring Cache + Redis | Analytics Caching |
 
 </td>
 <td valign="top">
@@ -294,6 +301,7 @@ merit-quest/
 | Vite 5 | Build Tool |
 | Tailwind CSS 3.4 | Styling |
 | Framer Motion 11 | Animations |
+| Recharts 2.12 | Charts & Visualizations |
 | Recharts 2 | Data Visualization |
 | Zustand 4 | State Management |
 | React Router 6 | Routing |
@@ -446,6 +454,20 @@ docker-compose up --build
 | `GET` | `/api/merit/students/{studentId}/history` | Student score history | Bearer Token |
 | `GET` | `/api/merit/config` | Get weight configurations | SYSTEM_ADMIN, GOV_AUTHORITY |
 | `PUT` | `/api/merit/config` | Update weight configuration | SYSTEM_ADMIN |
+
+### Analytics Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| `GET` | `/api/analytics/overview` | Platform/school overview stats | SCHOOL_ADMIN, SYSTEM_ADMIN, GOV_AUTHORITY, NGO_REP, DATA_VERIFIER |
+| `GET` | `/api/analytics/grade-distribution` | Score distribution by grade | SCHOOL_ADMIN, SYSTEM_ADMIN, GOV_AUTHORITY, NGO_REP, DATA_VERIFIER |
+| `GET` | `/api/analytics/subjects?academicYear=` | Subject-wise performance | SCHOOL_ADMIN, SYSTEM_ADMIN, GOV_AUTHORITY, DATA_VERIFIER |
+| `GET` | `/api/analytics/top-performers?limit=` | Top students by composite score | SCHOOL_ADMIN, SYSTEM_ADMIN, GOV_AUTHORITY, NGO_REP, DATA_VERIFIER |
+| `GET` | `/api/analytics/attendance-trends?academicYear=` | Monthly attendance trends | SCHOOL_ADMIN, SYSTEM_ADMIN, GOV_AUTHORITY, DATA_VERIFIER |
+| `GET` | `/api/analytics/score-histogram` | Score distribution histogram | SCHOOL_ADMIN, SYSTEM_ADMIN, GOV_AUTHORITY, NGO_REP, DATA_VERIFIER |
+| `GET` | `/api/analytics/institution-comparison` | Cross-institution comparison | SYSTEM_ADMIN, GOV_AUTHORITY |
+| `GET` | `/api/analytics/student/{studentId}?academicYear=` | Individual student performance | Bearer Token |
+| `POST` | `/api/analytics/cache/evict` | Evict all analytics caches | SYSTEM_ADMIN |
 
 ### Sample Requests
 
@@ -643,6 +665,73 @@ docker-compose up --build
 ```
 </details>
 
+<details>
+<summary><b>GET /api/analytics/overview</b> — Platform Overview Stats</summary>
+
+**Response (200 OK):**
+```json
+{
+  "success": true,
+  "message": "Overview statistics retrieved",
+  "data": {
+    "totalStudents": 9,
+    "approvedStudents": 8,
+    "pendingVerification": 1,
+    "totalInstitutions": 1,
+    "avgCompositeScore": 0.0,
+    "highestCompositeScore": 1.32576,
+    "totalMeritBatches": 3,
+    "completedBatches": 3
+  }
+}
+```
+</details>
+
+<details>
+<summary><b>GET /api/analytics/student/{studentId}</b> — Student Performance Detail</summary>
+
+**Response (200 OK):**
+```json
+{
+  "success": true,
+  "message": "Student performance retrieved",
+  "data": {
+    "studentId": 1,
+    "enrollmentNumber": "STU-2026-001",
+    "studentName": "Rahul Sharma",
+    "grade": "12",
+    "institutionName": "Merit Quest Central",
+    "compositeScore": 0.923697,
+    "academicZScore": 1.291849,
+    "attendanceZScore": 0.555545,
+    "activityZScore": 0.0,
+    "certificateZScore": 0.0,
+    "rankSchool": 2,
+    "subjectBreakdown": [
+      {
+        "subject": "Mathematics",
+        "recordCount": 2,
+        "avgPercentage": 75.38,
+        "minPercentage": 83.33,
+        "maxPercentage": 67.44
+      }
+    ],
+    "scoreHistory": [
+      {
+        "academicYear": "2025-2026",
+        "compositeScore": 0.923697,
+        "academicZScore": 1.291849,
+        "attendanceZScore": 0.555545,
+        "activityZScore": 0.0,
+        "certificateZScore": 0.0,
+        "rankSchool": 2
+      }
+    ]
+  }
+}
+```
+</details>
+
 ---
 
 ## 🔒 Security
@@ -670,7 +759,7 @@ docker-compose up --build
 | **Phase 2** | Student Data Management & Bulk Upload | ✅ Complete |
 | **Phase 3** | Verification Workflow & Audit Logging | ✅ Complete |
 | **Phase 4** | Merit Calculation Engine (Z-score, rankings) | ✅ Complete |
-| **Phase 5** | Analytics Dashboards (Recharts) | 🔲 Planned |
+| **Phase 5** | Analytics Dashboards (Recharts + Redis Caching) | ✅ Complete |
 | **Phase 6** | Scholarship Management | 🔲 Planned |
 | **Phase 7** | ML Pipeline — Dropout Prediction | 🔲 Planned |
 | **Phase 8** | Production Deployment & DevOps | 🔲 Planned |
