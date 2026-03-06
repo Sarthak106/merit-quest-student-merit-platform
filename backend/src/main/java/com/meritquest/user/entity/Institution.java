@@ -24,7 +24,7 @@ public class Institution {
     private String code;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "institution_type")
+    @Column(nullable = false)
     private InstitutionType type;
 
     private String board;

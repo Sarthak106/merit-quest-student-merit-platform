@@ -1,6 +1,7 @@
 package com.meritquest.student.dto;
 
 import com.meritquest.common.model.Gender;
+import com.meritquest.common.model.VerificationStatus;
 import lombok.Builder;
 import lombok.Data;
 
@@ -25,6 +26,7 @@ public class StudentResponse {
     private Long institutionId;
     private String institutionName;
     private Boolean active;
+    private VerificationStatus verificationStatus;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }

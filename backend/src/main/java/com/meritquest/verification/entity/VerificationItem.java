@@ -21,14 +21,14 @@ public class VerificationItem {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "record_type", nullable = false, columnDefinition = "record_type")
+    @Column(name = "record_type", nullable = false)
     private RecordType recordType;
 
     @Column(name = "record_id", nullable = false)
     private Long recordId;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "verification_status")
+    @Column(nullable = false)
     private VerificationStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)

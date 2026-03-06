@@ -130,6 +130,7 @@ public class StudentService {
                 .institutionId(s.getInstitution().getId())
                 .institutionName(s.getInstitution().getName())
                 .active(s.getActive())
+                .verificationStatus(s.getVerificationStatus())
                 .createdAt(s.getCreatedAt())
                 .updatedAt(s.getUpdatedAt())
                 .build();

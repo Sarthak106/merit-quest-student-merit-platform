@@ -36,7 +36,7 @@ public class Student {
     private LocalDate dateOfBirth;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "gender")
+    @Column(nullable = false)
     private Gender gender;
 
     @Column(nullable = false)
@@ -68,7 +68,7 @@ public class Student {
     private Boolean active = true;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "verification_status", nullable = false, columnDefinition = "verification_status")
+    @Column(name = "verification_status", nullable = false)
     @Builder.Default
     private VerificationStatus verificationStatus = VerificationStatus.PENDING_VERIFICATION;
 

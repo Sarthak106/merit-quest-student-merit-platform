@@ -27,11 +27,11 @@ public class BulkUpload {
     private String fileName;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "upload_type", nullable = false, columnDefinition = "upload_type")
+    @Column(name = "upload_type", nullable = false)
     private UploadType uploadType;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "upload_status")
+    @Column(nullable = false)
     private UploadStatus status;
 
     @Column(name = "total_rows")
