@@ -16,7 +16,7 @@
 <br />
 
 <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square" alt="Status" />
-<img src="https://img.shields.io/badge/Phase-1%20of%208-blue?style=flat-square" alt="Phase" />
+<img src="https://img.shields.io/badge/Phase-3%20of%208-blue?style=flat-square" alt="Phase" />
 <img src="https://img.shields.io/github/last-commit/ayush-mishra7/merit-quest-full-stack-student-merit-platform?style=flat-square&color=green" alt="Last Commit" />
 
 ---
@@ -97,6 +97,13 @@
 - **7 user roles** with strict RBAC (Role-Based Access Control)
 - **bcrypt password hashing** (strength 12) for maximum security
 - **Auto token refresh** — seamless UX with no unexpected logouts
+
+### 👥 Student Data Management
+- **Full CRUD** — create, read, update, soft-delete students
+- **Bulk upload** — CSV/Excel import via Apache POI & OpenCSV
+- **Certificate management** — upload/download via MinIO S3-compatible storage
+- **Grade filtering** — paginated student lists with grade-based search
+- **Duplicate protection** — unique enrollment number per institution (409 Conflict)
 
 ### 👥 Multi-Role System
 
@@ -192,25 +199,47 @@ merit-quest/
 │   │   │   ├── controller/        # AuthController (login, register, refresh)
 │   │   │   ├── dto/               # Request/Response DTOs
 │   │   │   └── security/          # JwtTokenProvider, Filters, EntryPoint
+│   │   ├── audit/                  # AOP-based audit logging
+│   │   │   ├── controller/        # AuditLogController
+│   │   │   ├── dto/               # AuditLogResponse
+│   │   │   ├── entity/            # AuditLog JPA entity
+│   │   │   ├── repository/        # AuditLogRepository
+│   │   │   ├── service/           # AuditLogService
+│   │   │   ├── AuditLogged.java   # Custom annotation
+│   │   │   └── AuditLogAspect.java # AOP aspect
 │   │   ├── common/                # Shared utilities
 │   │   │   ├── dto/               # ApiResponse wrapper
 │   │   │   ├── exception/         # Global exception handler
-│   │   │   └── model/             # Enums (Role, UserStatus, InstitutionType)
+│   │   │   └── model/             # Enums (Role, Gender, VerificationStatus, etc.)
 │   │   ├── config/                # SecurityConfig, AsyncConfig
-│   │   └── user/                  # User & Institution management
-│   │       ├── entity/            # JPA entities
-│   │       ├── repository/        # Spring Data repositories
-│   │       └── service/           # UserService (UserDetailsService)
+│   │   ├── notification/          # NotificationService interface
+│   │   ├── student/               # Student data management
+│   │   │   ├── controller/        # StudentController, BulkUploadController, CertificateController
+│   │   │   ├── dto/               # StudentRequest/Response DTOs
+│   │   │   ├── entity/            # Student, AcademicRecord, Activity, Certificate, BulkUpload
+│   │   │   ├── repository/        # Spring Data repositories
+│   │   │   └── service/           # StudentService, BulkUploadService, CertificateService, StorageService
+│   │   ├── user/                  # User & Institution management
+│   │   │   ├── entity/            # JPA entities
+│   │   │   ├── repository/        # Spring Data repositories
+│   │   │   └── service/           # UserService (UserDetailsService)
+│   │   └── verification/          # Verification workflow
+│   │       ├── controller/        # VerificationController
+│   │       ├── dto/               # VerificationDecisionRequest/ItemResponse
+│   │       ├── entity/            # VerificationItem
+│   │       ├── repository/        # VerificationRepository
+│   │       └── service/           # VerificationService
 │   ├── src/main/resources/
 │   │   ├── application.yml        # App configuration
-│   │   └── db/migration/          # Flyway SQL migrations
+│   │   └── db/migration/          # Flyway SQL migrations (V1–V5)
 │   ├── build.gradle               # Gradle build config
 │   └── Dockerfile                 # Multi-stage Docker build
 │
 ├── 📁 frontend/                   # React 18 + Vite
 │   ├── src/
 │   │   ├── components/            # Layout, Sidebar, ProtectedRoute
-│   │   ├── pages/                 # Login, Register, Dashboard, etc.
+│   │   ├── pages/                 # Login, Dashboard, StudentManagement,
+│   │   │                          # BulkUpload, VerificationQueue, AuditLogViewer
 │   │   ├── services/              # Axios API client with JWT interceptor
 │   │   ├── store/                 # Zustand auth store (persisted)
 │   │   └── utils/                 # Role-based navigation config
@@ -361,6 +390,44 @@ docker-compose up --build
 | `POST` | `/api/auth/refresh` | Refresh access token | Public |
 | `GET`  | `/api/auth/me` | Get current user profile | Bearer Token |
 
+### Student Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| `GET` | `/api/students` | List students (paginated, filterable by grade) | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `GET` | `/api/students/{id}` | Get student by ID | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `POST` | `/api/students` | Create a new student | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `PUT` | `/api/students/{id}` | Update a student | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `DELETE` | `/api/students/{id}` | Soft-delete (deactivate) a student | SCHOOL_ADMIN, SYSTEM_ADMIN |
+
+### Bulk Upload Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| `POST` | `/api/bulk-upload/students` | Upload students via CSV/Excel | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `GET` | `/api/bulk-upload/history` | List upload history | SCHOOL_ADMIN, SYSTEM_ADMIN |
+
+### Certificate Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| `POST` | `/api/certificates/upload` | Upload a certificate file | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `GET` | `/api/certificates/{id}/download` | Download a certificate | Bearer Token |
+
+### Verification Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| `GET` | `/api/verification` | Get verification queue (filterable by status) | DATA_VERIFIER, SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `GET` | `/api/verification/{id}` | Get a specific verification item | DATA_VERIFIER, SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `PUT` | `/api/verification/{id}/decide` | Approve or reject a record | DATA_VERIFIER, SYSTEM_ADMIN |
+
+### Audit Log Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| `GET` | `/api/audit-logs` | List audit logs (filterable by entity) | SYSTEM_ADMIN, GOV_AUTHORITY |
+
 ### Sample Requests
 
 <details>
@@ -428,6 +495,76 @@ docker-compose up --build
 ```
 </details>
 
+<details>
+<summary><b>POST /api/students</b> — Create a Student</summary>
+
+```json
+{
+  "enrollmentNumber": "STU-2026-001",
+  "firstName": "Rahul",
+  "lastName": "Sharma",
+  "dateOfBirth": "2010-05-15",
+  "gender": "MALE",
+  "grade": "10",
+  "section": "A",
+  "guardianName": "Suresh Sharma",
+  "guardianPhone": "+919876543210",
+  "guardianEmail": "suresh@email.com",
+  "address": "123 Main St, Delhi"
+}
+```
+
+**Response (201 Created):**
+```json
+{
+  "success": true,
+  "message": "Student created",
+  "data": {
+    "id": 1,
+    "enrollmentNumber": "STU-2026-001",
+    "firstName": "Rahul",
+    "lastName": "Sharma",
+    "dateOfBirth": "2010-05-15",
+    "gender": "MALE",
+    "grade": "10",
+    "section": "A",
+    "verificationStatus": "PENDING_VERIFICATION",
+    "institutionId": 1,
+    "institutionName": "Merit Quest Academy",
+    "active": true
+  }
+}
+```
+</details>
+
+<details>
+<summary><b>PUT /api/verification/{id}/decide</b> — Approve/Reject</summary>
+
+```json
+{
+  "approved": true,
+  "comment": "All documents verified successfully"
+}
+```
+
+**Response (200 OK):**
+```json
+{
+  "success": true,
+  "message": "Record approved",
+  "data": {
+    "id": 1,
+    "recordType": "STUDENT",
+    "recordId": 1,
+    "status": "APPROVED",
+    "reviewerName": "System Admin",
+    "comment": "All documents verified successfully",
+    "reviewedAt": "2026-03-06T16:30:00"
+  }
+}
+```
+</details>
+
 ---
 
 ## 🔒 Security
@@ -452,8 +589,8 @@ docker-compose up --build
 | Phase | Description | Status |
 |-------|-------------|--------|
 | **Phase 1** | Foundation & Authentication | ✅ Complete |
-| **Phase 2** | Student Data Management & Bulk Upload | 🔲 Planned |
-| **Phase 3** | Verification Workflow & Audit Logging | 🔲 Planned |
+| **Phase 2** | Student Data Management & Bulk Upload | ✅ Complete |
+| **Phase 3** | Verification Workflow & Audit Logging | ✅ Complete |
 | **Phase 4** | Merit Calculation Engine (Z-score, rankings) | 🔲 Planned |
 | **Phase 5** | Analytics Dashboards (Recharts) | 🔲 Planned |
 | **Phase 6** | Scholarship Management | 🔲 Planned |
@@ -465,27 +602,47 @@ docker-compose up --build
 ## 📊 Database Schema
 
 ```
-┌──────────────┐     ┌──────────────────┐
-│ institutions │     │      users       │
-├──────────────┤     ├──────────────────┤
-│ id       PK  │◄────│ institution_id FK│
-│ name         │     │ id           PK  │
-│ code    UQ   │     │ email       UQ   │
-│ type         │     │ password_hash    │
-│ board        │     │ first_name       │
-│ district     │     │ last_name        │
-│ state        │     │ role (enum)      │
-│ active       │     │ status (enum)    │
-│ created_at   │     │ phone            │
-│ updated_at   │     │ created_at       │
-└──────────────┘     │ updated_at       │
-                     └──────────────────┘
-
-  (Future phases will add: students, academic_records,
-   attendance_records, activities, certificates,
-   verification_queue, audit_logs, merit_scores,
-   scholarships, scholarship_applications, alerts,
-   ml_model_versions)
+┌──────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│ institutions │     │      users       │     │    students      │
+├──────────────┤     ├──────────────────┤     ├──────────────────┤
+│ id       PK  │◄────│ institution_id FK│     │ id           PK  │
+│ name         │     │ id           PK  │◄──┐ │ enrollment_no UQ │
+│ code    UQ   │     │ email       UQ   │   │ │ first_name       │
+│ type         │     │ password_hash    │   │ │ last_name        │
+│ board        │     │ first_name       │   │ │ date_of_birth    │
+│ district     │     │ last_name        │   │ │ gender           │
+│ state        │     │ role             │   │ │ grade            │
+│ active       │     │ status           │   │ │ verification_status│
+│ created_at   │     │ phone            │   │ │ institution_id FK│
+│ updated_at   │     │ created_at       │   │ │ user_id       FK │
+└──────────────┘     │ updated_at       │   │ │ active           │
+                     └──────────────────┘   │ └──────────────────┘
+                                            │
+┌──────────────────┐ ┌──────────────────┐   │ ┌──────────────────┐
+│ academic_records │ │   activities     │   │ │  certificates    │
+├──────────────────┤ ├──────────────────┤   │ ├──────────────────┤
+│ id           PK  │ │ id           PK  │   │ │ id           PK  │
+│ student_id   FK  │ │ student_id   FK  │   │ │ student_id   FK  │
+│ subject          │ │ title            │   │ │ title            │
+│ marks_obtained   │ │ category         │   │ │ file_path        │
+│ max_marks        │ │ achievement      │   │ │ issuing_body     │
+│ exam_type        │ │ event_date       │   │ │ issue_date       │
+│ academic_year    │ │ institution_id FK│   │ │ institution_id FK│
+└──────────────────┘ └──────────────────┘   │ └──────────────────┘
+                                            │
+┌──────────────────┐ ┌──────────────────┐   │ ┌──────────────────┐
+│verification_queue│ │   audit_logs     │   │ │  bulk_uploads    │
+├──────────────────┤ ├──────────────────┤   │ ├──────────────────┤
+│ id           PK  │ │ id           PK  │   │ │ id           PK  │
+│ record_type      │ │ action           │   │ │ file_name        │
+│ record_id        │ │ entity_type      │   │ │ upload_type      │
+│ status           │ │ entity_id        │   │ │ status           │
+│ reviewer_id   FK─┤►│ performed_by  FK─┤►──┘ │ total_rows       │
+│ comment          │ │ ip_address       │     │ success_rows     │
+│ institution_id FK│ │ details (jsonb)  │     │ error_details    │
+│ submitted_by  FK │ │ performed_at     │     │ uploaded_by   FK │
+│ reviewed_at      │ └──────────────────┘     │ institution_id FK│
+└──────────────────┘                          └──────────────────┘
 ```
 
 ---
