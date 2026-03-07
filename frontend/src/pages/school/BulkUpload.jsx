@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Upload, FileSpreadsheet, CheckCircle2, XCircle, Clock, AlertTriangle, RefreshCw } from 'lucide-react';
 import api from '../../services/api';
+import TextCaptcha from '../../components/TextCaptcha';
 
 const STATUS_CONFIG = {
   PENDING:    { icon: Clock,        color: 'text-yellow-600', bg: 'bg-yellow-50', label: 'Pending' },
@@ -23,6 +24,8 @@ export default function BulkUpload() {
   const [dragOver, setDragOver] = useState(false);
   const [selectedUpload, setSelectedUpload] = useState(null);
   const [uploadType, setUploadType] = useState('STUDENTS');
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [pendingFile, setPendingFile] = useState(null);
   const fileInputRef = useRef(null);
 
   const fetchUploads = useCallback(async () => {
@@ -67,6 +70,12 @@ export default function BulkUpload() {
       return;
     }
 
+    // Require captcha verification before uploading
+    if (!captchaVerified) {
+      setPendingFile(file);
+      return;
+    }
+
     setUploading(true);
     try {
       const formData = new FormData();
@@ -80,7 +89,38 @@ export default function BulkUpload() {
       alert(err.response?.data?.message || 'Upload failed');
     } finally {
       setUploading(false);
+      setCaptchaVerified(false);
+      setPendingFile(null);
       if (fileInputRef.current) fileInputRef.current.value = '';
+    }
+  };
+
+  const onCaptchaVerified = () => {
+    setCaptchaVerified(true);
+    if (pendingFile) {
+      // Re-trigger upload now that captcha is verified
+      const file = pendingFile;
+      setCaptchaVerified(true);
+      setPendingFile(null);
+      // Upload directly
+      (async () => {
+        setUploading(true);
+        try {
+          const formData = new FormData();
+          formData.append('file', file);
+          formData.append('type', uploadType);
+          await api.post('/uploads', formData, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+          });
+          fetchUploads();
+        } catch (err) {
+          alert(err.response?.data?.message || 'Upload failed');
+        } finally {
+          setUploading(false);
+          setCaptchaVerified(false);
+          if (fileInputRef.current) fileInputRef.current.value = '';
+        }
+      })();
     }
   };
 
@@ -115,6 +155,22 @@ export default function BulkUpload() {
             }`}>{t.label}</button>
         ))}
       </div>
+
+      {/* Captcha verification */}
+      <AnimatePresence>
+        {pendingFile && !captchaVerified && (
+          <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-2">
+              <p className="text-sm text-amber-800 font-medium mb-3">
+                Please verify you are human before uploading: <span className="font-semibold">{pendingFile.name}</span>
+              </p>
+              <TextCaptcha onVerified={onCaptchaVerified} />
+              <button onClick={() => { setPendingFile(null); if (fileInputRef.current) fileInputRef.current.value = ''; }}
+                className="mt-2 text-xs text-gray-500 hover:text-gray-700">Cancel upload</button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Drop zone */}
       <motion.div

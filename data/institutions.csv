@@ -1,0 +1,46 @@
+name,code,type,board,district,state,address,contact_email,contact_phone
+Delhi Public School Central,DL-CD-001,SCHOOL,CBSE,Central Delhi,Delhi,"Mathura Road, New Delhi - 110001, Delhi",admin@delhipublicschoolcentral.meritquest.test,+91 9896233790
+Convent of Jesus and Mary,DL-CD-002,SCHOOL,ICSE,Central Delhi,Delhi,"Bangla Sahib Marg, New Delhi - 110003, Delhi",admin@conventofjesusandmary.meritquest.test,+91 9339670711
+Modern School Barakhamba,DL-CD-003,SCHOOL,CBSE,Central Delhi,Delhi,"Barakhamba Road, New Delhi - 110002, Delhi",admin@modernschoolbarakhamba.meritquest.test,+91 7210053353
+The Mother's International School,DL-SD-001,SCHOOL,CBSE,South Delhi,Delhi,"Sri Aurobindo Marg, Hauz Khas - 110029, Delhi",admin@themothersinternationalsc.meritquest.test,+91 9734036506
+Sanskriti School,DL-SD-002,SCHOOL,CBSE,South Delhi,Delhi,"Dr S Radhakrishnan Marg, Chanakyapuri - 110049, Delhi",admin@sanskritischool.meritquest.test,+91 9131994523
+Sardar Patel Vidyalaya,DL-SD-003,SCHOOL,CBSE,South Delhi,Delhi,"Lodi Estate, New Delhi - 110016, Delhi",admin@sardarpatelvidyalaya.meritquest.test,+91 9349817734
+Bal Bharati Public School Lajpat Nagar,DL-ED-001,SCHOOL,CBSE,East Delhi,Delhi,"1 Institutional Area, Lajpat Nagar - 110092, Delhi",admin@balbharatipublicschoollaj.meritquest.test,+91 7313500298
+Ryan International Preet Vihar,DL-ED-002,SCHOOL,ICSE,East Delhi,Delhi,"D Block, Preet Vihar - 110096, Delhi",admin@ryaninternationalpreetvih.meritquest.test,+91 9582334538
+Montfort School Ashok Vihar,DL-WD-001,SCHOOL,ICSE,West Delhi,Delhi,"B-3 Ashok Vihar Phase II - 110063, Delhi",admin@montfortschoolashokvihar.meritquest.test,+91 9914763202
+Air Force Bal Bharati School,DL-WD-002,SCHOOL,CBSE,West Delhi,Delhi,"Lodhi Road, New Delhi - 110059, Delhi",admin@airforcebalbharatischool.meritquest.test,+91 7553778756
+St Xavier's High School Andheri,MH-MS-001,SCHOOL,ICSE,Mumbai Suburban,Maharashtra,"SV Road, Andheri West - 400069, Maharashtra",admin@stxaviershighschoolandher.meritquest.test,+91 8266944844
+Jamnabai Narsee School,MH-MS-002,SCHOOL,ICSE,Mumbai Suburban,Maharashtra,"Vile Parle West, Mumbai - 400058, Maharashtra",admin@jamnabainarseeschool.meritquest.test,+91 8209747451
+DAV Public School Andheri,MH-MS-003,SCHOOL,CBSE,Mumbai Suburban,Maharashtra,"Andheri East, Mumbai - 400053, Maharashtra",admin@davpublicschoolandheri.meritquest.test,+91 8203848421
+Cathedral and John Connon School,MH-MC-001,SCHOOL,ICSE,Mumbai City,Maharashtra,"6 Purshottamdas Thakurdas Marg, Fort - 400020, Maharashtra",admin@cathedralandjohnconnonsch.meritquest.test,+91 8748245888
+St Mary's School ICSE Mumbai,MH-MC-002,SCHOOL,ICSE,Mumbai City,Maharashtra,"Mazagaon, Mumbai - 400020, Maharashtra",admin@stmarysschoolicsemumbai.meritquest.test,+91 9883543540
+Symbiosis School Kothrud,MH-PU-001,SCHOOL,CBSE,Pune,Maharashtra,"Senapati Bapat Road, Kothrud - 411030, Maharashtra",admin@symbiosisschoolkothrud.meritquest.test,+91 7234031070
+Loyola High School Pune,MH-PU-002,SCHOOL,STATE_BOARD,Pune,Maharashtra,"Pashan Road, Pune - 411030, Maharashtra",admin@loyolahighschoolpune.meritquest.test,+91 9692749116
+DPS Pune,MH-PU-003,SCHOOL,CBSE,Pune,Maharashtra,"Nyati County, Undri, Pune - 411004, Maharashtra",admin@dpspune.meritquest.test,+91 7764130526
+Centre Point School Nagpur,MH-NG-001,SCHOOL,CBSE,Nagpur,Maharashtra,"Residency Road, Civil Lines, Nagpur - 440012, Maharashtra",admin@centrepointschoolnagpur.meritquest.test,+91 7306468299
+St Joseph's Convent Nagpur,MH-NG-002,SCHOOL,ICSE,Nagpur,Maharashtra,"Wardha Road, Nagpur - 440001, Maharashtra",admin@stjosephsconventnagpur.meritquest.test,+91 9810026086
+Bishop Cotton Boys School,KA-BU-001,SCHOOL,ICSE,Bengaluru Urban,Karnataka,"St Mark's Road, Bengaluru - 560004, Karnataka",admin@bishopcottonboysschool.meritquest.test,+91 8185675980
+Kendriya Vidyalaya Bengaluru,KA-BU-002,SCHOOL,CBSE,Bengaluru Urban,Karnataka,"ASC Centre, Bengaluru - 560004, Karnataka",admin@kendriyavidyalayabengalur.meritquest.test,+91 9508157429
+National Public School Rajajinagar,KA-BU-003,SCHOOL,CBSE,Bengaluru Urban,Karnataka,"Rajajinagar, Bengaluru - 560011, Karnataka",admin@nationalpublicschoolrajaj.meritquest.test,+91 8782560971
+Delhi Public School Bengaluru East,KA-BU-004,SCHOOL,CBSE,Bengaluru Urban,Karnataka,"Sulikunte, Sarjapur Road - 560011, Karnataka",admin@delhipublicschoolbengalur.meritquest.test,+91 9497478786
+Maharani's Science College School,KA-MY-001,SCHOOL,STATE_BOARD,Mysuru,Karnataka,"Vani Vilas Road, Mysuru - 570010, Karnataka",admin@maharanissciencecollegesc.meritquest.test,+91 9819595113
+DPS Mysore,KA-MY-002,SCHOOL,CBSE,Mysuru,Karnataka,"Bogadi Road, Mysuru - 570010, Karnataka",admin@dpsmysore.meritquest.test,+91 7833953718
+KLE School Hubballi,KA-DW-001,SCHOOL,STATE_BOARD,Dharwad,Karnataka,"Vidyanagar, Hubballi - 580001, Karnataka",admin@kleschoolhubballi.meritquest.test,+91 7781802744
+Jawahar Navodaya Vidyalaya Dharwad,KA-DW-002,SCHOOL,CBSE,Dharwad,Karnataka,"Alnavar Road, Dharwad - 580020, Karnataka",admin@jawaharnavodayavidyalayad.meritquest.test,+91 7882893941
+Don Bosco Matriculation Higher Secondary,TN-CH-001,SCHOOL,STATE_BOARD,Chennai,Tamil Nadu,"17 Broadway, Chennai - 600010, Tamil Nadu",admin@donboscomatriculationhigh.meritquest.test,+91 9596348124
+DAV Boys Senior Secondary School Chennai,TN-CH-002,SCHOOL,CBSE,Chennai,Tamil Nadu,"Gopalapuram, Chennai - 600020, Tamil Nadu",admin@davboysseniorsecondarysch.meritquest.test,+91 8787194506
+Padma Seshadri Bala Bhavan,TN-CH-003,SCHOOL,CBSE,Chennai,Tamil Nadu,"T. Nagar, Chennai - 600028, Tamil Nadu",admin@padmaseshadribalabhavan.meritquest.test,+91 9835098955
+Chettinad Vidyashram,TN-CH-004,SCHOOL,CBSE,Chennai,Tamil Nadu,"Rajah Annamalai Puram, Chennai - 600017, Tamil Nadu",admin@chettinadvidyashram.meritquest.test,+91 9345938494
+PSG Public School Coimbatore,TN-CB-001,SCHOOL,CBSE,Coimbatore,Tamil Nadu,"Peelamedu, Coimbatore - 641001, Tamil Nadu",admin@psgpublicschoolcoimbatore.meritquest.test,+91 8530747414
+Stanes Anglo-Indian Higher Secondary,TN-CB-002,SCHOOL,ICSE,Coimbatore,Tamil Nadu,"Race Course Road, Coimbatore - 641011, Tamil Nadu",admin@stanesanglo-indianhighers.meritquest.test,+91 9326541099
+TVS Academy Madurai,TN-MD-001,SCHOOL,CBSE,Madurai,Tamil Nadu,"Thirumangalam Road, Madurai - 625009, Tamil Nadu",admin@tvsacademymadurai.meritquest.test,+91 9803771909
+Thiagarajar Model Higher Secondary,TN-MD-002,SCHOOL,STATE_BOARD,Madurai,Tamil Nadu,"Teppakulam, Madurai - 625014, Tamil Nadu",admin@thiagarajarmodelhighersec.meritquest.test,+91 8790256940
+La Martiniere College Lucknow,UP-LK-001,SCHOOL,ICSE,Lucknow,Uttar Pradesh,"1 La Martiniere Road, Lucknow - 226012, Uttar Pradesh",admin@lamartinierecollegeluckno.meritquest.test,+91 9384412919
+City Montessori School Gomti Nagar,UP-LK-002,SCHOOL,CBSE,Lucknow,Uttar Pradesh,"Gomti Nagar, Lucknow - 226003, Uttar Pradesh",admin@citymontessorischoolgomti.meritquest.test,+91 9899925830
+Lucknow Public School,UP-LK-003,SCHOOL,CBSE,Lucknow,Uttar Pradesh,"Sector H, LDA Colony, Lucknow - 226018, Uttar Pradesh",admin@lucknowpublicschool.meritquest.test,+91 7382116655
+DPS Noida,UP-NO-001,SCHOOL,CBSE,Noida,Uttar Pradesh,"Sector 30, Noida - 201306, Uttar Pradesh",admin@dpsnoida.meritquest.test,+91 7528853029
+Amity International School Noida,UP-NO-002,SCHOOL,CBSE,Noida,Uttar Pradesh,"Sector 44, Noida - 201304, Uttar Pradesh",admin@amityinternationalschooln.meritquest.test,+91 9248532577
+Sunbeam School Varanasi,UP-VN-001,SCHOOL,CBSE,Varanasi,Uttar Pradesh,"Bhagwanpur, Varanasi - 221010, Uttar Pradesh",admin@sunbeamschoolvaranasi.meritquest.test,+91 9911514914
+DPS Varanasi,UP-VN-002,SCHOOL,CBSE,Varanasi,Uttar Pradesh,"Babatpur, Varanasi - 221001, Uttar Pradesh",admin@dpsvaranasi.meritquest.test,+91 9264112119
+St Peter's College Agra,UP-AG-001,SCHOOL,ICSE,Agra,Uttar Pradesh,"Wazirpura Road, Agra - 282002, Uttar Pradesh",admin@stpeterscollegeagra.meritquest.test,+91 7553290810
+Delhi Public School Agra,UP-AG-002,SCHOOL,CBSE,Agra,Uttar Pradesh,"NH-2 Bypass, Agra - 282001, Uttar Pradesh",admin@delhipublicschoolagra.meritquest.test,+91 8509760584

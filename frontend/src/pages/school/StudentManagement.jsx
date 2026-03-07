@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Search, Edit2, Trash2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import api from '../../services/api';
+import TextCaptcha from '../../components/TextCaptcha';
 
 const GENDERS = ['MALE', 'FEMALE', 'OTHER'];
 
@@ -23,6 +24,7 @@ export default function StudentManagement() {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [captchaVerified, setCaptchaVerified] = useState(false);
 
   const fetchStudents = useCallback(async () => {
     setLoading(true);
@@ -47,6 +49,7 @@ export default function StudentManagement() {
     setEditing(null);
     setForm(emptyForm);
     setErrors({});
+    setCaptchaVerified(false);
     setShowForm(true);
   };
 
@@ -66,6 +69,7 @@ export default function StudentManagement() {
       address: student.address || '',
     });
     setErrors({});
+    setCaptchaVerified(false);
     setShowForm(true);
   };
 
@@ -83,6 +87,10 @@ export default function StudentManagement() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
+    if (!captchaVerified) {
+      setErrors({ _form: 'Please complete the human verification below.' });
+      return;
+    }
     setSubmitting(true);
     try {
       if (editing) {
@@ -91,6 +99,7 @@ export default function StudentManagement() {
         await api.post('/students', form);
       }
       setShowForm(false);
+      setCaptchaVerified(false);
       fetchStudents();
     } catch (err) {
       const msg = err.response?.data?.message || 'Failed to save';
@@ -241,6 +250,15 @@ export default function StudentManagement() {
                 <Field label="Address">
                   <textarea value={form.address} onChange={e => setForm({...form, address: e.target.value})} rows={2} className="input" />
                 </Field>
+
+                {/* Captcha verification */}
+                {!captchaVerified ? (
+                  <TextCaptcha onVerified={() => setCaptchaVerified(true)} />
+                ) : (
+                  <div className="flex items-center gap-2 text-sm text-green-600 bg-green-50 rounded-lg p-3">
+                    <span>✓ Human verified</span>
+                  </div>
+                )}
 
                 <div className="flex justify-end gap-3 pt-2">
                   <button type="button" onClick={() => setShowForm(false)}

@@ -1,0 +1,509 @@
+enrollment_number,first_name,last_name,date_of_birth,gender,grade,section,guardian_name,guardian_phone,guardian_email,address,institution_id
+DL-CD-001/2024/0001,Tanmay,Chowdhury,2009-11-07,MALE,12,D,Girish Chowdhury,+91 7673510887,girish.chowdhury@gmail.com,"14, Vihar, New Delhi - 110001, Delhi",1
+DL-CD-001/2024/0002,Ritvik,Pillai,2013-03-06,MALE,7,A,Gopal Pillai,+91 8451492250,gopal.pillai@gmail.com,"109, Ward 11, New Delhi - 110005, Delhi",1
+DL-CD-001/2024/0003,Chirag,Khanna,2008-03-20,MALE,11,A,Mamta Khanna,+91 9798086909,mamta.khanna@gmail.com,"36, Block A, New Delhi - 110002, Delhi",1
+DL-CD-001/2024/0004,Kashvi,Rao,2010-09-04,FEMALE,7,D,Suresh Rao,+91 7334037646,suresh.rao@gmail.com,"239, Block E, New Delhi - 110006, Delhi",1
+DL-CD-001/2024/0005,Jiya,Rajagopal,2009-11-01,FEMALE,8,A,Sanjay Rajagopal,+91 8718257024,sanjay.rajagopal@gmail.com,"347, Sector 59, New Delhi - 110006, Delhi",1
+DL-CD-001/2024/0006,Priya,Joshi,2011-05-20,FEMALE,12,A,Manoj Joshi,+91 8672030854,manoj.joshi@gmail.com,"220, Vihar, New Delhi - 110003, Delhi",1
+DL-CD-001/2024/0007,Darsh,Mehra,2009-03-08,MALE,9,C,Nirmala Mehra,+91 7264272995,nirmala.mehra@gmail.com,"223, Colony No 18, New Delhi - 110005, Delhi",1
+DL-CD-001/2024/0008,Vinay,Yadav,2011-08-13,MALE,12,B,Satish Yadav,+91 8584044963,satish.yadav@gmail.com,"125, Vihar, New Delhi - 110005, Delhi",1
+DL-CD-001/2024/0009,Mayank,Mandal,2010-01-14,MALE,9,B,Seema Mandal,+91 8465436049,seema.mandal@gmail.com,"144, Nagar, New Delhi - 110002, Delhi",1
+DL-CD-001/2024/0010,Mihir,Mehra,2010-09-11,MALE,11,D,Poonam Mehra,+91 8951405188,poonam.mehra@gmail.com,"9, Vihar, New Delhi - 110002, Delhi",1
+DL-CD-001/2024/0011,Ujjwal,Mukherjee,2013-04-22,MALE,10,C,Veena Mukherjee,+91 7690975123,veena.mukherjee@gmail.com,"170, Ward 9, New Delhi - 110002, Delhi",1
+DL-CD-002/2024/0001,Simran,Nair,2010-01-28,FEMALE,7,B,Santosh Nair,+91 8878017216,santosh.nair@gmail.com,"302, Ward 4, New Delhi - 110002, Delhi",2
+DL-CD-002/2024/0002,Shaurya,Sharma,2013-12-27,MALE,7,C,Manoj Sharma,+91 9694164665,manoj.sharma@gmail.com,"150, Sector 45, New Delhi - 110001, Delhi",2
+DL-CD-002/2024/0003,Mahika,Khanna,2012-12-09,FEMALE,8,B,Ramesh Khanna,+91 8612957813,ramesh.khanna@gmail.com,"59, Sector 53, New Delhi - 110006, Delhi",2
+DL-CD-002/2024/0004,Anika,Rao,2009-09-03,FEMALE,12,C,Vinod Rao,+91 9227186396,vinod.rao@gmail.com,"286, Nagar, New Delhi - 110002, Delhi",2
+DL-CD-002/2024/0005,Zara,Kapoor,2012-12-18,FEMALE,8,D,Kamlesh Kapoor,+91 7766823010,kamlesh.kapoor@gmail.com,"31, Vihar, New Delhi - 110002, Delhi",2
+DL-CD-002/2024/0006,Chirag,Verma,2010-09-09,MALE,7,A,Ganesh Verma,+91 9538642403,ganesh.verma@gmail.com,"231, Block H, New Delhi - 110003, Delhi",2
+DL-CD-002/2024/0007,Jasmine,Gupta,2010-08-14,FEMALE,8,B,Veena Gupta,+91 9684719405,veena.gupta@gmail.com,"116, Block C, New Delhi - 110001, Delhi",2
+DL-CD-002/2024/0008,Siddharth,Hegde,2011-03-28,MALE,9,A,Kamla Hegde,+91 7426515425,kamla.hegde@gmail.com,"359, Colony No 18, New Delhi - 110005, Delhi",2
+DL-CD-002/2024/0009,Ankit,Bose,2011-08-13,MALE,10,C,Sanjay Bose,+91 9345805719,sanjay.bose@gmail.com,"493, Nagar, New Delhi - 110001, Delhi",2
+DL-CD-002/2024/0010,Meera,Khanna,2013-10-26,FEMALE,11,D,Balram Khanna,+91 9728492896,balram.khanna@gmail.com,"224, Ward 3, New Delhi - 110005, Delhi",2
+DL-CD-002/2024/0011,Dhruv,Verma,2011-09-12,MALE,9,D,Omprakash Verma,+91 7529982328,omprakash.verma@gmail.com,"417, Ward 15, New Delhi - 110003, Delhi",2
+DL-CD-003/2024/0001,Tanmay,Kohli,2008-01-05,MALE,11,D,Lata Kohli,+91 9301415220,lata.kohli@gmail.com,"266, Sector 24, New Delhi - 110002, Delhi",3
+DL-CD-003/2024/0002,Ishaan,Pandey,2012-11-29,MALE,11,D,Mukesh Pandey,+91 9776481264,mukesh.pandey@gmail.com,"312, Ward 23, New Delhi - 110006, Delhi",3
+DL-CD-003/2024/0003,Mihir,Reddy,2010-07-09,MALE,12,A,Kamla Reddy,+91 9795472980,kamla.reddy@gmail.com,"427, Nagar, New Delhi - 110003, Delhi",3
+DL-CD-003/2024/0004,Ansh,Khanna,2010-09-25,MALE,9,B,Neeta Khanna,+91 9743576792,neeta.khanna@gmail.com,"261, Ward 28, New Delhi - 110005, Delhi",3
+DL-CD-003/2024/0005,Nakul,Yadav,2008-01-11,MALE,8,C,Poonam Yadav,+91 9579476614,poonam.yadav@gmail.com,"276, Nagar, New Delhi - 110005, Delhi",3
+DL-CD-003/2024/0006,Varun,Deshmukh,2010-09-05,MALE,10,D,Virendra Deshmukh,+91 8146865930,virendra.deshmukh@gmail.com,"163, Colony No 13, New Delhi - 110002, Delhi",3
+DL-CD-003/2024/0007,Amaira,Pillai,2013-08-19,FEMALE,10,C,Rakesh Pillai,+91 8207064620,rakesh.pillai@gmail.com,"270, Colony No 5, New Delhi - 110002, Delhi",3
+DL-CD-003/2024/0008,Reyansh,Das,2012-06-16,MALE,11,A,Kavita Das,+91 7672972597,kavita.das@gmail.com,"195, Sector 21, New Delhi - 110006, Delhi",3
+DL-CD-003/2024/0009,Sahil,Mishra,2009-01-05,MALE,9,A,Rakesh Mishra,+91 8278632824,rakesh.mishra@gmail.com,"356, Sector 20, New Delhi - 110003, Delhi",3
+DL-CD-003/2024/0010,Aniket,Rao,2010-09-27,MALE,10,D,Kuldeep Rao,+91 9287979290,kuldeep.rao@gmail.com,"41, Colony No 8, New Delhi - 110006, Delhi",3
+DL-CD-003/2024/0011,Soham,Naik,2010-11-06,MALE,9,C,Sunil Naik,+91 8408842146,sunil.naik@gmail.com,"347, Ward 3, New Delhi - 110006, Delhi",3
+DL-SD-001/2024/0001,Mishti,Bhatt,2010-10-21,FEMALE,9,C,Devendra Bhatt,+91 8618840705,devendra.bhatt@gmail.com,"55, Nagar, Hauz Khas - 110024, Delhi",4
+DL-SD-001/2024/0002,Vinay,Patel,2012-06-09,OTHER,8,A,Ramesh Patel,+91 7900122509,ramesh.patel@gmail.com,"255, Nagar, Hauz Khas - 110024, Delhi",4
+DL-SD-001/2024/0003,Mohan,Kulkarni,2010-10-23,MALE,11,B,Rakesh Kulkarni,+91 7794002948,rakesh.kulkarni@gmail.com,"21, Ward 2, Hauz Khas - 110017, Delhi",4
+DL-SD-001/2024/0004,Sai,Mandal,2012-08-28,MALE,7,B,Girish Mandal,+91 7492836532,girish.mandal@gmail.com,"272, Ward 27, Hauz Khas - 110049, Delhi",4
+DL-SD-001/2024/0005,Samaira,Rathore,2011-10-19,FEMALE,12,A,Kamla Rathore,+91 9251136695,kamla.rathore@gmail.com,"387, Ward 28, Hauz Khas - 110016, Delhi",4
+DL-SD-001/2024/0006,Aanya,Tiwari,2009-05-21,FEMALE,9,C,Gopal Tiwari,+91 7509123009,gopal.tiwari@gmail.com,"422, Colony No 8, Hauz Khas - 110016, Delhi",4
+DL-SD-001/2024/0007,Chhavi,Mandal,2010-06-25,FEMALE,11,A,Kamla Mandal,+91 7424474225,kamla.mandal@gmail.com,"333, Sector 27, Hauz Khas - 110024, Delhi",4
+DL-SD-001/2024/0008,Pranav,Joshi,2010-08-19,OTHER,10,B,Neeta Joshi,+91 8498370582,neeta.joshi@gmail.com,"344, Colony No 5, Hauz Khas - 110016, Delhi",4
+DL-SD-001/2024/0009,Jhanvi,Ghosh,2011-02-19,FEMALE,6,C,Narendra Ghosh,+91 8577488537,narendra.ghosh@gmail.com,"487, Nagar, Hauz Khas - 110024, Delhi",4
+DL-SD-001/2024/0010,Rushil,Deshmukh,2009-05-15,MALE,12,D,Satish Deshmukh,+91 7327746886,satish.deshmukh@gmail.com,"329, Block A, Hauz Khas - 110017, Delhi",4
+DL-SD-001/2024/0011,Neha,Gupta,2010-04-28,FEMALE,10,B,Virendra Gupta,+91 8931471931,virendra.gupta@gmail.com,"76, Block A, Hauz Khas - 110029, Delhi",4
+DL-SD-002/2024/0001,Jiya,Shukla,2008-04-15,FEMALE,7,A,Seema Shukla,+91 9732276010,seema.shukla@gmail.com,"166, Block C, Hauz Khas - 110049, Delhi",5
+DL-SD-002/2024/0002,Anvi,Khanna,2013-01-10,FEMALE,12,C,Kiran Khanna,+91 7217095851,kiran.khanna@gmail.com,"232, Vihar, Hauz Khas - 110029, Delhi",5
+DL-SD-002/2024/0003,Aman,Kumar,2013-05-15,MALE,12,D,Veena Kumar,+91 7215923129,veena.kumar@gmail.com,"252, Ward 3, Hauz Khas - 110029, Delhi",5
+DL-SD-002/2024/0004,Ishaan,Yadav,2011-08-24,MALE,9,C,Nirmala Yadav,+91 7750072069,nirmala.yadav@gmail.com,"221, Vihar, Hauz Khas - 110017, Delhi",5
+DL-SD-002/2024/0005,Pranav,Ghosh,2011-10-20,MALE,12,D,Rekha Ghosh,+91 8883415470,rekha.ghosh@gmail.com,"49, Ward 11, Hauz Khas - 110017, Delhi",5
+DL-SD-002/2024/0006,Mahika,Gupta,2009-01-08,FEMALE,12,A,Satish Gupta,+91 8203685265,satish.gupta@gmail.com,"382, Nagar, Hauz Khas - 110016, Delhi",5
+DL-SD-002/2024/0007,Chhavi,Agarwal,2011-09-12,FEMALE,11,A,Lata Agarwal,+91 8814403943,lata.agarwal@gmail.com,"482, Ward 28, Hauz Khas - 110029, Delhi",5
+DL-SD-002/2024/0008,Dhruv,Sinha,2013-09-09,MALE,7,B,Santosh Sinha,+91 9216198604,santosh.sinha@gmail.com,"180, Nagar, Hauz Khas - 110017, Delhi",5
+DL-SD-002/2024/0009,Chhavi,Rajagopal,2008-04-17,FEMALE,10,C,Sanjay Rajagopal,+91 9393421844,sanjay.rajagopal2@gmail.com,"360, Ward 30, Hauz Khas - 110016, Delhi",5
+DL-SD-002/2024/0010,Kabir,Sinha,2012-06-29,MALE,6,B,Sanjay Sinha,+91 9901131404,sanjay.sinha@gmail.com,"272, Ward 14, Hauz Khas - 110017, Delhi",5
+DL-SD-002/2024/0011,Varun,Rajagopal,2008-12-13,MALE,6,B,Ganesh Rajagopal,+91 7153432064,ganesh.rajagopal@gmail.com,"346, Colony No 14, Hauz Khas - 110029, Delhi",5
+DL-SD-003/2024/0001,Parth,Srivastava,2013-09-29,MALE,6,C,Shobha Srivastava,+91 9404133583,shobha.srivastava@gmail.com,"348, Sector 44, Hauz Khas - 110017, Delhi",6
+DL-SD-003/2024/0002,Zayan,Kumar,2008-02-01,MALE,7,C,Narendra Kumar,+91 9920511515,narendra.kumar@gmail.com,"131, Colony No 1, Hauz Khas - 110049, Delhi",6
+DL-SD-003/2024/0003,Advait,Saxena,2010-07-31,MALE,10,C,Pramod Saxena,+91 8896760809,pramod.saxena@gmail.com,"22, Ward 15, Hauz Khas - 110029, Delhi",6
+DL-SD-003/2024/0004,Tanmay,Deshpande,2012-09-06,MALE,8,A,Rekha Deshpande,+91 9448717183,rekha.deshpande@gmail.com,"88, Sector 52, Hauz Khas - 110049, Delhi",6
+DL-SD-003/2024/0005,Priya,Bose,2012-06-28,FEMALE,10,A,Pushpa Bose,+91 8900801837,pushpa.bose@gmail.com,"174, Sector 15, Hauz Khas - 110029, Delhi",6
+DL-SD-003/2024/0006,Urvi,Kohli,2010-03-05,FEMALE,12,C,Mamta Kohli,+91 7979339361,mamta.kohli@gmail.com,"331, Block C, Hauz Khas - 110024, Delhi",6
+DL-SD-003/2024/0007,Hrithik,Rao,2008-11-04,MALE,7,D,Kamla Rao,+91 7915911873,kamla.rao@gmail.com,"297, Block F, Hauz Khas - 110049, Delhi",6
+DL-SD-003/2024/0008,Samar,Naik,2011-05-25,MALE,12,C,Dinesh Naik,+91 8644748834,dinesh.naik@gmail.com,"38, Sector 20, Hauz Khas - 110024, Delhi",6
+DL-SD-003/2024/0009,Avni,Patil,2009-01-04,FEMALE,10,D,Kamla Patil,+91 7695192667,kamla.patil@gmail.com,"489, Vihar, Hauz Khas - 110017, Delhi",6
+DL-SD-003/2024/0010,Abhinav,Kohli,2009-09-09,MALE,6,D,Naresh Kohli,+91 8866990485,naresh.kohli@gmail.com,"44, Vihar, Hauz Khas - 110049, Delhi",6
+DL-SD-003/2024/0011,Aarna,Thakur,2009-10-12,OTHER,8,C,Omprakash Thakur,+91 8538912794,omprakash.thakur@gmail.com,"397, Sector 22, Hauz Khas - 110024, Delhi",6
+DL-SD-003/2024/0012,Rudra,Pandey,2010-10-29,MALE,11,B,Kavita Pandey,+91 9725711790,kavita.pandey@gmail.com,"340, Block F, Hauz Khas - 110029, Delhi",6
+DL-ED-001/2024/0001,Advait,Patil,2011-09-07,MALE,12,B,Rani Patil,+91 9793663866,rani.patil@gmail.com,"344, Ward 1, Preet Vihar - 110091, Delhi",7
+DL-ED-001/2024/0002,Swati,Rajagopal,2013-06-14,FEMALE,7,B,Harish Rajagopal,+91 9182855381,harish.rajagopal@gmail.com,"152, Vihar, Preet Vihar - 110092, Delhi",7
+DL-ED-001/2024/0003,Kashvi,Pillai,2012-03-23,FEMALE,7,B,Kuldeep Pillai,+91 7927959968,kuldeep.pillai@gmail.com,"320, Sector 52, Preet Vihar - 110096, Delhi",7
+DL-ED-001/2024/0004,Raj,Kapoor,2011-03-13,MALE,12,D,Virendra Kapoor,+91 7356805216,virendra.kapoor@gmail.com,"159, Ward 29, Preet Vihar - 110096, Delhi",7
+DL-ED-001/2024/0005,Sahil,Rajagopal,2012-04-13,MALE,10,D,Ganesh Rajagopal,+91 9960345542,ganesh.rajagopal2@gmail.com,"310, Ward 2, Preet Vihar - 110092, Delhi",7
+DL-ED-001/2024/0006,Tanya,Nair,2011-03-13,FEMALE,6,B,Shyam Nair,+91 8651208305,shyam.nair@gmail.com,"76, Colony No 8, Preet Vihar - 110051, Delhi",7
+DL-ED-001/2024/0007,Pihu,Kumar,2012-06-11,FEMALE,10,C,Ajay Kumar,+91 8187623171,ajay.kumar@gmail.com,"192, Vihar, Preet Vihar - 110051, Delhi",7
+DL-ED-001/2024/0008,Kiara,Singh,2011-03-21,FEMALE,12,D,Harish Singh,+91 7603703167,harish.singh@gmail.com,"230, Sector 40, Preet Vihar - 110051, Delhi",7
+DL-ED-001/2024/0009,Karan,Agarwal,2013-12-01,MALE,9,A,Omprakash Agarwal,+91 9423358638,omprakash.agarwal@gmail.com,"63, Colony No 20, Preet Vihar - 110092, Delhi",7
+DL-ED-001/2024/0010,Mayank,Hegde,2008-03-08,MALE,11,B,Umesh Hegde,+91 8560891752,umesh.hegde@gmail.com,"1, Colony No 19, Preet Vihar - 110091, Delhi",7
+DL-ED-001/2024/0011,Bhavya,Thakur,2012-01-17,FEMALE,6,A,Neeta Thakur,+91 8146744734,neeta.thakur@gmail.com,"326, Ward 9, Preet Vihar - 110092, Delhi",7
+DL-ED-002/2024/0001,Dhruv,Rajagopal,2011-09-23,MALE,7,A,Seema Rajagopal,+91 7463512350,seema.rajagopal@gmail.com,"417, Vihar, Preet Vihar - 110096, Delhi",8
+DL-ED-002/2024/0002,Kiara,Gupta,2013-02-17,FEMALE,6,C,Devendra Gupta,+91 9949447049,devendra.gupta@gmail.com,"103, Nagar, Preet Vihar - 110096, Delhi",8
+DL-ED-002/2024/0003,Mahika,Khanna,2010-11-03,OTHER,6,B,Omprakash Khanna,+91 8938422254,omprakash.khanna@gmail.com,"25, Ward 9, Preet Vihar - 110096, Delhi",8
+DL-ED-002/2024/0004,Mehr,Banerjee,2011-10-20,FEMALE,7,D,Renu Banerjee,+91 8956084565,renu.banerjee@gmail.com,"266, Sector 18, Preet Vihar - 110096, Delhi",8
+DL-ED-002/2024/0005,Myra,Saxena,2011-04-18,FEMALE,8,A,Vinod Saxena,+91 8809656613,vinod.saxena@gmail.com,"152, Block H, Preet Vihar - 110096, Delhi",8
+DL-ED-002/2024/0006,Ankit,Chowdhury,2011-12-15,MALE,10,D,Balram Chowdhury,+91 7949842840,balram.chowdhury@gmail.com,"486, Ward 22, Preet Vihar - 110091, Delhi",8
+DL-ED-002/2024/0007,Kriti,Hegde,2012-11-29,FEMALE,6,B,Ashok Hegde,+91 9935924516,ashok.hegde@gmail.com,"331, Sector 24, Preet Vihar - 110091, Delhi",8
+DL-ED-002/2024/0008,Vaishali,Mukherjee,2012-12-23,FEMALE,12,A,Harish Mukherjee,+91 7494009507,harish.mukherjee@gmail.com,"204, Sector 21, Preet Vihar - 110091, Delhi",8
+DL-ED-002/2024/0009,Ritika,Agarwal,2009-04-27,FEMALE,8,C,Asha Agarwal,+91 9756998124,asha.agarwal@gmail.com,"147, Block H, Preet Vihar - 110092, Delhi",8
+DL-ED-002/2024/0010,Samar,Reddy,2011-08-02,MALE,11,C,Ashok Reddy,+91 7682152066,ashok.reddy@gmail.com,"149, Vihar, Preet Vihar - 110091, Delhi",8
+DL-ED-002/2024/0011,Sia,Mishra,2009-05-12,FEMALE,7,B,Ajay Mishra,+91 8128222260,ajay.mishra@gmail.com,"185, Block F, Preet Vihar - 110092, Delhi",8
+DL-WD-001/2024/0001,Ansh,Thakur,2012-08-09,MALE,12,D,Pramod Thakur,+91 9440405868,pramod.thakur@gmail.com,"329, Ward 15, Janakpuri - 110059, Delhi",9
+DL-WD-001/2024/0002,Anushka,Naik,2010-01-15,FEMALE,12,B,Shobha Naik,+91 7159499094,shobha.naik@gmail.com,"426, Block C, Janakpuri - 110063, Delhi",9
+DL-WD-001/2024/0003,Pallavi,Sen,2013-10-26,FEMALE,8,A,Mohan Sen,+91 9781887358,mohan.sen@gmail.com,"490, Nagar, Janakpuri - 110058, Delhi",9
+DL-WD-001/2024/0004,Mansi,Menon,2009-09-23,FEMALE,7,C,Manoj Menon,+91 9187212377,manoj.menon@gmail.com,"24, Nagar, Janakpuri - 110041, Delhi",9
+DL-WD-001/2024/0005,Aditi,Mehra,2011-04-01,FEMALE,11,C,Santosh Mehra,+91 9964027324,santosh.mehra@gmail.com,"414, Sector 44, Janakpuri - 110058, Delhi",9
+DL-WD-001/2024/0006,Darsh,Khanna,2013-03-17,MALE,7,C,Umesh Khanna,+91 8871336275,umesh.khanna@gmail.com,"164, Ward 13, Janakpuri - 110058, Delhi",9
+DL-WD-001/2024/0007,Soham,Nair,2010-12-31,MALE,9,B,Umesh Nair,+91 9154337019,umesh.nair@gmail.com,"149, Ward 8, Janakpuri - 110063, Delhi",9
+DL-WD-001/2024/0008,Krishna,Mehra,2013-10-09,MALE,9,D,Kamlesh Mehra,+91 8124885365,kamlesh.mehra@gmail.com,"47, Nagar, Janakpuri - 110063, Delhi",9
+DL-WD-001/2024/0009,Sahil,Mehra,2013-04-11,MALE,8,A,Naresh Mehra,+91 8243811545,naresh.mehra@gmail.com,"452, Ward 25, Janakpuri - 110058, Delhi",9
+DL-WD-001/2024/0010,Rehan,Agarwal,2010-03-08,MALE,8,C,Pramod Agarwal,+91 8641440255,pramod.agarwal@gmail.com,"231, Vihar, Janakpuri - 110058, Delhi",9
+DL-WD-001/2024/0011,Dev,Chatterjee,2012-03-08,MALE,12,C,Reema Chatterjee,+91 9313736772,reema.chatterjee@gmail.com,"309, Sector 33, Janakpuri - 110058, Delhi",9
+DL-WD-002/2024/0001,Mahika,Thakur,2013-02-14,FEMALE,7,B,Anita Thakur,+91 7442019016,anita.thakur@gmail.com,"84, Nagar, Janakpuri - 110041, Delhi",10
+DL-WD-002/2024/0002,Sanya,Khanna,2008-03-09,FEMALE,8,C,Suresh Khanna,+91 8726745401,suresh.khanna@gmail.com,"158, Ward 20, Janakpuri - 110059, Delhi",10
+DL-WD-002/2024/0003,Falguni,Khanna,2009-11-29,FEMALE,10,D,Umesh Khanna,+91 7360056579,umesh.khanna2@gmail.com,"17, Colony No 1, Janakpuri - 110063, Delhi",10
+DL-WD-002/2024/0004,Mihir,Bhatt,2010-04-15,MALE,9,D,Dinesh Bhatt,+91 7248264937,dinesh.bhatt@gmail.com,"266, Nagar, Janakpuri - 110041, Delhi",10
+DL-WD-002/2024/0005,Lakshya,Malhotra,2013-12-23,MALE,8,C,Gopal Malhotra,+91 7619884429,gopal.malhotra@gmail.com,"99, Block E, Janakpuri - 110063, Delhi",10
+DL-WD-002/2024/0006,Neha,Bhatt,2013-06-25,FEMALE,8,D,Mamta Bhatt,+91 7954059995,mamta.bhatt@gmail.com,"370, Vihar, Janakpuri - 110041, Delhi",10
+DL-WD-002/2024/0007,Gauri,Sen,2009-08-22,FEMALE,8,A,Omprakash Sen,+91 7184857208,omprakash.sen@gmail.com,"178, Vihar, Janakpuri - 110041, Delhi",10
+DL-WD-002/2024/0008,Utkarsh,Yadav,2011-01-17,MALE,7,A,Ajay Yadav,+91 9154508960,ajay.yadav@gmail.com,"343, Sector 58, Janakpuri - 110058, Delhi",10
+DL-WD-002/2024/0009,Abhinav,Joshi,2009-07-17,MALE,6,B,Lata Joshi,+91 7610778600,lata.joshi@gmail.com,"245, Ward 25, Janakpuri - 110063, Delhi",10
+DL-WD-002/2024/0010,Diya,Patil,2010-08-09,FEMALE,10,A,Sandeep Patil,+91 8999371401,sandeep.patil@gmail.com,"91, Colony No 13, Janakpuri - 110059, Delhi",10
+DL-WD-002/2024/0011,Samaira,Singh,2008-02-07,FEMALE,8,A,Kavita Singh,+91 8587853601,kavita.singh@gmail.com,"329, Nagar, Janakpuri - 110041, Delhi",10
+MH-MS-001/2024/0001,Gaurav,Das,2009-10-27,MALE,11,D,Mohan Das,+91 7299929730,mohan.das@gmail.com,"8, Nagar, Andheri - 400058, Maharashtra",11
+MH-MS-001/2024/0002,Tanmay,Bose,2013-10-11,MALE,8,A,Rekha Bose,+91 7202418976,rekha.bose@gmail.com,"95, Sector 9, Andheri - 400069, Maharashtra",11
+MH-MS-001/2024/0003,Tejas,Srivastava,2010-12-29,MALE,8,C,Sunil Srivastava,+91 8801887172,sunil.srivastava@gmail.com,"185, Colony No 4, Andheri - 400069, Maharashtra",11
+MH-MS-001/2024/0004,Nakul,Deshpande,2011-06-27,MALE,11,A,Ravishankar Deshpande,+91 8759949050,ravishankar.deshpande@gmail.com,"114, Colony No 5, Andheri - 400069, Maharashtra",11
+MH-MS-001/2024/0005,Kartik,Khanna,2010-06-13,MALE,12,B,Vinod Khanna,+91 7579691987,vinod.khanna@gmail.com,"271, Sector 46, Andheri - 400053, Maharashtra",11
+MH-MS-001/2024/0006,Saisha,Deshmukh,2009-09-05,FEMALE,7,C,Jyoti Deshmukh,+91 8224811770,jyoti.deshmukh@gmail.com,"349, Colony No 17, Andheri - 400053, Maharashtra",11
+MH-MS-001/2024/0007,Prateek,Ghosh,2013-02-14,MALE,10,A,Kamla Ghosh,+91 7966418765,kamla.ghosh@gmail.com,"158, Sector 47, Andheri - 400058, Maharashtra",11
+MH-MS-001/2024/0008,Ananya,Bose,2011-11-12,FEMALE,11,A,Lakshmi Bose,+91 9174108740,lakshmi.bose@gmail.com,"479, Block A, Andheri - 400058, Maharashtra",11
+MH-MS-001/2024/0009,Pihu,Mukherjee,2012-04-15,FEMALE,9,D,Sita Mukherjee,+91 9833076128,sita.mukherjee@gmail.com,"494, Sector 43, Andheri - 400058, Maharashtra",11
+MH-MS-001/2024/0010,Mansi,Thakur,2009-06-05,OTHER,11,B,Rajesh Thakur,+91 9420364823,rajesh.thakur@gmail.com,"238, Block G, Andheri - 400058, Maharashtra",11
+MH-MS-001/2024/0011,Karan,Yadav,2010-02-11,MALE,11,A,Vijay Yadav,+91 7550156166,vijay.yadav@gmail.com,"315, Sector 50, Andheri - 400053, Maharashtra",11
+MH-MS-002/2024/0001,Zayan,Trivedi,2008-07-18,MALE,7,A,Rekha Trivedi,+91 8351619881,rekha.trivedi@gmail.com,"277, Ward 5, Andheri - 400058, Maharashtra",12
+MH-MS-002/2024/0002,Eva,Mandal,2011-08-06,FEMALE,7,C,Umesh Mandal,+91 7659689063,umesh.mandal@gmail.com,"114, Nagar, Andheri - 400058, Maharashtra",12
+MH-MS-002/2024/0003,Mishti,Agarwal,2013-07-23,FEMALE,6,C,Sita Agarwal,+91 7442238518,sita.agarwal@gmail.com,"357, Colony No 10, Andheri - 400058, Maharashtra",12
+MH-MS-002/2024/0004,Mahika,Chauhan,2010-07-12,FEMALE,8,B,Kamla Chauhan,+91 9703857319,kamla.chauhan@gmail.com,"212, Ward 13, Andheri - 400058, Maharashtra",12
+MH-MS-002/2024/0005,Chirag,Kapoor,2012-02-28,MALE,6,B,Ramesh Kapoor,+91 8504981031,ramesh.kapoor@gmail.com,"345, Block A, Andheri - 400058, Maharashtra",12
+MH-MS-002/2024/0006,Vedant,Dubey,2008-03-03,MALE,7,B,Mukesh Dubey,+91 7909956465,mukesh.dubey@gmail.com,"246, Vihar, Andheri - 400058, Maharashtra",12
+MH-MS-002/2024/0007,Raj,Agarwal,2011-08-10,MALE,12,C,Sita Agarwal,+91 8673002461,sita.agarwal2@gmail.com,"333, Nagar, Andheri - 400072, Maharashtra",12
+MH-MS-002/2024/0008,Abhinav,Srivastava,2011-08-04,MALE,7,C,Sunita Srivastava,+91 8149086585,sunita.srivastava@gmail.com,"289, Sector 56, Andheri - 400069, Maharashtra",12
+MH-MS-002/2024/0009,Falguni,Menon,2012-09-06,FEMALE,8,B,Devendra Menon,+91 8346980616,devendra.menon@gmail.com,"195, Vihar, Andheri - 400069, Maharashtra",12
+MH-MS-002/2024/0010,Hardik,Chowdhury,2013-07-02,MALE,9,B,Seema Chowdhury,+91 9250279322,seema.chowdhury@gmail.com,"369, Vihar, Andheri - 400053, Maharashtra",12
+MH-MS-002/2024/0011,Avni,Shukla,2008-07-17,FEMALE,12,A,Lata Shukla,+91 9777210736,lata.shukla@gmail.com,"119, Nagar, Andheri - 400072, Maharashtra",12
+MH-MS-002/2024/0012,Krish,Khanna,2013-06-21,MALE,6,A,Padma Khanna,+91 7541671360,padma.khanna@gmail.com,"7, Sector 2, Andheri - 400072, Maharashtra",12
+MH-MS-003/2024/0001,Dev,Thakur,2009-09-01,MALE,7,B,Rani Thakur,+91 8975329786,rani.thakur@gmail.com,"182, Colony No 12, Andheri - 400072, Maharashtra",13
+MH-MS-003/2024/0002,Pallavi,Dubey,2008-11-26,FEMALE,11,A,Satish Dubey,+91 8507231644,satish.dubey@gmail.com,"194, Vihar, Andheri - 400058, Maharashtra",13
+MH-MS-003/2024/0003,Aniket,Patil,2011-09-18,MALE,10,A,Rani Patil,+91 9346709900,rani.patil2@gmail.com,"109, Sector 58, Andheri - 400069, Maharashtra",13
+MH-MS-003/2024/0004,Deepika,Shukla,2008-05-14,FEMALE,7,C,Anil Shukla,+91 9730325223,anil.shukla@gmail.com,"74, Ward 30, Andheri - 400058, Maharashtra",13
+MH-MS-003/2024/0005,Deepika,Banerjee,2011-09-20,FEMALE,9,B,Vinod Banerjee,+91 7900427880,vinod.banerjee@gmail.com,"499, Block A, Andheri - 400053, Maharashtra",13
+MH-MS-003/2024/0006,Krish,Hegde,2012-06-12,MALE,12,C,Sanjay Hegde,+91 7393482659,sanjay.hegde@gmail.com,"402, Nagar, Andheri - 400072, Maharashtra",13
+MH-MS-003/2024/0007,Ujjwal,Shukla,2012-04-05,MALE,6,C,Rajan Shukla,+91 7178927201,rajan.shukla@gmail.com,"43, Vihar, Andheri - 400072, Maharashtra",13
+MH-MS-003/2024/0008,Dhruv,Reddy,2008-01-22,MALE,8,D,Reema Reddy,+91 8209770151,reema.reddy@gmail.com,"68, Nagar, Andheri - 400072, Maharashtra",13
+MH-MS-003/2024/0009,Deepak,Sen,2009-01-16,MALE,10,C,Neeta Sen,+91 9413368711,neeta.sen@gmail.com,"212, Block B, Andheri - 400058, Maharashtra",13
+MH-MS-003/2024/0010,Mansi,Pillai,2011-01-06,FEMALE,8,C,Renu Pillai,+91 9167932588,renu.pillai@gmail.com,"86, Colony No 10, Andheri - 400053, Maharashtra",13
+MH-MS-003/2024/0011,Rahul,Chowdhury,2013-07-23,MALE,10,B,Nirmala Chowdhury,+91 9245480775,nirmala.chowdhury@gmail.com,"156, Colony No 20, Andheri - 400069, Maharashtra",13
+MH-MC-001/2024/0001,Zayan,Pillai,2011-05-15,MALE,8,B,Santosh Pillai,+91 8290736564,santosh.pillai@gmail.com,"494, Nagar, Fort - 400002, Maharashtra",14
+MH-MC-001/2024/0002,Rushil,Chatterjee,2012-02-04,MALE,6,B,Lakshmi Chatterjee,+91 9831983367,lakshmi.chatterjee@gmail.com,"394, Vihar, Fort - 400002, Maharashtra",14
+MH-MC-001/2024/0003,Sai,Bhatt,2008-10-10,MALE,12,D,Renu Bhatt,+91 9780039397,renu.bhatt@gmail.com,"156, Vihar, Fort - 400034, Maharashtra",14
+MH-MC-001/2024/0004,Avni,Kapoor,2013-05-16,FEMALE,10,D,Padma Kapoor,+91 7842716738,padma.kapoor@gmail.com,"215, Vihar, Fort - 400001, Maharashtra",14
+MH-MC-001/2024/0005,Rahul,Shukla,2011-12-25,MALE,7,A,Rekha Shukla,+91 8954946593,rekha.shukla@gmail.com,"221, Block A, Fort - 400002, Maharashtra",14
+MH-MC-001/2024/0006,Omkar,Malhotra,2013-08-11,MALE,7,C,Sanjay Malhotra,+91 8212259020,sanjay.malhotra@gmail.com,"152, Ward 4, Fort - 400020, Maharashtra",14
+MH-MC-001/2024/0007,Nikhil,Thakur,2013-06-01,MALE,8,D,Rakesh Thakur,+91 8875235090,rakesh.thakur@gmail.com,"357, Sector 29, Fort - 400001, Maharashtra",14
+MH-MC-001/2024/0008,Vihaan,Patil,2009-03-23,MALE,11,B,Rajan Patil,+91 7287317728,rajan.patil@gmail.com,"283, Colony No 14, Fort - 400002, Maharashtra",14
+MH-MC-001/2024/0009,Myra,Iyer,2012-11-05,FEMALE,9,A,Devendra Iyer,+91 8735873300,devendra.iyer@gmail.com,"220, Block A, Fort - 400020, Maharashtra",14
+MH-MC-001/2024/0010,Anvi,Sinha,2009-02-20,FEMALE,12,B,Reema Sinha,+91 8311606895,reema.sinha@gmail.com,"235, Nagar, Fort - 400020, Maharashtra",14
+MH-MC-001/2024/0011,Jhanvi,Chatterjee,2009-04-12,FEMALE,8,C,Nirmala Chatterjee,+91 7285250002,nirmala.chatterjee@gmail.com,"417, Nagar, Fort - 400001, Maharashtra",14
+MH-MC-001/2024/0012,Simran,Nair,2010-09-04,FEMALE,8,A,Kuldeep Nair,+91 8844571822,kuldeep.nair@gmail.com,"73, Block G, Fort - 400034, Maharashtra",14
+MH-MC-002/2024/0001,Utkarsh,Bhatt,2009-12-10,MALE,10,B,Poonam Bhatt,+91 8250642261,poonam.bhatt@gmail.com,"96, Ward 20, Fort - 400001, Maharashtra",15
+MH-MC-002/2024/0002,Mohan,Banerjee,2013-09-01,MALE,11,D,Lata Banerjee,+91 7627986647,lata.banerjee@gmail.com,"213, Sector 46, Fort - 400001, Maharashtra",15
+MH-MC-002/2024/0003,Pallavi,Pandey,2008-05-13,FEMALE,8,B,Padma Pandey,+91 8280613009,padma.pandey@gmail.com,"400, Sector 30, Fort - 400001, Maharashtra",15
+MH-MC-002/2024/0004,Jay,Mukherjee,2008-06-19,MALE,12,D,Lakshmi Mukherjee,+91 9556506372,lakshmi.mukherjee@gmail.com,"53, Colony No 2, Fort - 400020, Maharashtra",15
+MH-MC-002/2024/0005,Deepak,Kapoor,2009-04-25,MALE,12,B,Rajendra Kapoor,+91 7731278472,rajendra.kapoor@gmail.com,"353, Block G, Fort - 400002, Maharashtra",15
+MH-MC-002/2024/0006,Anjali,Sinha,2011-12-07,FEMALE,10,C,Padma Sinha,+91 9447520416,padma.sinha@gmail.com,"361, Nagar, Fort - 400001, Maharashtra",15
+MH-MC-002/2024/0007,Mihir,Kumar,2011-02-09,MALE,12,B,Girish Kumar,+91 9257027702,girish.kumar@gmail.com,"365, Colony No 13, Fort - 400002, Maharashtra",15
+MH-MC-002/2024/0008,Riya,Naik,2012-08-23,FEMALE,9,D,Pramod Naik,+91 7953193777,pramod.naik@gmail.com,"451, Vihar, Fort - 400020, Maharashtra",15
+MH-MC-002/2024/0009,Vaishali,Malhotra,2013-06-22,FEMALE,8,A,Satish Malhotra,+91 7592256138,satish.malhotra@gmail.com,"326, Nagar, Fort - 400034, Maharashtra",15
+MH-MC-002/2024/0010,Ritvik,Bhat,2013-07-19,MALE,8,C,Omprakash Bhat,+91 8687670209,omprakash.bhat@gmail.com,"296, Vihar, Fort - 400001, Maharashtra",15
+MH-MC-002/2024/0011,Aayush,Patel,2009-05-23,MALE,12,B,Usha Patel,+91 8100725768,usha.patel@gmail.com,"491, Vihar, Fort - 400020, Maharashtra",15
+MH-MC-002/2024/0012,Rushil,Reddy,2012-01-16,MALE,8,A,Geeta Reddy,+91 7796763109,geeta.reddy@gmail.com,"85, Vihar, Fort - 400002, Maharashtra",15
+MH-PU-001/2024/0001,Divya,Sharma,2010-05-24,FEMALE,9,A,Girish Sharma,+91 7342870588,girish.sharma@gmail.com,"266, Vihar, Kothrud - 411004, Maharashtra",16
+MH-PU-001/2024/0002,Mishti,Bhatt,2009-06-25,FEMALE,9,A,Virendra Bhatt,+91 8195918514,virendra.bhatt@gmail.com,"375, Ward 4, Kothrud - 411004, Maharashtra",16
+MH-PU-001/2024/0003,Jayesh,Patil,2009-08-08,MALE,6,A,Pradeep Patil,+91 8477084942,pradeep.patil@gmail.com,"370, Nagar, Kothrud - 411030, Maharashtra",16
+MH-PU-001/2024/0004,Diya,Joshi,2009-07-27,FEMALE,12,A,Neeta Joshi,+91 8561052655,neeta.joshi2@gmail.com,"162, Vihar, Kothrud - 411029, Maharashtra",16
+MH-PU-001/2024/0005,Zayan,Hegde,2011-03-13,MALE,12,A,Yogesh Hegde,+91 9655928892,yogesh.hegde@gmail.com,"311, Ward 24, Kothrud - 411029, Maharashtra",16
+MH-PU-001/2024/0006,Pooja,Mehra,2012-04-29,FEMALE,6,B,Renu Mehra,+91 7737727239,renu.mehra@gmail.com,"37, Block A, Kothrud - 411030, Maharashtra",16
+MH-PU-001/2024/0007,Deepika,Ghosh,2012-02-05,FEMALE,10,B,Saroj Ghosh,+91 9117920106,saroj.ghosh@gmail.com,"301, Sector 5, Kothrud - 411029, Maharashtra",16
+MH-PU-001/2024/0008,Gauri,Kohli,2011-03-19,FEMALE,11,D,Veena Kohli,+91 7531942087,veena.kohli@gmail.com,"43, Ward 9, Kothrud - 411029, Maharashtra",16
+MH-PU-001/2024/0009,Neha,Rao,2011-08-31,FEMALE,9,A,Kamlesh Rao,+91 7569747059,kamlesh.rao@gmail.com,"374, Sector 55, Kothrud - 411030, Maharashtra",16
+MH-PU-001/2024/0010,Krish,Hegde,2008-08-13,MALE,8,B,Mukesh Hegde,+91 9860102491,mukesh.hegde@gmail.com,"71, Ward 6, Kothrud - 411004, Maharashtra",16
+MH-PU-001/2024/0011,Ishaan,Rathore,2011-01-05,MALE,11,A,Sanjay Rathore,+91 8966625455,sanjay.rathore@gmail.com,"220, Vihar, Kothrud - 411029, Maharashtra",16
+MH-PU-001/2024/0012,Sia,Mukherjee,2008-08-15,FEMALE,9,B,Geeta Mukherjee,+91 9373928805,geeta.mukherjee@gmail.com,"396, Sector 7, Kothrud - 411029, Maharashtra",16
+MH-PU-002/2024/0001,Abhinav,Mukherjee,2012-04-17,MALE,7,B,Vijay Mukherjee,+91 7962338680,vijay.mukherjee@gmail.com,"468, Block G, Kothrud - 411030, Maharashtra",17
+MH-PU-002/2024/0002,Simran,Yadav,2008-11-15,FEMALE,10,C,Mukesh Yadav,+91 7822977979,mukesh.yadav@gmail.com,"462, Sector 4, Kothrud - 411030, Maharashtra",17
+MH-PU-002/2024/0003,Soham,Pandey,2011-06-26,MALE,8,A,Nirmala Pandey,+91 9496124146,nirmala.pandey@gmail.com,"103, Block E, Kothrud - 411030, Maharashtra",17
+MH-PU-002/2024/0004,Mayank,Rajagopal,2010-03-11,MALE,11,B,Mahesh Rajagopal,+91 9540272920,mahesh.rajagopal@gmail.com,"13, Ward 21, Kothrud - 411029, Maharashtra",17
+MH-PU-002/2024/0005,Zara,Rathore,2011-06-13,FEMALE,6,B,Rani Rathore,+91 9550773824,rani.rathore@gmail.com,"252, Sector 4, Kothrud - 411029, Maharashtra",17
+MH-PU-002/2024/0006,Tanya,Ghosh,2012-03-05,FEMALE,9,A,Rakesh Ghosh,+91 7243359401,rakesh.ghosh@gmail.com,"327, Nagar, Kothrud - 411029, Maharashtra",17
+MH-PU-002/2024/0007,Ishaan,Chauhan,2011-04-09,MALE,8,C,Pushpa Chauhan,+91 7993245640,pushpa.chauhan@gmail.com,"377, Block F, Kothrud - 411029, Maharashtra",17
+MH-PU-002/2024/0008,Kiara,Rajagopal,2009-03-22,FEMALE,7,A,Pradeep Rajagopal,+91 8600422869,pradeep.rajagopal@gmail.com,"161, Block B, Kothrud - 411030, Maharashtra",17
+MH-PU-002/2024/0009,Reyansh,Nair,2009-01-05,MALE,7,C,Manoj Nair,+91 9997567367,manoj.nair@gmail.com,"439, Ward 3, Kothrud - 411030, Maharashtra",17
+MH-PU-002/2024/0010,Sanya,Tiwari,2009-12-13,FEMALE,6,D,Asha Tiwari,+91 7903243119,asha.tiwari@gmail.com,"282, Block B, Kothrud - 411029, Maharashtra",17
+MH-PU-002/2024/0011,Piyush,Pillai,2010-03-22,MALE,12,D,Geeta Pillai,+91 7776776838,geeta.pillai@gmail.com,"481, Ward 19, Kothrud - 411029, Maharashtra",17
+MH-PU-003/2024/0001,Omkar,Patil,2012-12-21,OTHER,12,B,Satish Patil,+91 8231563076,satish.patil@gmail.com,"22, Colony No 19, Kothrud - 411030, Maharashtra",18
+MH-PU-003/2024/0002,Zara,Trivedi,2012-10-13,FEMALE,7,C,Narendra Trivedi,+91 9395259429,narendra.trivedi@gmail.com,"144, Nagar, Kothrud - 411038, Maharashtra",18
+MH-PU-003/2024/0003,Paridhi,Ghosh,2013-05-16,FEMALE,6,A,Balram Ghosh,+91 8247356051,balram.ghosh@gmail.com,"215, Sector 13, Kothrud - 411030, Maharashtra",18
+MH-PU-003/2024/0004,Tara,Khanna,2013-06-08,FEMALE,8,C,Neeta Khanna,+91 8293075824,neeta.khanna2@gmail.com,"14, Sector 21, Kothrud - 411030, Maharashtra",18
+MH-PU-003/2024/0005,Falguni,Mishra,2009-10-15,FEMALE,6,B,Ajay Mishra,+91 8673044801,ajay.mishra2@gmail.com,"418, Nagar, Kothrud - 411030, Maharashtra",18
+MH-PU-003/2024/0006,Lakshya,Iyer,2010-08-26,MALE,10,C,Seema Iyer,+91 7130286569,seema.iyer@gmail.com,"361, Block F, Kothrud - 411038, Maharashtra",18
+MH-PU-003/2024/0007,Paridhi,Saxena,2011-06-19,FEMALE,7,D,Vijay Saxena,+91 9160309911,vijay.saxena@gmail.com,"120, Colony No 17, Kothrud - 411029, Maharashtra",18
+MH-PU-003/2024/0008,Krish,Deshmukh,2009-06-18,MALE,8,B,Anita Deshmukh,+91 9123528797,anita.deshmukh@gmail.com,"76, Nagar, Kothrud - 411004, Maharashtra",18
+MH-PU-003/2024/0009,Vaishali,Deshpande,2012-06-08,FEMALE,10,A,Savita Deshpande,+91 8446392556,savita.deshpande@gmail.com,"70, Vihar, Kothrud - 411004, Maharashtra",18
+MH-PU-003/2024/0010,Ojas,Bhatt,2012-01-01,MALE,7,B,Sita Bhatt,+91 8888121101,sita.bhatt@gmail.com,"353, Vihar, Kothrud - 411030, Maharashtra",18
+MH-PU-003/2024/0011,Deepika,Singh,2010-01-15,FEMALE,10,C,Surendra Singh,+91 7707254955,surendra.singh@gmail.com,"54, Vihar, Kothrud - 411029, Maharashtra",18
+MH-NG-001/2024/0001,Suresh,Verma,2008-12-29,MALE,12,C,Asha Verma,+91 9384769690,asha.verma@gmail.com,"108, Sector 16, Civil Lines - 440001, Maharashtra",19
+MH-NG-001/2024/0002,Samar,Chowdhury,2012-09-14,MALE,7,D,Renu Chowdhury,+91 8477131597,renu.chowdhury@gmail.com,"280, Nagar, Civil Lines - 440010, Maharashtra",19
+MH-NG-001/2024/0003,Atharv,Singh,2011-04-22,MALE,6,C,Gopal Singh,+91 9179672074,gopal.singh@gmail.com,"176, Nagar, Civil Lines - 440001, Maharashtra",19
+MH-NG-001/2024/0004,Krish,Khanna,2008-05-06,MALE,9,B,Shobha Khanna,+91 9157505040,shobha.khanna@gmail.com,"52, Vihar, Civil Lines - 440012, Maharashtra",19
+MH-NG-001/2024/0005,Sanya,Chauhan,2009-01-27,FEMALE,6,D,Poonam Chauhan,+91 9158524142,poonam.chauhan@gmail.com,"185, Vihar, Civil Lines - 440018, Maharashtra",19
+MH-NG-001/2024/0006,Aman,Bhat,2009-11-30,MALE,11,C,Vinod Bhat,+91 8224026766,vinod.bhat@gmail.com,"158, Vihar, Civil Lines - 440012, Maharashtra",19
+MH-NG-001/2024/0007,Jay,Banerjee,2010-01-27,MALE,8,D,Geeta Banerjee,+91 9578647558,geeta.banerjee@gmail.com,"23, Block H, Civil Lines - 440012, Maharashtra",19
+MH-NG-001/2024/0008,Lakshmi,Srivastava,2009-01-31,FEMALE,6,C,Lakshmi Srivastava,+91 8912239392,lakshmi.srivastava@gmail.com,"302, Nagar, Civil Lines - 440018, Maharashtra",19
+MH-NG-001/2024/0009,Mahika,Sinha,2010-08-23,FEMALE,9,C,Vinod Sinha,+91 8866979905,vinod.sinha@gmail.com,"18, Block C, Civil Lines - 440010, Maharashtra",19
+MH-NG-001/2024/0010,Nandini,Pillai,2008-06-23,FEMALE,9,A,Shobha Pillai,+91 9983221403,shobha.pillai@gmail.com,"322, Sector 10, Civil Lines - 440018, Maharashtra",19
+MH-NG-001/2024/0011,Anushka,Mandal,2011-02-05,FEMALE,10,D,Sunil Mandal,+91 7769003354,sunil.mandal@gmail.com,"301, Block G, Civil Lines - 440010, Maharashtra",19
+MH-NG-002/2024/0001,Divya,Joshi,2009-02-17,FEMALE,12,C,Padma Joshi,+91 8541189818,padma.joshi@gmail.com,"136, Colony No 20, Civil Lines - 440001, Maharashtra",20
+MH-NG-002/2024/0002,Tanmay,Rao,2012-07-03,MALE,6,D,Kavita Rao,+91 7355098831,kavita.rao@gmail.com,"26, Ward 30, Civil Lines - 440001, Maharashtra",20
+MH-NG-002/2024/0003,Shaurya,Dubey,2011-02-22,MALE,12,D,Rakesh Dubey,+91 9244295352,rakesh.dubey@gmail.com,"154, Ward 25, Civil Lines - 440018, Maharashtra",20
+MH-NG-002/2024/0004,Diya,Deshmukh,2012-12-14,FEMALE,7,D,Poonam Deshmukh,+91 7501483027,poonam.deshmukh@gmail.com,"421, Vihar, Civil Lines - 440018, Maharashtra",20
+MH-NG-002/2024/0005,Shivansh,Sinha,2008-04-28,MALE,7,B,Devendra Sinha,+91 9367888133,devendra.sinha@gmail.com,"17, Vihar, Civil Lines - 440010, Maharashtra",20
+MH-NG-002/2024/0006,Soham,Kohli,2012-06-13,MALE,11,A,Sanjay Kohli,+91 9499933139,sanjay.kohli@gmail.com,"251, Nagar, Civil Lines - 440012, Maharashtra",20
+MH-NG-002/2024/0007,Reyansh,Rathore,2009-01-05,MALE,8,A,Neeta Rathore,+91 9274920492,neeta.rathore@gmail.com,"438, Vihar, Civil Lines - 440010, Maharashtra",20
+MH-NG-002/2024/0008,Riya,Patil,2012-08-04,FEMALE,10,A,Sunil Patil,+91 8242071170,sunil.patil@gmail.com,"332, Nagar, Civil Lines - 440012, Maharashtra",20
+MH-NG-002/2024/0009,Saanvi,Bose,2012-03-22,FEMALE,12,C,Nirmala Bose,+91 8334300190,nirmala.bose@gmail.com,"239, Sector 20, Civil Lines - 440012, Maharashtra",20
+MH-NG-002/2024/0010,Himani,Hegde,2011-03-03,FEMALE,8,A,Santosh Hegde,+91 9461081823,santosh.hegde@gmail.com,"142, Ward 28, Civil Lines - 440012, Maharashtra",20
+MH-NG-002/2024/0011,Raghav,Srivastava,2010-09-11,MALE,6,D,Sunita Srivastava,+91 7250248163,sunita.srivastava2@gmail.com,"370, Colony No 9, Civil Lines - 440018, Maharashtra",20
+MH-NG-002/2024/0012,Amit,Menon,2010-02-16,MALE,8,B,Padma Menon,+91 7942776797,padma.menon@gmail.com,"244, Block F, Civil Lines - 440010, Maharashtra",20
+KA-BU-001/2024/0001,Ishaan,Rathore,2010-11-25,MALE,11,B,Kavita Rathore,+91 7195884955,kavita.rathore@gmail.com,"114, Colony No 10, Bengaluru - 560011, Karnataka",21
+KA-BU-001/2024/0002,Ujjwal,Pandey,2013-03-14,MALE,12,A,Saroj Pandey,+91 9781178315,saroj.pandey@gmail.com,"299, Nagar, Bengaluru - 560001, Karnataka",21
+KA-BU-001/2024/0003,Zara,Thakur,2011-05-07,FEMALE,9,A,Mahesh Thakur,+91 9315066828,mahesh.thakur@gmail.com,"176, Vihar, Bengaluru - 560004, Karnataka",21
+KA-BU-001/2024/0004,Ojaswi,Das,2009-12-25,FEMALE,8,A,Rajesh Das,+91 8393698307,rajesh.das@gmail.com,"108, Colony No 6, Bengaluru - 560001, Karnataka",21
+KA-BU-001/2024/0005,Aniket,Naik,2012-10-24,MALE,9,D,Santosh Naik,+91 8105013454,santosh.naik@gmail.com,"20, Sector 35, Bengaluru - 560011, Karnataka",21
+KA-BU-001/2024/0006,Urvi,Deshmukh,2008-03-14,FEMALE,11,A,Rajan Deshmukh,+91 9844666527,rajan.deshmukh@gmail.com,"450, Colony No 4, Bengaluru - 560034, Karnataka",21
+KA-BU-001/2024/0007,Mansi,Gupta,2008-07-06,FEMALE,8,C,Nirmala Gupta,+91 7658655427,nirmala.gupta@gmail.com,"306, Ward 14, Bengaluru - 560025, Karnataka",21
+KA-BU-001/2024/0008,Mohan,Verma,2012-07-10,MALE,6,B,Surendra Verma,+91 7240881133,surendra.verma@gmail.com,"109, Block A, Bengaluru - 560001, Karnataka",21
+KA-BU-001/2024/0009,Amit,Banerjee,2010-11-13,MALE,12,A,Ramesh Banerjee,+91 7216085930,ramesh.banerjee@gmail.com,"335, Colony No 4, Bengaluru - 560025, Karnataka",21
+KA-BU-001/2024/0010,Kartik,Tiwari,2013-04-27,MALE,11,B,Rajendra Tiwari,+91 7836307746,rajendra.tiwari@gmail.com,"323, Vihar, Bengaluru - 560034, Karnataka",21
+KA-BU-001/2024/0011,Hrithik,Bhatt,2009-07-15,MALE,9,A,Kiran Bhatt,+91 7763248135,kiran.bhatt@gmail.com,"61, Colony No 4, Bengaluru - 560004, Karnataka",21
+KA-BU-002/2024/0001,Reyansh,Thakur,2010-04-06,MALE,8,D,Ravishankar Thakur,+91 9142311558,ravishankar.thakur@gmail.com,"281, Ward 23, Bengaluru - 560004, Karnataka",22
+KA-BU-002/2024/0002,Deepak,Nair,2013-07-16,MALE,7,A,Kiran Nair,+91 9876920515,kiran.nair@gmail.com,"371, Colony No 8, Bengaluru - 560011, Karnataka",22
+KA-BU-002/2024/0003,Arjun,Joshi,2009-12-16,MALE,12,A,Ravishankar Joshi,+91 8960707259,ravishankar.joshi@gmail.com,"347, Sector 21, Bengaluru - 560001, Karnataka",22
+KA-BU-002/2024/0004,Jayesh,Shukla,2009-11-29,MALE,8,C,Usha Shukla,+91 7388095021,usha.shukla@gmail.com,"450, Block B, Bengaluru - 560001, Karnataka",22
+KA-BU-002/2024/0005,Aayush,Yadav,2012-04-28,MALE,11,D,Meena Yadav,+91 7955675121,meena.yadav@gmail.com,"86, Block C, Bengaluru - 560001, Karnataka",22
+KA-BU-002/2024/0006,Vinay,Khanna,2012-11-29,MALE,7,D,Seema Khanna,+91 7130941191,seema.khanna@gmail.com,"442, Sector 44, Bengaluru - 560025, Karnataka",22
+KA-BU-002/2024/0007,Aryan,Tiwari,2011-07-11,MALE,6,B,Savita Tiwari,+91 7661677752,savita.tiwari@gmail.com,"353, Colony No 8, Bengaluru - 560011, Karnataka",22
+KA-BU-002/2024/0008,Ritika,Rao,2008-08-11,FEMALE,6,B,Suman Rao,+91 8632398698,suman.rao@gmail.com,"446, Ward 25, Bengaluru - 560004, Karnataka",22
+KA-BU-002/2024/0009,Rushil,Kumar,2013-09-07,MALE,7,D,Rekha Kumar,+91 9184643708,rekha.kumar@gmail.com,"236, Colony No 16, Bengaluru - 560011, Karnataka",22
+KA-BU-002/2024/0010,Mayank,Rathore,2008-03-13,MALE,6,D,Lata Rathore,+91 9698214865,lata.rathore@gmail.com,"282, Nagar, Bengaluru - 560011, Karnataka",22
+KA-BU-002/2024/0011,Chhavi,Bhat,2013-02-11,FEMALE,8,C,Ramesh Bhat,+91 9587972689,ramesh.bhat@gmail.com,"170, Vihar, Bengaluru - 560025, Karnataka",22
+KA-BU-002/2024/0012,Piyush,Sharma,2011-10-30,MALE,8,C,Jyoti Sharma,+91 8853869899,jyoti.sharma@gmail.com,"55, Vihar, Bengaluru - 560025, Karnataka",22
+KA-BU-003/2024/0001,Neeraj,Deshmukh,2009-05-09,MALE,12,D,Narendra Deshmukh,+91 8985358270,narendra.deshmukh@gmail.com,"401, Sector 13, Bengaluru - 560034, Karnataka",23
+KA-BU-003/2024/0002,Tejas,Malhotra,2013-08-27,MALE,7,D,Rajesh Malhotra,+91 7890503688,rajesh.malhotra@gmail.com,"25, Colony No 19, Bengaluru - 560034, Karnataka",23
+KA-BU-003/2024/0003,Meera,Bhatt,2009-12-12,FEMALE,11,B,Naresh Bhatt,+91 8806008664,naresh.bhatt@gmail.com,"308, Colony No 13, Bengaluru - 560034, Karnataka",23
+KA-BU-003/2024/0004,Priya,Yadav,2012-06-17,FEMALE,8,C,Asha Yadav,+91 9248369653,asha.yadav@gmail.com,"212, Ward 27, Bengaluru - 560034, Karnataka",23
+KA-BU-003/2024/0005,Navya,Bhat,2011-04-05,FEMALE,11,C,Girish Bhat,+91 7798024936,girish.bhat@gmail.com,"500, Ward 23, Bengaluru - 560034, Karnataka",23
+KA-BU-003/2024/0006,Tarun,Shukla,2012-09-05,MALE,11,C,Veena Shukla,+91 9661277051,veena.shukla@gmail.com,"55, Vihar, Bengaluru - 560001, Karnataka",23
+KA-BU-003/2024/0007,Krishna,Pandey,2010-10-23,MALE,7,A,Ravishankar Pandey,+91 9909165341,ravishankar.pandey@gmail.com,"278, Sector 3, Bengaluru - 560034, Karnataka",23
+KA-BU-003/2024/0008,Chhavi,Mishra,2012-05-11,FEMALE,7,C,Ramesh Mishra,+91 8516133637,ramesh.mishra@gmail.com,"214, Sector 51, Bengaluru - 560011, Karnataka",23
+KA-BU-003/2024/0009,Samar,Mishra,2012-02-15,MALE,12,B,Jagdish Mishra,+91 8581911354,jagdish.mishra@gmail.com,"91, Vihar, Bengaluru - 560034, Karnataka",23
+KA-BU-003/2024/0010,Ankit,Bose,2011-02-17,MALE,10,C,Girish Bose,+91 9727050254,girish.bose@gmail.com,"434, Vihar, Bengaluru - 560004, Karnataka",23
+KA-BU-003/2024/0011,Varun,Hegde,2008-07-27,MALE,12,C,Poonam Hegde,+91 7690729993,poonam.hegde@gmail.com,"184, Block F, Bengaluru - 560034, Karnataka",23
+KA-BU-004/2024/0001,Mahi,Ghosh,2012-07-10,FEMALE,6,C,Surendra Ghosh,+91 9812249975,surendra.ghosh@gmail.com,"170, Nagar, Bengaluru - 560034, Karnataka",24
+KA-BU-004/2024/0002,Ojas,Srivastava,2008-02-06,MALE,6,C,Asha Srivastava,+91 9789626099,asha.srivastava@gmail.com,"315, Colony No 11, Bengaluru - 560001, Karnataka",24
+KA-BU-004/2024/0003,Jay,Chowdhury,2011-03-04,MALE,6,C,Kiran Chowdhury,+91 7578413078,kiran.chowdhury@gmail.com,"250, Ward 29, Bengaluru - 560034, Karnataka",24
+KA-BU-004/2024/0004,Dev,Verma,2013-12-24,MALE,6,A,Rajendra Verma,+91 7775936026,rajendra.verma@gmail.com,"397, Block G, Bengaluru - 560034, Karnataka",24
+KA-BU-004/2024/0005,Aarna,Patil,2008-10-22,FEMALE,11,B,Sanjay Patil,+91 8869731458,sanjay.patil@gmail.com,"170, Block B, Bengaluru - 560011, Karnataka",24
+KA-BU-004/2024/0006,Eva,Mishra,2010-11-25,FEMALE,9,D,Asha Mishra,+91 7534272756,asha.mishra@gmail.com,"222, Nagar, Bengaluru - 560001, Karnataka",24
+KA-BU-004/2024/0007,Kashvi,Gupta,2008-07-05,FEMALE,11,A,Seema Gupta,+91 7213962171,seema.gupta@gmail.com,"149, Ward 20, Bengaluru - 560025, Karnataka",24
+KA-BU-004/2024/0008,Aman,Khanna,2009-10-02,MALE,10,B,Harish Khanna,+91 7519825069,harish.khanna@gmail.com,"408, Ward 21, Bengaluru - 560011, Karnataka",24
+KA-BU-004/2024/0009,Aanya,Agarwal,2009-08-02,FEMALE,6,A,Rajesh Agarwal,+91 7740653308,rajesh.agarwal@gmail.com,"202, Vihar, Bengaluru - 560011, Karnataka",24
+KA-BU-004/2024/0010,Prateek,Rao,2009-10-21,MALE,7,B,Mohan Rao,+91 9223075021,mohan.rao@gmail.com,"93, Colony No 18, Bengaluru - 560034, Karnataka",24
+KA-BU-004/2024/0011,Aryan,Tiwari,2009-02-06,MALE,7,D,Kavita Tiwari,+91 8237669962,kavita.tiwari@gmail.com,"344, Nagar, Bengaluru - 560001, Karnataka",24
+KA-MY-001/2024/0001,Tejas,Das,2011-06-06,MALE,11,B,Reema Das,+91 8559891563,reema.das@gmail.com,"87, Vihar, Mysuru - 570015, Karnataka",25
+KA-MY-001/2024/0002,Yash,Pillai,2011-09-20,MALE,9,D,Asha Pillai,+91 8931899691,asha.pillai@gmail.com,"157, Sector 32, Mysuru - 570010, Karnataka",25
+KA-MY-001/2024/0003,Kiara,Saxena,2010-03-15,FEMALE,8,A,Pramod Saxena,+91 9644578566,pramod.saxena2@gmail.com,"324, Block G, Mysuru - 570001, Karnataka",25
+KA-MY-001/2024/0004,Yashvi,Saxena,2013-04-17,FEMALE,11,B,Reema Saxena,+91 8339773681,reema.saxena@gmail.com,"457, Nagar, Mysuru - 570001, Karnataka",25
+KA-MY-001/2024/0005,Nakul,Sharma,2010-09-05,MALE,12,B,Kiran Sharma,+91 9579125557,kiran.sharma@gmail.com,"82, Ward 24, Mysuru - 570001, Karnataka",25
+KA-MY-001/2024/0006,Hardik,Mishra,2008-09-14,MALE,8,C,Virendra Mishra,+91 9817888322,virendra.mishra@gmail.com,"106, Colony No 16, Mysuru - 570001, Karnataka",25
+KA-MY-001/2024/0007,Varun,Joshi,2013-11-05,MALE,11,C,Gopal Joshi,+91 7684491424,gopal.joshi@gmail.com,"292, Ward 21, Mysuru - 570001, Karnataka",25
+KA-MY-001/2024/0008,Zara,Mishra,2013-10-16,FEMALE,9,C,Mamta Mishra,+91 8951109462,mamta.mishra@gmail.com,"247, Colony No 5, Mysuru - 570004, Karnataka",25
+KA-MY-001/2024/0009,Prateek,Patil,2011-02-24,MALE,7,B,Kuldeep Patil,+91 9488933925,kuldeep.patil@gmail.com,"309, Colony No 8, Mysuru - 570010, Karnataka",25
+KA-MY-001/2024/0010,Nitya,Trivedi,2013-05-15,FEMALE,9,B,Ganesh Trivedi,+91 7994818854,ganesh.trivedi@gmail.com,"211, Nagar, Mysuru - 570004, Karnataka",25
+KA-MY-001/2024/0011,Prateek,Singh,2009-08-24,MALE,6,B,Gopal Singh,+91 9654738715,gopal.singh2@gmail.com,"491, Sector 26, Mysuru - 570004, Karnataka",25
+KA-MY-002/2024/0001,Mahika,Khanna,2009-11-29,FEMALE,7,D,Umesh Khanna,+91 7980954894,umesh.khanna3@gmail.com,"393, Colony No 11, Mysuru - 570001, Karnataka",26
+KA-MY-002/2024/0002,Rudra,Pillai,2009-03-20,MALE,6,B,Jyoti Pillai,+91 7834834366,jyoti.pillai@gmail.com,"215, Block C, Mysuru - 570015, Karnataka",26
+KA-MY-002/2024/0003,Himani,Singh,2013-12-16,FEMALE,10,A,Satish Singh,+91 8808017427,satish.singh@gmail.com,"67, Nagar, Mysuru - 570015, Karnataka",26
+KA-MY-002/2024/0004,Ankit,Bhatt,2013-12-10,MALE,9,B,Santosh Bhatt,+91 8476365632,santosh.bhatt@gmail.com,"302, Ward 14, Mysuru - 570015, Karnataka",26
+KA-MY-002/2024/0005,Bhavya,Pandey,2012-07-31,FEMALE,8,B,Rajesh Pandey,+91 7898483467,rajesh.pandey@gmail.com,"405, Colony No 1, Mysuru - 570004, Karnataka",26
+KA-MY-002/2024/0006,Simran,Ghosh,2012-01-23,FEMALE,6,B,Veena Ghosh,+91 7728536453,veena.ghosh@gmail.com,"130, Nagar, Mysuru - 570010, Karnataka",26
+KA-MY-002/2024/0007,Meera,Srivastava,2010-04-14,OTHER,9,D,Sandeep Srivastava,+91 8700322425,sandeep.srivastava@gmail.com,"285, Ward 10, Mysuru - 570015, Karnataka",26
+KA-MY-002/2024/0008,Kavya,Rathore,2010-07-30,FEMALE,9,B,Rakesh Rathore,+91 9645829727,rakesh.rathore@gmail.com,"206, Nagar, Mysuru - 570001, Karnataka",26
+KA-MY-002/2024/0009,Aarav,Reddy,2009-08-18,MALE,9,D,Satish Reddy,+91 9382492880,satish.reddy@gmail.com,"114, Vihar, Mysuru - 570015, Karnataka",26
+KA-MY-002/2024/0010,Vanya,Kulkarni,2013-11-04,FEMALE,8,A,Sandeep Kulkarni,+91 7630824004,sandeep.kulkarni@gmail.com,"225, Ward 28, Mysuru - 570004, Karnataka",26
+KA-MY-002/2024/0011,Zayan,Kohli,2013-10-13,MALE,11,B,Pradeep Kohli,+91 7138720348,pradeep.kohli@gmail.com,"185, Ward 6, Mysuru - 570015, Karnataka",26
+KA-MY-002/2024/0012,Omkar,Chatterjee,2010-03-31,MALE,10,A,Ashok Chatterjee,+91 9690120616,ashok.chatterjee@gmail.com,"146, Block F, Mysuru - 570004, Karnataka",26
+KA-DW-001/2024/0001,Eva,Sharma,2010-12-05,FEMALE,7,D,Suman Sharma,+91 9699825163,suman.sharma@gmail.com,"38, Nagar, Hubballi - 580024, Karnataka",27
+KA-DW-001/2024/0002,Eva,Tiwari,2012-12-18,FEMALE,9,D,Rajan Tiwari,+91 8932792876,rajan.tiwari@gmail.com,"235, Sector 44, Hubballi - 580029, Karnataka",27
+KA-DW-001/2024/0003,Aryan,Banerjee,2010-06-21,MALE,11,B,Sunita Banerjee,+91 8479134231,sunita.banerjee@gmail.com,"265, Block A, Hubballi - 580024, Karnataka",27
+KA-DW-001/2024/0004,Vihaan,Gupta,2010-01-01,MALE,9,C,Seema Gupta,+91 9716019237,seema.gupta2@gmail.com,"138, Block D, Hubballi - 580020, Karnataka",27
+KA-DW-001/2024/0005,Neha,Mishra,2010-04-10,FEMALE,12,B,Seema Mishra,+91 9936378830,seema.mishra@gmail.com,"55, Nagar, Hubballi - 580001, Karnataka",27
+KA-DW-001/2024/0006,Yashvi,Singh,2013-05-29,FEMALE,8,C,Renu Singh,+91 7394992351,renu.singh@gmail.com,"252, Nagar, Hubballi - 580020, Karnataka",27
+KA-DW-001/2024/0007,Ritvik,Khanna,2008-05-13,MALE,10,C,Pushpa Khanna,+91 7933120538,pushpa.khanna@gmail.com,"90, Colony No 17, Hubballi - 580024, Karnataka",27
+KA-DW-001/2024/0008,Aanya,Trivedi,2010-05-13,FEMALE,9,A,Anita Trivedi,+91 8757965465,anita.trivedi@gmail.com,"442, Block C, Hubballi - 580024, Karnataka",27
+KA-DW-001/2024/0009,Krish,Das,2012-02-07,MALE,7,D,Veena Das,+91 9549997617,veena.das@gmail.com,"359, Ward 12, Hubballi - 580029, Karnataka",27
+KA-DW-001/2024/0010,Ishaan,Sinha,2010-07-25,MALE,12,A,Shyam Sinha,+91 9696291839,shyam.sinha@gmail.com,"222, Vihar, Hubballi - 580020, Karnataka",27
+KA-DW-001/2024/0011,Aditya,Iyer,2012-09-22,MALE,9,B,Jyoti Iyer,+91 7873695765,jyoti.iyer@gmail.com,"162, Nagar, Hubballi - 580001, Karnataka",27
+KA-DW-001/2024/0012,Krishna,Kumar,2010-06-01,MALE,12,C,Saroj Kumar,+91 7203403365,saroj.kumar@gmail.com,"231, Ward 9, Hubballi - 580024, Karnataka",27
+KA-DW-002/2024/0001,Harsh,Sen,2010-03-25,MALE,10,B,Omprakash Sen,+91 8449063037,omprakash.sen2@gmail.com,"345, Sector 33, Hubballi - 580029, Karnataka",28
+KA-DW-002/2024/0002,Lavanya,Naik,2009-08-16,FEMALE,12,B,Savita Naik,+91 8777824658,savita.naik@gmail.com,"314, Sector 37, Hubballi - 580020, Karnataka",28
+KA-DW-002/2024/0003,Suresh,Mandal,2011-04-08,MALE,11,C,Pushpa Mandal,+91 8577706000,pushpa.mandal@gmail.com,"400, Nagar, Hubballi - 580029, Karnataka",28
+KA-DW-002/2024/0004,Manav,Patel,2009-05-27,MALE,11,B,Mohan Patel,+91 7852367594,mohan.patel@gmail.com,"384, Sector 6, Hubballi - 580001, Karnataka",28
+KA-DW-002/2024/0005,Abhinav,Agarwal,2008-08-08,MALE,6,D,Rani Agarwal,+91 9211592272,rani.agarwal@gmail.com,"135, Ward 3, Hubballi - 580020, Karnataka",28
+KA-DW-002/2024/0006,Sahil,Kapoor,2009-06-01,MALE,7,B,Sanjay Kapoor,+91 9812480457,sanjay.kapoor@gmail.com,"183, Colony No 16, Hubballi - 580024, Karnataka",28
+KA-DW-002/2024/0007,Kiara,Bhatt,2009-12-26,FEMALE,10,D,Shobha Bhatt,+91 7786965530,shobha.bhatt@gmail.com,"328, Colony No 12, Hubballi - 580020, Karnataka",28
+KA-DW-002/2024/0008,Mehr,Dubey,2012-02-07,FEMALE,9,C,Mahesh Dubey,+91 8111334226,mahesh.dubey@gmail.com,"1, Colony No 10, Hubballi - 580001, Karnataka",28
+KA-DW-002/2024/0009,Ojaswi,Srivastava,2013-05-08,FEMALE,8,A,Shobha Srivastava,+91 8741027901,shobha.srivastava2@gmail.com,"119, Block A, Hubballi - 580029, Karnataka",28
+KA-DW-002/2024/0010,Aarna,Chatterjee,2010-10-20,FEMALE,7,D,Sita Chatterjee,+91 9382372922,sita.chatterjee@gmail.com,"41, Vihar, Hubballi - 580024, Karnataka",28
+KA-DW-002/2024/0011,Utkarsh,Yadav,2012-08-18,MALE,7,A,Kuldeep Yadav,+91 9410950586,kuldeep.yadav@gmail.com,"57, Ward 20, Hubballi - 580029, Karnataka",28
+TN-CH-001/2024/0001,Karan,Kumar,2013-12-31,MALE,6,B,Naresh Kumar,+91 8389046078,naresh.kumar@gmail.com,"65, Block H, Chennai - 600001, Tamil Nadu",29
+TN-CH-001/2024/0002,Mayank,Bhat,2011-11-01,MALE,9,C,Renu Bhat,+91 8597877404,renu.bhat@gmail.com,"357, Block A, Chennai - 600001, Tamil Nadu",29
+TN-CH-001/2024/0003,Omkar,Gupta,2013-04-09,MALE,7,B,Mohan Gupta,+91 8989328868,mohan.gupta@gmail.com,"7, Block D, Chennai - 600001, Tamil Nadu",29
+TN-CH-001/2024/0004,Dev,Thakur,2010-05-03,MALE,9,D,Kamlesh Thakur,+91 8270307732,kamlesh.thakur@gmail.com,"323, Nagar, Chennai - 600001, Tamil Nadu",29
+TN-CH-001/2024/0005,Shaurya,Deshmukh,2012-01-16,MALE,6,B,Suresh Deshmukh,+91 9779580831,suresh.deshmukh@gmail.com,"223, Nagar, Chennai - 600001, Tamil Nadu",29
+TN-CH-001/2024/0006,Rahul,Sharma,2008-06-21,MALE,10,D,Mahesh Sharma,+91 8927636977,mahesh.sharma@gmail.com,"46, Vihar, Chennai - 600028, Tamil Nadu",29
+TN-CH-001/2024/0007,Arnav,Kumar,2011-12-27,MALE,11,B,Padma Kumar,+91 9235106204,padma.kumar@gmail.com,"250, Colony No 12, Chennai - 600010, Tamil Nadu",29
+TN-CH-001/2024/0008,Advait,Sen,2009-07-05,MALE,8,A,Poonam Sen,+91 7569762050,poonam.sen@gmail.com,"287, Block H, Chennai - 600028, Tamil Nadu",29
+TN-CH-001/2024/0009,Soham,Yadav,2009-10-18,MALE,6,B,Asha Yadav,+91 8979843968,asha.yadav2@gmail.com,"135, Vihar, Chennai - 600028, Tamil Nadu",29
+TN-CH-001/2024/0010,Manav,Patel,2012-01-31,MALE,12,B,Anita Patel,+91 7168012695,anita.patel@gmail.com,"338, Vihar, Chennai - 600020, Tamil Nadu",29
+TN-CH-001/2024/0011,Lakshmi,Kulkarni,2011-03-05,FEMALE,8,D,Anita Kulkarni,+91 9203354415,anita.kulkarni@gmail.com,"268, Block B, Chennai - 600001, Tamil Nadu",29
+TN-CH-002/2024/0001,Mohan,Joshi,2008-05-10,MALE,10,D,Poonam Joshi,+91 7769983207,poonam.joshi@gmail.com,"360, Block E, Chennai - 600028, Tamil Nadu",30
+TN-CH-002/2024/0002,Aanya,Bhat,2013-07-05,FEMALE,12,A,Kamla Bhat,+91 7165176331,kamla.bhat@gmail.com,"185, Vihar, Chennai - 600001, Tamil Nadu",30
+TN-CH-002/2024/0003,Riya,Thakur,2008-06-15,FEMALE,11,A,Yogesh Thakur,+91 9331820924,yogesh.thakur@gmail.com,"492, Nagar, Chennai - 600020, Tamil Nadu",30
+TN-CH-002/2024/0004,Shivansh,Shukla,2010-10-15,MALE,10,B,Meena Shukla,+91 7213294985,meena.shukla@gmail.com,"393, Vihar, Chennai - 600020, Tamil Nadu",30
+TN-CH-002/2024/0005,Mansi,Iyer,2012-07-02,FEMALE,10,C,Ganesh Iyer,+91 7744154611,ganesh.iyer@gmail.com,"227, Nagar, Chennai - 600017, Tamil Nadu",30
+TN-CH-002/2024/0006,Shanaya,Srivastava,2012-10-29,FEMALE,12,C,Ajay Srivastava,+91 7685861719,ajay.srivastava@gmail.com,"110, Colony No 15, Chennai - 600020, Tamil Nadu",30
+TN-CH-002/2024/0007,Amit,Pandey,2008-03-07,MALE,10,B,Yogesh Pandey,+91 9422481128,yogesh.pandey@gmail.com,"114, Nagar, Chennai - 600028, Tamil Nadu",30
+TN-CH-002/2024/0008,Eva,Rao,2009-01-21,FEMALE,6,D,Seema Rao,+91 9248614668,seema.rao@gmail.com,"136, Ward 8, Chennai - 600001, Tamil Nadu",30
+TN-CH-002/2024/0009,Deepika,Bhat,2008-11-12,FEMALE,11,C,Santosh Bhat,+91 9624282788,santosh.bhat@gmail.com,"423, Sector 58, Chennai - 600028, Tamil Nadu",30
+TN-CH-002/2024/0010,Arnav,Rajagopal,2011-10-01,MALE,8,D,Meena Rajagopal,+91 9927200028,meena.rajagopal@gmail.com,"117, Sector 48, Chennai - 600017, Tamil Nadu",30
+TN-CH-002/2024/0011,Simran,Saxena,2009-09-04,FEMALE,8,B,Mahesh Saxena,+91 9823310328,mahesh.saxena@gmail.com,"375, Nagar, Chennai - 600028, Tamil Nadu",30
+TN-CH-003/2024/0001,Sai,Chatterjee,2009-08-29,MALE,7,C,Vinod Chatterjee,+91 8713579662,vinod.chatterjee@gmail.com,"382, Colony No 3, Chennai - 600028, Tamil Nadu",31
+TN-CH-003/2024/0002,Ishaan,Srivastava,2009-07-06,MALE,9,B,Poonam Srivastava,+91 8800346424,poonam.srivastava@gmail.com,"293, Ward 8, Chennai - 600020, Tamil Nadu",31
+TN-CH-003/2024/0003,Tarun,Reddy,2009-04-05,MALE,11,D,Veena Reddy,+91 8473992719,veena.reddy@gmail.com,"98, Ward 20, Chennai - 600010, Tamil Nadu",31
+TN-CH-003/2024/0004,Jhanvi,Kapoor,2009-08-20,OTHER,9,A,Virendra Kapoor,+91 9835898867,virendra.kapoor2@gmail.com,"192, Block B, Chennai - 600028, Tamil Nadu",31
+TN-CH-003/2024/0005,Sakshi,Sharma,2011-11-07,FEMALE,11,A,Kamlesh Sharma,+91 8605936741,kamlesh.sharma@gmail.com,"12, Block D, Chennai - 600010, Tamil Nadu",31
+TN-CH-003/2024/0006,Ridhi,Agarwal,2013-06-01,FEMALE,10,B,Anil Agarwal,+91 8725996789,anil.agarwal@gmail.com,"464, Sector 43, Chennai - 600017, Tamil Nadu",31
+TN-CH-003/2024/0007,Rohan,Kumar,2013-03-19,MALE,11,A,Ashok Kumar,+91 8809069927,ashok.kumar@gmail.com,"139, Sector 43, Chennai - 600017, Tamil Nadu",31
+TN-CH-003/2024/0008,Ritika,Mishra,2012-04-08,FEMALE,10,A,Sunita Mishra,+91 8741138124,sunita.mishra@gmail.com,"273, Colony No 17, Chennai - 600028, Tamil Nadu",31
+TN-CH-003/2024/0009,Aarohi,Singh,2010-10-10,FEMALE,10,C,Kavita Singh,+91 8522409833,kavita.singh2@gmail.com,"382, Ward 12, Chennai - 600017, Tamil Nadu",31
+TN-CH-003/2024/0010,Nakul,Yadav,2008-09-10,MALE,11,C,Neeta Yadav,+91 9695861587,neeta.yadav@gmail.com,"486, Colony No 11, Chennai - 600010, Tamil Nadu",31
+TN-CH-003/2024/0011,Advait,Thakur,2010-07-20,MALE,9,B,Mahesh Thakur,+91 8435418436,mahesh.thakur2@gmail.com,"466, Block F, Chennai - 600010, Tamil Nadu",31
+TN-CH-004/2024/0001,Navya,Pillai,2011-06-19,FEMALE,11,B,Shobha Pillai,+91 9804623475,shobha.pillai2@gmail.com,"478, Nagar, Chennai - 600028, Tamil Nadu",32
+TN-CH-004/2024/0002,Kavya,Iyer,2011-07-24,FEMALE,12,B,Sanjay Iyer,+91 8544572227,sanjay.iyer@gmail.com,"493, Block E, Chennai - 600010, Tamil Nadu",32
+TN-CH-004/2024/0003,Manav,Patel,2010-12-29,MALE,10,B,Virendra Patel,+91 9838066391,virendra.patel@gmail.com,"14, Block B, Chennai - 600028, Tamil Nadu",32
+TN-CH-004/2024/0004,Mahika,Deshpande,2012-03-11,FEMALE,7,D,Poonam Deshpande,+91 8247653166,poonam.deshpande@gmail.com,"84, Sector 13, Chennai - 600017, Tamil Nadu",32
+TN-CH-004/2024/0005,Pallavi,Rathore,2010-04-10,FEMALE,12,B,Ashok Rathore,+91 9571678892,ashok.rathore@gmail.com,"444, Colony No 11, Chennai - 600010, Tamil Nadu",32
+TN-CH-004/2024/0006,Ankit,Hegde,2012-04-07,MALE,11,C,Pushpa Hegde,+91 7897218787,pushpa.hegde@gmail.com,"293, Colony No 4, Chennai - 600020, Tamil Nadu",32
+TN-CH-004/2024/0007,Ananya,Chauhan,2013-10-25,FEMALE,10,D,Manoj Chauhan,+91 7515965279,manoj.chauhan@gmail.com,"265, Colony No 10, Chennai - 600020, Tamil Nadu",32
+TN-CH-004/2024/0008,Sakshi,Malhotra,2009-11-12,FEMALE,9,C,Ramesh Malhotra,+91 7655091932,ramesh.malhotra@gmail.com,"463, Sector 10, Chennai - 600028, Tamil Nadu",32
+TN-CH-004/2024/0009,Ujjwal,Bhatt,2009-07-08,MALE,9,D,Anita Bhatt,+91 8126749178,anita.bhatt@gmail.com,"92, Sector 30, Chennai - 600017, Tamil Nadu",32
+TN-CH-004/2024/0010,Krishna,Deshpande,2009-05-21,MALE,6,A,Asha Deshpande,+91 7489707503,asha.deshpande@gmail.com,"44, Nagar, Chennai - 600010, Tamil Nadu",32
+TN-CH-004/2024/0011,Advait,Singh,2009-11-30,MALE,8,B,Ganesh Singh,+91 9292056726,ganesh.singh@gmail.com,"394, Ward 14, Chennai - 600020, Tamil Nadu",32
+TN-CB-001/2024/0001,Kavya,Pillai,2010-04-10,FEMALE,6,C,Sunil Pillai,+91 8634323575,sunil.pillai@gmail.com,"438, Block A, Coimbatore - 641002, Tamil Nadu",33
+TN-CB-001/2024/0002,Mahika,Malhotra,2012-08-06,FEMALE,9,A,Rajesh Malhotra,+91 9687703577,rajesh.malhotra2@gmail.com,"143, Block D, Coimbatore - 641001, Tamil Nadu",33
+TN-CB-001/2024/0003,Amaira,Rao,2008-05-12,FEMALE,11,C,Kavita Rao,+91 9152647028,kavita.rao2@gmail.com,"56, Nagar, Coimbatore - 641002, Tamil Nadu",33
+TN-CB-001/2024/0004,Falguni,Mukherjee,2008-05-26,FEMALE,6,C,Anita Mukherjee,+91 8506883029,anita.mukherjee@gmail.com,"420, Sector 5, Coimbatore - 641011, Tamil Nadu",33
+TN-CB-001/2024/0005,Harsh,Bhatt,2011-01-29,MALE,8,D,Rani Bhatt,+91 9847141233,rani.bhatt@gmail.com,"108, Vihar, Coimbatore - 641001, Tamil Nadu",33
+TN-CB-001/2024/0006,Hrithik,Deshpande,2011-03-22,MALE,9,C,Gopal Deshpande,+91 7717554752,gopal.deshpande@gmail.com,"320, Colony No 19, Coimbatore - 641014, Tamil Nadu",33
+TN-CB-001/2024/0007,Myra,Kulkarni,2010-08-11,FEMALE,11,C,Jagdish Kulkarni,+91 9226923950,jagdish.kulkarni@gmail.com,"13, Nagar, Coimbatore - 641014, Tamil Nadu",33
+TN-CB-001/2024/0008,Vedant,Sen,2010-05-19,MALE,6,B,Omprakash Sen,+91 8948465967,omprakash.sen3@gmail.com,"35, Ward 17, Coimbatore - 641001, Tamil Nadu",33
+TN-CB-001/2024/0009,Vedant,Das,2012-06-10,MALE,11,A,Sandeep Das,+91 9454887598,sandeep.das@gmail.com,"427, Sector 22, Coimbatore - 641002, Tamil Nadu",33
+TN-CB-001/2024/0010,Aayush,Saxena,2011-10-04,MALE,9,D,Dinesh Saxena,+91 7421417903,dinesh.saxena@gmail.com,"290, Sector 47, Coimbatore - 641002, Tamil Nadu",33
+TN-CB-001/2024/0011,Suhana,Sen,2008-09-28,FEMALE,7,C,Sanjay Sen,+91 8502911719,sanjay.sen@gmail.com,"321, Colony No 20, Coimbatore - 641002, Tamil Nadu",33
+TN-CB-002/2024/0001,Siddharth,Deshpande,2011-07-12,MALE,11,A,Shyam Deshpande,+91 8193198413,shyam.deshpande@gmail.com,"255, Ward 12, Coimbatore - 641002, Tamil Nadu",34
+TN-CB-002/2024/0002,Meera,Nair,2012-03-12,FEMALE,12,A,Devendra Nair,+91 9576498805,devendra.nair@gmail.com,"260, Block H, Coimbatore - 641002, Tamil Nadu",34
+TN-CB-002/2024/0003,Ansh,Chowdhury,2013-11-14,MALE,8,C,Umesh Chowdhury,+91 9982764505,umesh.chowdhury@gmail.com,"481, Colony No 2, Coimbatore - 641014, Tamil Nadu",34
+TN-CB-002/2024/0004,Tanya,Nair,2008-01-17,FEMALE,8,A,Satish Nair,+91 8601304182,satish.nair@gmail.com,"456, Sector 3, Coimbatore - 641011, Tamil Nadu",34
+TN-CB-002/2024/0005,Neha,Mandal,2010-04-01,FEMALE,7,C,Balram Mandal,+91 7442684477,balram.mandal@gmail.com,"396, Block B, Coimbatore - 641011, Tamil Nadu",34
+TN-CB-002/2024/0006,Ojas,Kohli,2009-02-23,MALE,7,C,Sunita Kohli,+91 8251995483,sunita.kohli@gmail.com,"483, Block E, Coimbatore - 641001, Tamil Nadu",34
+TN-CB-002/2024/0007,Vihaan,Saxena,2012-12-22,MALE,6,B,Sanjay Saxena,+91 8825308245,sanjay.saxena@gmail.com,"26, Colony No 3, Coimbatore - 641014, Tamil Nadu",34
+TN-CB-002/2024/0008,Zayan,Menon,2012-12-31,MALE,10,C,Kamlesh Menon,+91 8977721640,kamlesh.menon@gmail.com,"102, Nagar, Coimbatore - 641002, Tamil Nadu",34
+TN-CB-002/2024/0009,Soham,Joshi,2013-02-09,MALE,8,D,Saroj Joshi,+91 9340297471,saroj.joshi@gmail.com,"74, Colony No 12, Coimbatore - 641002, Tamil Nadu",34
+TN-CB-002/2024/0010,Suhana,Mandal,2013-01-30,FEMALE,9,A,Ashok Mandal,+91 8221211559,ashok.mandal@gmail.com,"180, Ward 28, Coimbatore - 641011, Tamil Nadu",34
+TN-CB-002/2024/0011,Khushi,Kohli,2009-02-25,FEMALE,9,A,Anita Kohli,+91 7797343144,anita.kohli@gmail.com,"37, Colony No 15, Coimbatore - 641014, Tamil Nadu",34
+TN-CB-002/2024/0012,Rahul,Agarwal,2009-10-13,MALE,9,D,Ashok Agarwal,+91 8323594003,ashok.agarwal@gmail.com,"417, Nagar, Coimbatore - 641011, Tamil Nadu",34
+TN-MD-001/2024/0001,Meera,Shukla,2008-11-15,FEMALE,11,D,Suresh Shukla,+91 7740031190,suresh.shukla@gmail.com,"238, Block B, Madurai - 625009, Tamil Nadu",35
+TN-MD-001/2024/0002,Anvi,Hegde,2009-03-21,FEMALE,11,D,Anita Hegde,+91 8792551787,anita.hegde@gmail.com,"339, Nagar, Madurai - 625001, Tamil Nadu",35
+TN-MD-001/2024/0003,Lakshmi,Kapoor,2013-12-16,FEMALE,8,D,Asha Kapoor,+91 9320827549,asha.kapoor@gmail.com,"349, Vihar, Madurai - 625009, Tamil Nadu",35
+TN-MD-001/2024/0004,Aarna,Deshpande,2011-11-11,FEMALE,6,A,Kiran Deshpande,+91 8236961886,kiran.deshpande@gmail.com,"437, Sector 19, Madurai - 625001, Tamil Nadu",35
+TN-MD-001/2024/0005,Tara,Nair,2011-03-01,FEMALE,12,A,Ajay Nair,+91 8854005004,ajay.nair@gmail.com,"303, Colony No 13, Madurai - 625014, Tamil Nadu",35
+TN-MD-001/2024/0006,Parth,Shukla,2009-12-11,MALE,9,B,Jagdish Shukla,+91 7512955792,jagdish.shukla@gmail.com,"432, Block F, Madurai - 625009, Tamil Nadu",35
+TN-MD-001/2024/0007,Ravi,Pillai,2008-02-17,OTHER,6,A,Umesh Pillai,+91 7622591579,umesh.pillai@gmail.com,"337, Vihar, Madurai - 625014, Tamil Nadu",35
+TN-MD-001/2024/0008,Ira,Bose,2010-01-06,FEMALE,9,D,Asha Bose,+91 8481508232,asha.bose@gmail.com,"116, Nagar, Madurai - 625014, Tamil Nadu",35
+TN-MD-001/2024/0009,Pooja,Deshpande,2013-08-17,FEMALE,8,D,Lakshmi Deshpande,+91 7494031067,lakshmi.deshpande@gmail.com,"18, Sector 3, Madurai - 625014, Tamil Nadu",35
+TN-MD-001/2024/0010,Bhavya,Rao,2013-11-26,FEMALE,12,C,Kamla Rao,+91 7184003766,kamla.rao2@gmail.com,"268, Vihar, Madurai - 625001, Tamil Nadu",35
+TN-MD-001/2024/0011,Yashvi,Menon,2011-07-03,FEMALE,10,A,Savita Menon,+91 7935937148,savita.menon@gmail.com,"6, Nagar, Madurai - 625009, Tamil Nadu",35
+TN-MD-001/2024/0012,Sai,Pandey,2009-11-17,MALE,6,C,Gopal Pandey,+91 9775705787,gopal.pandey@gmail.com,"243, Vihar, Madurai - 625009, Tamil Nadu",35
+TN-MD-002/2024/0001,Hardik,Reddy,2009-06-03,MALE,10,A,Balram Reddy,+91 8242312411,balram.reddy@gmail.com,"316, Sector 18, Madurai - 625001, Tamil Nadu",36
+TN-MD-002/2024/0002,Garima,Rathore,2009-09-11,FEMALE,11,D,Geeta Rathore,+91 9380517824,geeta.rathore@gmail.com,"401, Nagar, Madurai - 625001, Tamil Nadu",36
+TN-MD-002/2024/0003,Chirag,Rao,2009-09-23,MALE,12,D,Lata Rao,+91 8355494114,lata.rao@gmail.com,"339, Vihar, Madurai - 625009, Tamil Nadu",36
+TN-MD-002/2024/0004,Reyansh,Srivastava,2009-04-20,MALE,6,B,Kamla Srivastava,+91 8611350152,kamla.srivastava@gmail.com,"155, Colony No 13, Madurai - 625009, Tamil Nadu",36
+TN-MD-002/2024/0005,Aniket,Sharma,2011-03-28,MALE,12,D,Sita Sharma,+91 7438968079,sita.sharma@gmail.com,"493, Vihar, Madurai - 625009, Tamil Nadu",36
+TN-MD-002/2024/0006,Aarna,Kulkarni,2011-01-21,FEMALE,8,C,Shyam Kulkarni,+91 9374173441,shyam.kulkarni@gmail.com,"336, Vihar, Madurai - 625002, Tamil Nadu",36
+TN-MD-002/2024/0007,Myra,Mandal,2008-02-13,FEMALE,11,A,Ashok Mandal,+91 9541575005,ashok.mandal2@gmail.com,"51, Ward 22, Madurai - 625002, Tamil Nadu",36
+TN-MD-002/2024/0008,Radhika,Deshmukh,2008-05-19,FEMALE,6,A,Dinesh Deshmukh,+91 7805024801,dinesh.deshmukh@gmail.com,"458, Vihar, Madurai - 625001, Tamil Nadu",36
+TN-MD-002/2024/0009,Hrithik,Pillai,2012-03-19,MALE,11,B,Suresh Pillai,+91 7297850884,suresh.pillai@gmail.com,"130, Vihar, Madurai - 625014, Tamil Nadu",36
+TN-MD-002/2024/0010,Saanvi,Rajagopal,2012-10-14,FEMALE,11,C,Mohan Rajagopal,+91 9938303850,mohan.rajagopal@gmail.com,"38, Ward 13, Madurai - 625001, Tamil Nadu",36
+TN-MD-002/2024/0011,Reyansh,Iyer,2012-12-09,MALE,6,D,Devendra Iyer,+91 7521588025,devendra.iyer2@gmail.com,"92, Nagar, Madurai - 625014, Tamil Nadu",36
+TN-MD-002/2024/0012,Dhruv,Kapoor,2010-11-26,MALE,6,A,Pramod Kapoor,+91 9713476544,pramod.kapoor@gmail.com,"373, Block H, Madurai - 625001, Tamil Nadu",36
+UP-LK-001/2024/0001,Riya,Rao,2011-09-12,FEMALE,9,A,Kiran Rao,+91 7927844881,kiran.rao@gmail.com,"252, Nagar, Lucknow - 226003, Uttar Pradesh",37
+UP-LK-001/2024/0002,Ansh,Nair,2012-01-10,MALE,8,C,Rekha Nair,+91 9778897450,rekha.nair@gmail.com,"491, Ward 12, Lucknow - 226001, Uttar Pradesh",37
+UP-LK-001/2024/0003,Samaira,Patil,2010-04-11,FEMALE,7,A,Neeta Patil,+91 7305088080,neeta.patil@gmail.com,"154, Vihar, Lucknow - 226010, Uttar Pradesh",37
+UP-LK-001/2024/0004,Samar,Rathore,2010-02-15,MALE,7,A,Jagdish Rathore,+91 9872813901,jagdish.rathore@gmail.com,"304, Nagar, Lucknow - 226010, Uttar Pradesh",37
+UP-LK-001/2024/0005,Charvi,Patel,2008-05-31,FEMALE,8,A,Savita Patel,+91 7145971754,savita.patel@gmail.com,"208, Colony No 17, Lucknow - 226018, Uttar Pradesh",37
+UP-LK-001/2024/0006,Ujjwal,Mishra,2008-10-22,MALE,6,B,Poonam Mishra,+91 7120468746,poonam.mishra@gmail.com,"242, Sector 59, Lucknow - 226003, Uttar Pradesh",37
+UP-LK-001/2024/0007,Shreya,Joshi,2013-02-11,FEMALE,10,B,Ashok Joshi,+91 9222599500,ashok.joshi@gmail.com,"255, Colony No 7, Lucknow - 226010, Uttar Pradesh",37
+UP-LK-001/2024/0008,Vanya,Mandal,2009-05-09,FEMALE,11,B,Anita Mandal,+91 9920583443,anita.mandal@gmail.com,"24, Sector 38, Lucknow - 226010, Uttar Pradesh",37
+UP-LK-001/2024/0009,Darsh,Verma,2012-02-24,MALE,10,B,Usha Verma,+91 9724902501,usha.verma@gmail.com,"21, Colony No 20, Lucknow - 226003, Uttar Pradesh",37
+UP-LK-001/2024/0010,Hardik,Reddy,2008-01-27,MALE,6,B,Satish Reddy,+91 7799817448,satish.reddy2@gmail.com,"304, Vihar, Lucknow - 226003, Uttar Pradesh",37
+UP-LK-001/2024/0011,Rohan,Thakur,2013-01-18,MALE,9,B,Sandeep Thakur,+91 7842678841,sandeep.thakur@gmail.com,"20, Nagar, Lucknow - 226001, Uttar Pradesh",37
+UP-LK-002/2024/0001,Aarav,Agarwal,2010-08-23,MALE,7,A,Rani Agarwal,+91 9764561301,rani.agarwal2@gmail.com,"186, Ward 15, Lucknow - 226001, Uttar Pradesh",38
+UP-LK-002/2024/0002,Karan,Trivedi,2013-04-27,MALE,9,B,Ganesh Trivedi,+91 7146295027,ganesh.trivedi2@gmail.com,"28, Colony No 7, Lucknow - 226010, Uttar Pradesh",38
+UP-LK-002/2024/0003,Aayush,Singh,2009-03-03,MALE,11,A,Padma Singh,+91 9269700183,padma.singh@gmail.com,"403, Sector 2, Lucknow - 226003, Uttar Pradesh",38
+UP-LK-002/2024/0004,Garima,Menon,2011-08-28,FEMALE,9,B,Anita Menon,+91 9936418338,anita.menon@gmail.com,"57, Vihar, Lucknow - 226012, Uttar Pradesh",38
+UP-LK-002/2024/0005,Zara,Mishra,2008-10-28,FEMALE,9,D,Ramesh Mishra,+91 8255629507,ramesh.mishra2@gmail.com,"111, Ward 6, Lucknow - 226003, Uttar Pradesh",38
+UP-LK-002/2024/0006,Mohan,Naik,2012-01-08,MALE,8,B,Kavita Naik,+91 9134461310,kavita.naik@gmail.com,"355, Sector 37, Lucknow - 226012, Uttar Pradesh",38
+UP-LK-002/2024/0007,Kunal,Srivastava,2011-11-08,MALE,7,C,Ganesh Srivastava,+91 7756623287,ganesh.srivastava@gmail.com,"464, Nagar, Lucknow - 226012, Uttar Pradesh",38
+UP-LK-002/2024/0008,Nisha,Menon,2013-04-23,FEMALE,12,D,Balram Menon,+91 9883850598,balram.menon@gmail.com,"220, Colony No 11, Lucknow - 226018, Uttar Pradesh",38
+UP-LK-002/2024/0009,Vinay,Rao,2008-01-21,MALE,9,A,Manoj Rao,+91 8887564180,manoj.rao@gmail.com,"394, Colony No 17, Lucknow - 226012, Uttar Pradesh",38
+UP-LK-002/2024/0010,Divya,Kapoor,2013-07-21,FEMALE,7,A,Sunil Kapoor,+91 7885749538,sunil.kapoor@gmail.com,"209, Block C, Lucknow - 226001, Uttar Pradesh",38
+UP-LK-002/2024/0011,Siddharth,Verma,2013-02-24,MALE,12,A,Nirmala Verma,+91 8928751533,nirmala.verma@gmail.com,"71, Vihar, Lucknow - 226012, Uttar Pradesh",38
+UP-LK-003/2024/0001,Avni,Banerjee,2011-09-25,FEMALE,10,A,Ravishankar Banerjee,+91 8908407344,ravishankar.banerjee@gmail.com,"139, Nagar, Lucknow - 226010, Uttar Pradesh",39
+UP-LK-003/2024/0002,Anjali,Kohli,2012-01-30,FEMALE,6,A,Neeta Kohli,+91 8599668842,neeta.kohli@gmail.com,"317, Vihar, Lucknow - 226018, Uttar Pradesh",39
+UP-LK-003/2024/0003,Chhavi,Deshpande,2010-04-18,FEMALE,7,C,Ajay Deshpande,+91 7221931627,ajay.deshpande@gmail.com,"333, Ward 25, Lucknow - 226010, Uttar Pradesh",39
+UP-LK-003/2024/0004,Saisha,Trivedi,2012-09-28,FEMALE,8,A,Ashok Trivedi,+91 8470684221,ashok.trivedi@gmail.com,"232, Vihar, Lucknow - 226018, Uttar Pradesh",39
+UP-LK-003/2024/0005,Charvi,Kulkarni,2012-02-16,FEMALE,12,A,Jagdish Kulkarni,+91 8193747059,jagdish.kulkarni2@gmail.com,"42, Sector 26, Lucknow - 226003, Uttar Pradesh",39
+UP-LK-003/2024/0006,Kabir,Mehra,2009-09-08,MALE,12,B,Jyoti Mehra,+91 7124363495,jyoti.mehra@gmail.com,"151, Colony No 12, Lucknow - 226012, Uttar Pradesh",39
+UP-LK-003/2024/0007,Aarohi,Pandey,2010-02-13,FEMALE,6,A,Virendra Pandey,+91 7792211324,virendra.pandey@gmail.com,"172, Colony No 11, Lucknow - 226018, Uttar Pradesh",39
+UP-LK-003/2024/0008,Urvi,Agarwal,2012-12-28,FEMALE,9,C,Girish Agarwal,+91 8284401329,girish.agarwal@gmail.com,"405, Ward 16, Lucknow - 226001, Uttar Pradesh",39
+UP-LK-003/2024/0009,Sahil,Malhotra,2009-11-12,MALE,10,B,Padma Malhotra,+91 8295722203,padma.malhotra@gmail.com,"499, Sector 12, Lucknow - 226001, Uttar Pradesh",39
+UP-LK-003/2024/0010,Vedika,Pillai,2012-12-10,OTHER,8,C,Kuldeep Pillai,+91 9703966077,kuldeep.pillai2@gmail.com,"363, Ward 12, Lucknow - 226012, Uttar Pradesh",39
+UP-LK-003/2024/0011,Mahi,Saxena,2011-05-20,FEMALE,6,A,Rekha Saxena,+91 8925190102,rekha.saxena@gmail.com,"75, Vihar, Lucknow - 226018, Uttar Pradesh",39
+UP-NO-001/2024/0001,Sai,Khanna,2011-04-02,MALE,12,B,Usha Khanna,+91 8839965938,usha.khanna@gmail.com,"58, Block H, Noida - 201301, Uttar Pradesh",40
+UP-NO-001/2024/0002,Tanmay,Kulkarni,2010-06-21,MALE,9,C,Satish Kulkarni,+91 8159091919,satish.kulkarni@gmail.com,"312, Block D, Noida - 201304, Uttar Pradesh",40
+UP-NO-001/2024/0003,Chirag,Saxena,2012-12-29,MALE,11,A,Kiran Saxena,+91 8308789137,kiran.saxena@gmail.com,"252, Colony No 12, Noida - 201303, Uttar Pradesh",40
+UP-NO-001/2024/0004,Mishti,Mukherjee,2012-04-30,FEMALE,8,A,Omprakash Mukherjee,+91 8477264595,omprakash.mukherjee@gmail.com,"158, Vihar, Noida - 201306, Uttar Pradesh",40
+UP-NO-001/2024/0005,Sakshi,Verma,2012-10-02,FEMALE,11,D,Harish Verma,+91 7742028580,harish.verma@gmail.com,"45, Nagar, Noida - 201304, Uttar Pradesh",40
+UP-NO-001/2024/0006,Vinay,Srivastava,2012-03-19,MALE,6,A,Lata Srivastava,+91 7393484627,lata.srivastava@gmail.com,"213, Block H, Noida - 201303, Uttar Pradesh",40
+UP-NO-001/2024/0007,Advait,Pandey,2013-07-02,MALE,6,C,Yogesh Pandey,+91 8700523461,yogesh.pandey2@gmail.com,"379, Block D, Noida - 201304, Uttar Pradesh",40
+UP-NO-001/2024/0008,Abhinav,Nair,2011-03-24,MALE,9,B,Poonam Nair,+91 7792333529,poonam.nair@gmail.com,"126, Colony No 9, Noida - 201301, Uttar Pradesh",40
+UP-NO-001/2024/0009,Trisha,Menon,2013-05-22,FEMALE,10,D,Gopal Menon,+91 7836493300,gopal.menon@gmail.com,"244, Vihar, Noida - 201301, Uttar Pradesh",40
+UP-NO-001/2024/0010,Mahi,Menon,2008-08-27,FEMALE,7,C,Kamla Menon,+91 7245489216,kamla.menon@gmail.com,"183, Colony No 12, Noida - 201304, Uttar Pradesh",40
+UP-NO-001/2024/0011,Sai,Thakur,2008-11-10,MALE,10,B,Kuldeep Thakur,+91 9742916320,kuldeep.thakur@gmail.com,"386, Vihar, Noida - 201304, Uttar Pradesh",40
+UP-NO-001/2024/0012,Yash,Joshi,2013-12-28,MALE,10,C,Umesh Joshi,+91 9247048346,umesh.joshi@gmail.com,"266, Colony No 16, Noida - 201304, Uttar Pradesh",40
+UP-NO-002/2024/0001,Karan,Kohli,2010-06-24,MALE,12,B,Rani Kohli,+91 7865091650,rani.kohli@gmail.com,"283, Sector 45, Noida - 201301, Uttar Pradesh",41
+UP-NO-002/2024/0002,Aarohi,Khanna,2011-11-27,FEMALE,8,C,Harish Khanna,+91 8741720343,harish.khanna2@gmail.com,"268, Sector 49, Noida - 201301, Uttar Pradesh",41
+UP-NO-002/2024/0003,Kabir,Bhatt,2010-07-17,MALE,8,B,Rajendra Bhatt,+91 9184401435,rajendra.bhatt@gmail.com,"218, Colony No 1, Noida - 201306, Uttar Pradesh",41
+UP-NO-002/2024/0004,Dhruv,Singh,2013-10-04,MALE,10,A,Saroj Singh,+91 9371670077,saroj.singh@gmail.com,"23, Sector 5, Noida - 201301, Uttar Pradesh",41
+UP-NO-002/2024/0005,Neha,Menon,2010-03-30,FEMALE,7,C,Sanjay Menon,+91 9256290615,sanjay.menon@gmail.com,"434, Ward 19, Noida - 201303, Uttar Pradesh",41
+UP-NO-002/2024/0006,Jhanvi,Chauhan,2013-08-30,FEMALE,10,A,Rakesh Chauhan,+91 7919527047,rakesh.chauhan@gmail.com,"8, Ward 23, Noida - 201303, Uttar Pradesh",41
+UP-NO-002/2024/0007,Vedika,Sharma,2009-02-08,FEMALE,7,D,Reema Sharma,+91 7732842568,reema.sharma@gmail.com,"95, Colony No 12, Noida - 201306, Uttar Pradesh",41
+UP-NO-002/2024/0008,Pranav,Ghosh,2009-04-07,MALE,12,C,Mukesh Ghosh,+91 8218451078,mukesh.ghosh@gmail.com,"267, Vihar, Noida - 201304, Uttar Pradesh",41
+UP-NO-002/2024/0009,Ananya,Reddy,2011-09-05,FEMALE,9,A,Neeta Reddy,+91 8590641779,neeta.reddy@gmail.com,"308, Block E, Noida - 201306, Uttar Pradesh",41
+UP-NO-002/2024/0010,Ritvik,Deshmukh,2008-10-12,MALE,12,D,Geeta Deshmukh,+91 9113728694,geeta.deshmukh@gmail.com,"346, Nagar, Noida - 201301, Uttar Pradesh",41
+UP-NO-002/2024/0011,Omkar,Chatterjee,2009-02-20,MALE,11,B,Ashok Chatterjee,+91 8313767380,ashok.chatterjee2@gmail.com,"174, Colony No 8, Noida - 201306, Uttar Pradesh",41
+UP-VN-001/2024/0001,Falguni,Menon,2011-01-23,FEMALE,12,D,Seema Menon,+91 8815838988,seema.menon@gmail.com,"309, Block H, Varanasi - 221010, Uttar Pradesh",42
+UP-VN-001/2024/0002,Ravi,Mehra,2013-07-29,MALE,7,B,Sanjay Mehra,+91 9892204952,sanjay.mehra@gmail.com,"28, Block B, Varanasi - 221010, Uttar Pradesh",42
+UP-VN-001/2024/0003,Sneha,Rao,2011-05-25,FEMALE,10,A,Pramod Rao,+91 7907034823,pramod.rao@gmail.com,"267, Block H, Varanasi - 221005, Uttar Pradesh",42
+UP-VN-001/2024/0004,Ojaswi,Kohli,2010-12-07,FEMALE,10,C,Lakshmi Kohli,+91 7118973435,lakshmi.kohli@gmail.com,"488, Colony No 4, Varanasi - 221010, Uttar Pradesh",42
+UP-VN-001/2024/0005,Advait,Kapoor,2013-02-25,MALE,6,A,Sandeep Kapoor,+91 7808037197,sandeep.kapoor@gmail.com,"441, Colony No 6, Varanasi - 221010, Uttar Pradesh",42
+UP-VN-001/2024/0006,Rudra,Mehra,2009-03-24,MALE,10,D,Lakshmi Mehra,+91 7604463645,lakshmi.mehra@gmail.com,"244, Colony No 2, Varanasi - 221005, Uttar Pradesh",42
+UP-VN-001/2024/0007,Zara,Kulkarni,2011-12-15,FEMALE,12,C,Anita Kulkarni,+91 9130222592,anita.kulkarni2@gmail.com,"303, Ward 27, Varanasi - 221001, Uttar Pradesh",42
+UP-VN-001/2024/0008,Swati,Banerjee,2009-02-02,FEMALE,9,C,Seema Banerjee,+91 8477172497,seema.banerjee@gmail.com,"29, Vihar, Varanasi - 221005, Uttar Pradesh",42
+UP-VN-001/2024/0009,Anvi,Dubey,2009-04-13,FEMALE,8,B,Anil Dubey,+91 7450165292,anil.dubey@gmail.com,"20, Colony No 17, Varanasi - 221005, Uttar Pradesh",42
+UP-VN-001/2024/0010,Abhinav,Menon,2008-04-01,MALE,8,D,Neeta Menon,+91 8714758692,neeta.menon@gmail.com,"51, Ward 4, Varanasi - 221010, Uttar Pradesh",42
+UP-VN-001/2024/0011,Swati,Verma,2011-05-11,FEMALE,8,D,Devendra Verma,+91 8782303013,devendra.verma@gmail.com,"434, Block B, Varanasi - 221005, Uttar Pradesh",42
+UP-VN-002/2024/0001,Tarun,Chatterjee,2010-07-14,MALE,10,A,Rakesh Chatterjee,+91 7461677118,rakesh.chatterjee@gmail.com,"140, Ward 14, Varanasi - 221001, Uttar Pradesh",43
+UP-VN-002/2024/0002,Sanya,Kohli,2011-05-13,FEMALE,9,C,Devendra Kohli,+91 8531967365,devendra.kohli@gmail.com,"129, Block H, Varanasi - 221001, Uttar Pradesh",43
+UP-VN-002/2024/0003,Tanya,Iyer,2013-08-06,FEMALE,7,D,Shyam Iyer,+91 7672003029,shyam.iyer@gmail.com,"415, Vihar, Varanasi - 221001, Uttar Pradesh",43
+UP-VN-002/2024/0004,Trisha,Malhotra,2009-08-28,FEMALE,7,B,Yogesh Malhotra,+91 8540513606,yogesh.malhotra@gmail.com,"164, Colony No 7, Varanasi - 221005, Uttar Pradesh",43
+UP-VN-002/2024/0005,Mahi,Tiwari,2010-08-25,FEMALE,9,B,Suresh Tiwari,+91 9306068248,suresh.tiwari@gmail.com,"15, Nagar, Varanasi - 221010, Uttar Pradesh",43
+UP-VN-002/2024/0006,Amit,Deshmukh,2009-10-14,MALE,8,B,Sanjay Deshmukh,+91 8947901530,sanjay.deshmukh@gmail.com,"412, Vihar, Varanasi - 221010, Uttar Pradesh",43
+UP-VN-002/2024/0007,Anjali,Reddy,2011-07-09,FEMALE,10,C,Ashok Reddy,+91 8490234548,ashok.reddy2@gmail.com,"344, Block B, Varanasi - 221001, Uttar Pradesh",43
+UP-VN-002/2024/0008,Saisha,Nair,2013-11-07,FEMALE,11,C,Renu Nair,+91 9355633079,renu.nair@gmail.com,"308, Vihar, Varanasi - 221010, Uttar Pradesh",43
+UP-VN-002/2024/0009,Pooja,Bose,2010-06-11,FEMALE,7,A,Sandeep Bose,+91 9394792954,sandeep.bose@gmail.com,"226, Sector 27, Varanasi - 221010, Uttar Pradesh",43
+UP-VN-002/2024/0010,Jiya,Mandal,2012-10-01,FEMALE,9,B,Balram Mandal,+91 9489766149,balram.mandal2@gmail.com,"244, Sector 46, Varanasi - 221001, Uttar Pradesh",43
+UP-VN-002/2024/0011,Anika,Bhatt,2010-09-08,FEMALE,8,D,Kamlesh Bhatt,+91 7852281566,kamlesh.bhatt@gmail.com,"186, Colony No 8, Varanasi - 221010, Uttar Pradesh",43
+UP-AG-001/2024/0001,Gauri,Tiwari,2011-05-17,FEMALE,6,B,Yogesh Tiwari,+91 9272042677,yogesh.tiwari@gmail.com,"469, Sector 29, Agra - 282005, Uttar Pradesh",44
+UP-AG-001/2024/0002,Ojaswi,Khanna,2012-08-18,FEMALE,12,C,Veena Khanna,+91 9985193689,veena.khanna@gmail.com,"83, Ward 17, Agra - 282007, Uttar Pradesh",44
+UP-AG-001/2024/0003,Anushka,Rathore,2011-08-31,FEMALE,9,A,Ramesh Rathore,+91 7788904718,ramesh.rathore@gmail.com,"95, Sector 41, Agra - 282007, Uttar Pradesh",44
+UP-AG-001/2024/0004,Siddharth,Mandal,2008-12-02,MALE,6,B,Rajan Mandal,+91 7866183442,rajan.mandal@gmail.com,"497, Vihar, Agra - 282007, Uttar Pradesh",44
+UP-AG-001/2024/0005,Simran,Kapoor,2013-05-13,FEMALE,12,B,Gopal Kapoor,+91 9838161934,gopal.kapoor@gmail.com,"304, Block F, Agra - 282001, Uttar Pradesh",44
+UP-AG-001/2024/0006,Manav,Chatterjee,2012-03-25,MALE,12,B,Anil Chatterjee,+91 9699717002,anil.chatterjee@gmail.com,"332, Colony No 3, Agra - 282002, Uttar Pradesh",44
+UP-AG-001/2024/0007,Kunal,Kumar,2012-06-30,MALE,10,D,Gopal Kumar,+91 9195628804,gopal.kumar@gmail.com,"491, Sector 24, Agra - 282007, Uttar Pradesh",44
+UP-AG-001/2024/0008,Jasmine,Trivedi,2013-07-17,FEMALE,6,B,Rajendra Trivedi,+91 9973394943,rajendra.trivedi@gmail.com,"401, Colony No 16, Agra - 282002, Uttar Pradesh",44
+UP-AG-001/2024/0009,Nikhil,Hegde,2010-06-01,MALE,12,C,Jagdish Hegde,+91 8293670676,jagdish.hegde@gmail.com,"210, Ward 1, Agra - 282002, Uttar Pradesh",44
+UP-AG-001/2024/0010,Priya,Mukherjee,2013-02-19,FEMALE,6,A,Saroj Mukherjee,+91 9447082726,saroj.mukherjee@gmail.com,"499, Vihar, Agra - 282007, Uttar Pradesh",44
+UP-AG-001/2024/0011,Himani,Tiwari,2008-10-26,FEMALE,6,A,Ramesh Tiwari,+91 8352159078,ramesh.tiwari@gmail.com,"242, Vihar, Agra - 282001, Uttar Pradesh",44
+UP-AG-002/2024/0001,Advait,Dubey,2012-06-04,MALE,11,C,Girish Dubey,+91 7144157616,girish.dubey@gmail.com,"298, Colony No 17, Agra - 282005, Uttar Pradesh",45
+UP-AG-002/2024/0002,Khushi,Reddy,2011-07-23,FEMALE,11,D,Umesh Reddy,+91 8225458204,umesh.reddy@gmail.com,"161, Vihar, Agra - 282005, Uttar Pradesh",45
+UP-AG-002/2024/0003,Sakshi,Tiwari,2010-12-16,FEMALE,10,C,Shobha Tiwari,+91 9438811626,shobha.tiwari@gmail.com,"378, Sector 32, Agra - 282002, Uttar Pradesh",45
+UP-AG-002/2024/0004,Pranav,Iyer,2008-05-26,MALE,9,C,Ganesh Iyer,+91 7601580067,ganesh.iyer2@gmail.com,"224, Ward 2, Agra - 282007, Uttar Pradesh",45
+UP-AG-002/2024/0005,Gaurav,Chowdhury,2009-08-29,MALE,6,C,Satish Chowdhury,+91 9405067716,satish.chowdhury@gmail.com,"93, Ward 24, Agra - 282002, Uttar Pradesh",45
+UP-AG-002/2024/0006,Aadhya,Thakur,2010-01-09,FEMALE,9,A,Rajan Thakur,+91 8826824988,rajan.thakur@gmail.com,"49, Vihar, Agra - 282001, Uttar Pradesh",45
+UP-AG-002/2024/0007,Vinay,Joshi,2011-08-18,MALE,7,A,Vinod Joshi,+91 8991956502,vinod.joshi@gmail.com,"363, Nagar, Agra - 282001, Uttar Pradesh",45
+UP-AG-002/2024/0008,Ankit,Patil,2013-01-29,MALE,8,B,Narendra Patil,+91 9960666308,narendra.patil@gmail.com,"330, Vihar, Agra - 282001, Uttar Pradesh",45
+UP-AG-002/2024/0009,Ira,Banerjee,2009-01-14,FEMALE,9,C,Sandeep Banerjee,+91 9927723397,sandeep.banerjee@gmail.com,"444, Block B, Agra - 282007, Uttar Pradesh",45
+UP-AG-002/2024/0010,Sakshi,Patil,2009-09-23,FEMALE,6,C,Poonam Patil,+91 8890155099,poonam.patil@gmail.com,"413, Block E, Agra - 282005, Uttar Pradesh",45
+UP-AG-002/2024/0011,Vaishali,Kohli,2010-03-29,FEMALE,9,D,Neeta Kohli,+91 8388277560,neeta.kohli2@gmail.com,"289, Ward 3, Agra - 282002, Uttar Pradesh",45

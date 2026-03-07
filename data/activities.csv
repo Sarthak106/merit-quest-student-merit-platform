@@ -1,0 +1,448 @@
+student_id,title,category,description,achievement,event_date,institution_id
+1,Annual Art Exhibition,ARTS,Performed in front of distinguished guests at school event,Best Speaker,2024-12-17,1
+1,Kho-Kho District Championship,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2025-02-16,1
+2,Cultural Dance Festival,ARTS,Participated in cultural exchange program,First Place,2024-12-18,1
+2,Kho-Kho District Championship,SPORTS,Represented school in district-level sports competition,Best Player,2024-05-27,1
+2,Table Tennis Inter-House,SPORTS,Trained and competed in zonal championship,First Place,2024-12-24,1
+3,Kho-Kho District Championship,SPORTS,Part of school team for annual sports event,First Place,2025-02-20,1
+3,Quiz Bowl Regional Finals,ACADEMICS,Participated in science and technology exhibition,State Finalist,2024-11-05,1
+4,Kabaddi State Tournament,SPORTS,Participated in inter-school athletic meet,Gold Medal,2024-06-16,1
+4,Astronomy Night Observation,ACADEMICS,Competed in regional academic olympiad,Gold Medal,2024-06-08,1
+4,Annual Sports Day Long Jump,SPORTS,Represented school in district-level sports competition,Best Speaker,2024-11-16,1
+5,Cultural Dance Festival,ARTS,Participated in cultural exchange program,State Finalist,2025-01-04,1
+5,Table Tennis Inter-House,SPORTS,Part of school team for annual sports event,Certificate of Merit,2024-05-06,1
+5,Quiz Bowl Regional Finals,ACADEMICS,Presented research project at district science fair,Best Speaker,2024-06-22,1
+6,Tree Plantation Drive,COMMUNITY_SERVICE,Contributed to school's community outreach program,State Finalist,2024-07-17,1
+6,Community Cleanliness Drive,COMMUNITY_SERVICE,Helped coordinate awareness drive in local community,Certificate of Merit,2024-06-20,1
+6,Vedic Mathematics Competition,ACADEMICS,Participated in science and technology exhibition,State Finalist,2024-09-15,1
+7,Table Tennis Inter-House,SPORTS,Represented school in district-level sports competition,Gold Medal,2025-03-30,1
+7,Badminton Inter-School Meet,SPORTS,Represented school in district-level sports competition,Best Speaker,2024-05-12,1
+8,Annual Sports Day Long Jump,SPORTS,Trained and competed in zonal championship,State Finalist,2024-09-03,1
+8,Quiz Bowl Regional Finals,ACADEMICS,Represented school in national-level quiz competition,Best Player,2024-06-05,1
+9,Inter-House Basketball Tournament,SPORTS,Represented school in district-level sports competition,Gold Medal,2025-03-20,1
+9,Inter-House Basketball Tournament,SPORTS,Represented school in district-level sports competition,Best Player,2024-11-01,1
+10,Cultural Dance Festival,ARTS,Displayed artwork at district-level art exhibition,Gold Medal,2024-08-02,1
+10,Code-a-thon 2025,ACADEMICS,Selected for state-level academic challenge,First Place,2025-03-01,1
+11,Quiz Bowl Regional Finals,ACADEMICS,Participated in science and technology exhibition,Certificate of Merit,2024-07-07,1
+11,Code-a-thon 2025,ACADEMICS,Participated in science and technology exhibition,First Place,2025-02-22,1
+12,District Chess Championship,SPORTS,Trained and competed in zonal championship,Gold Medal,2024-07-14,2
+12,Tree Plantation Drive,COMMUNITY_SERVICE,Led a team of students in social awareness campaign,Best Speaker,2025-01-19,2
+12,State-Level Science Olympiad,ACADEMICS,Competed in regional academic olympiad,Best Player,2025-02-05,2
+13,Street Play on Social Awareness,COMMUNITY_SERVICE,Volunteered for community development initiative,Best Player,2024-07-23,2
+13,Tree Plantation Drive,COMMUNITY_SERVICE,Contributed to school's community outreach program,Best Speaker,2025-02-08,2
+13,Astronomy Night Observation,ACADEMICS,Participated in science and technology exhibition,Gold Medal,2025-03-13,2
+14,Inter-House Basketball Tournament,SPORTS,Competed in state-level tournament with distinction,State Finalist,2024-04-01,2
+14,Model United Nations,LEADERSHIP,Demonstrated leadership in school governance activities,Gold Medal,2024-08-08,2
+15,School Debate Competition,ACADEMICS,Presented research project at district science fair,State Finalist,2024-11-10,2
+15,Independence Day Cultural Program,ARTS,Showcased creative talent at annual cultural festival,Gold Medal,2024-11-24,2
+15,Table Tennis Inter-House,SPORTS,Competed in state-level tournament with distinction,State Finalist,2025-01-05,2
+16,District Chess Championship,SPORTS,Represented school in district-level sports competition,Gold Medal,2025-01-08,2
+16,District Chess Championship,SPORTS,Represented school in district-level sports competition,Best Player,2025-03-02,2
+16,Blood Donation Camp Volunteer,COMMUNITY_SERVICE,Led a team of students in social awareness campaign,Best Speaker,2024-09-01,2
+17,Science Model Exhibition,ACADEMICS,Selected for state-level academic challenge,Gold Medal,2024-06-27,2
+17,Independence Day Cultural Program,ARTS,Displayed artwork at district-level art exhibition,Gold Medal,2024-06-06,2
+17,District Yoga Championship,SPORTS,Represented school in district-level sports competition,State Finalist,2024-10-01,2
+18,State Volleyball Championship,SPORTS,Part of school team for annual sports event,Best Speaker,2025-02-07,2
+18,Peer Tutoring Program,LEADERSHIP,Coordinated peers in extracurricular leadership role,Gold Medal,2025-03-28,2
+19,Vedic Mathematics Competition,ACADEMICS,Competed in regional academic olympiad,State Finalist,2024-07-09,2
+19,Kho-Kho District Championship,SPORTS,Competed in state-level tournament with distinction,State Finalist,2025-03-29,2
+19,Kho-Kho District Championship,SPORTS,Participated in inter-school athletic meet,Certificate of Merit,2025-03-24,2
+20,Cultural Dance Festival,ARTS,Presented creative work at inter-school competition,Gold Medal,2025-03-05,2
+20,Inter-School Football League,SPORTS,Trained and competed in zonal championship,First Place,2024-12-14,2
+21,State Volleyball Championship,SPORTS,Competed in state-level tournament with distinction,First Place,2024-11-14,2
+21,Kabaddi State Tournament,SPORTS,Represented school in district-level sports competition,Certificate of Merit,2024-08-17,2
+21,Quiz Bowl Regional Finals,ACADEMICS,Presented research project at district science fair,Best Player,2024-09-04,2
+22,District Chess Championship,SPORTS,Participated in inter-school athletic meet,Best Speaker,2025-03-13,2
+22,Badminton Inter-School Meet,SPORTS,Represented school in district-level sports competition,Gold Medal,2024-04-24,2
+23,District Chess Championship,SPORTS,Competed in state-level tournament with distinction,State Finalist,2024-06-21,3
+23,Essay Writing Contest English,ARTS,Participated in cultural exchange program,First Place,2025-03-18,3
+24,Traffic Awareness Campaign,COMMUNITY_SERVICE,Helped coordinate awareness drive in local community,Best Speaker,2025-03-27,3
+24,Photography Contest,ARTS,Participated in cultural exchange program,Gold Medal,2024-06-30,3
+24,Annual Science Fair,ACADEMICS,Presented research project at district science fair,State Finalist,2024-05-13,3
+25,Independence Day Cultural Program,ARTS,Performed in front of distinguished guests at school event,Gold Medal,2024-04-10,3
+25,Spelling Bee Competition,ACADEMICS,Selected for state-level academic challenge,Best Speaker,2024-10-01,3
+25,Inter-School Cricket Tournament,SPORTS,Trained and competed in zonal championship,Best Player,2025-03-28,3
+26,Photography Contest,ARTS,Showcased creative talent at annual cultural festival,State Finalist,2024-11-08,3
+26,Cultural Dance Festival,ARTS,Presented creative work at inter-school competition,First Place,2024-07-01,3
+27,Science Model Exhibition,ACADEMICS,Participated in science and technology exhibition,Certificate of Merit,2024-09-16,3
+27,Vedic Mathematics Competition,ACADEMICS,Selected for state-level academic challenge,First Place,2024-10-04,3
+27,Annual Art Exhibition,ARTS,Displayed artwork at district-level art exhibition,Best Speaker,2024-09-14,3
+28,Traffic Awareness Campaign,COMMUNITY_SERVICE,Contributed to school's community outreach program,Best Player,2024-09-12,3
+28,Annual Sports Day 100m Sprint,SPORTS,Represented school in district-level sports competition,Gold Medal,2025-02-05,3
+28,Table Tennis Inter-House,SPORTS,Part of school team for annual sports event,Best Speaker,2024-07-06,3
+29,Annual Science Fair,ACADEMICS,Participated in science and technology exhibition,State Finalist,2024-04-10,3
+29,Robotics Workshop,ACADEMICS,Represented school in national-level quiz competition,Best Player,2024-10-28,3
+29,Spelling Bee Competition,ACADEMICS,Competed in regional academic olympiad,Gold Medal,2024-09-14,3
+30,Inter-School Cricket Tournament,SPORTS,Trained and competed in zonal championship,State Finalist,2025-01-07,3
+30,Poster Making Competition,ARTS,Participated in cultural exchange program,Gold Medal,2025-01-18,3
+30,Handwriting Competition,ARTS,Displayed artwork at district-level art exhibition,Certificate of Merit,2024-05-26,3
+31,Hindi Kavita Recitation,ARTS,Performed in front of distinguished guests at school event,First Place,2024-05-30,3
+31,Classical Music Recital,ARTS,Presented creative work at inter-school competition,Best Speaker,2025-03-30,3
+32,NCC Camp,LEADERSHIP,Managed logistics and team coordination for school event,First Place,2024-04-04,3
+32,Model United Nations,LEADERSHIP,Coordinated peers in extracurricular leadership role,Certificate of Merit,2024-11-21,3
+32,Sanskrit Shloka Recitation,ARTS,Performed in front of distinguished guests at school event,Certificate of Merit,2024-05-07,3
+33,District Swimming Meet,SPORTS,Trained and competed in zonal championship,Best Speaker,2025-01-21,3
+33,Annual Sports Day Long Jump,SPORTS,Represented school in district-level sports competition,Certificate of Merit,2024-07-26,3
+33,Essay Writing Contest Hindi,ARTS,Participated in cultural exchange program,Gold Medal,2024-08-22,3
+34,District Yoga Championship,SPORTS,Trained and competed in zonal championship,Best Speaker,2024-08-05,4
+34,Handwriting Competition,ARTS,Participated in cultural exchange program,Best Speaker,2025-02-22,4
+34,Annual Sports Day 100m Sprint,SPORTS,Part of school team for annual sports event,Gold Medal,2024-06-04,4
+35,District Chess Championship,SPORTS,Part of school team for annual sports event,Gold Medal,2025-03-23,4
+35,Annual Science Fair,ACADEMICS,Selected for state-level academic challenge,Certificate of Merit,2024-07-18,4
+35,Essay Writing Contest Hindi,ARTS,Presented creative work at inter-school competition,Certificate of Merit,2025-01-02,4
+36,Code-a-thon 2025,ACADEMICS,Participated in science and technology exhibition,Certificate of Merit,2024-12-19,4
+36,State Volleyball Championship,SPORTS,Trained and competed in zonal championship,Best Speaker,2025-01-13,4
+36,Street Play on Social Awareness,COMMUNITY_SERVICE,Volunteered for community development initiative,Best Speaker,2024-12-19,4
+37,Cooking Without Fire Contest,OTHER,Contributed to special school program initiative,Best Player,2024-07-30,4
+37,Science Model Exhibition,ACADEMICS,Competed in regional academic olympiad,Certificate of Merit,2024-08-03,4
+37,Peer Tutoring Program,LEADERSHIP,Demonstrated leadership in school governance activities,Best Player,2024-04-05,4
+38,Essay Writing Contest Hindi,ARTS,Displayed artwork at district-level art exhibition,Best Speaker,2025-01-26,4
+38,Independence Day Cultural Program,ARTS,Displayed artwork at district-level art exhibition,State Finalist,2025-02-08,4
+39,Robotics Workshop,ACADEMICS,Participated in science and technology exhibition,State Finalist,2025-03-17,4
+39,Model United Nations,LEADERSHIP,Demonstrated leadership in school governance activities,Best Player,2024-05-27,4
+39,Street Play on Social Awareness,COMMUNITY_SERVICE,Led a team of students in social awareness campaign,Certificate of Merit,2025-01-23,4
+40,Cultural Dance Festival,ARTS,Displayed artwork at district-level art exhibition,State Finalist,2024-10-15,4
+40,State Volleyball Championship,SPORTS,Competed in state-level tournament with distinction,Best Player,2024-07-28,4
+40,Kabaddi State Tournament,SPORTS,Represented school in district-level sports competition,Certificate of Merit,2025-01-16,4
+41,State-Level Science Olympiad,ACADEMICS,Represented school in national-level quiz competition,State Finalist,2024-08-11,4
+41,Independence Day Cultural Program,ARTS,Presented creative work at inter-school competition,First Place,2025-02-28,4
+41,Annual Sports Day Long Jump,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2024-12-21,4
+42,Quiz Bowl Regional Finals,ACADEMICS,Competed in regional academic olympiad,Best Player,2025-01-16,4
+42,Annual Sports Day 100m Sprint,SPORTS,Trained and competed in zonal championship,Best Player,2025-03-27,4
+42,Badminton Inter-School Meet,SPORTS,Competed in state-level tournament with distinction,Best Player,2024-12-16,4
+43,Handwriting Competition,ARTS,Participated in cultural exchange program,State Finalist,2024-07-24,4
+43,Blood Donation Camp Volunteer,COMMUNITY_SERVICE,Helped coordinate awareness drive in local community,Gold Medal,2025-03-07,4
+43,Classical Music Recital,ARTS,Presented creative work at inter-school competition,State Finalist,2024-12-01,4
+44,School Band Performance,ARTS,Showcased creative talent at annual cultural festival,Best Player,2025-03-13,4
+44,Science Model Exhibition,ACADEMICS,Competed in regional academic olympiad,Best Player,2024-07-17,4
+45,Carrom Tournament,SPORTS,Part of school team for annual sports event,Best Player,2024-05-21,5
+45,Classical Music Recital,ARTS,Performed in front of distinguished guests at school event,State Finalist,2024-05-19,5
+45,Carrom Tournament,SPORTS,Represented school in district-level sports competition,Best Player,2024-04-14,5
+46,Photography Contest,ARTS,Participated in cultural exchange program,Best Speaker,2024-07-21,5
+46,Kho-Kho District Championship,SPORTS,Participated in inter-school athletic meet,First Place,2024-06-16,5
+46,Quiz Bowl Regional Finals,ACADEMICS,Selected for state-level academic challenge,State Finalist,2025-03-31,5
+47,Inter-School Cricket Tournament,SPORTS,Participated in inter-school athletic meet,Best Player,2024-07-30,5
+47,Independence Day Cultural Program,ARTS,Presented creative work at inter-school competition,State Finalist,2025-01-26,5
+47,Cultural Dance Festival,ARTS,Displayed artwork at district-level art exhibition,Certificate of Merit,2025-01-09,5
+48,Vedic Mathematics Competition,ACADEMICS,Represented school in national-level quiz competition,Gold Medal,2024-07-05,5
+48,Handwriting Competition,ARTS,Participated in cultural exchange program,State Finalist,2024-06-10,5
+49,Kho-Kho District Championship,SPORTS,Participated in inter-school athletic meet,State Finalist,2024-11-21,5
+49,Science Model Exhibition,ACADEMICS,Participated in science and technology exhibition,Gold Medal,2025-03-10,5
+50,Annual Sports Day Long Jump,SPORTS,Participated in inter-school athletic meet,State Finalist,2024-11-17,5
+50,Annual Sports Day 100m Sprint,SPORTS,Represented school in district-level sports competition,First Place,2025-03-20,5
+50,Cultural Dance Festival,ARTS,Performed in front of distinguished guests at school event,State Finalist,2024-06-05,5
+51,Essay Writing Contest Hindi,ARTS,Displayed artwork at district-level art exhibition,Special Mention,2024-05-09,5
+51,Annual Sports Day Long Jump,SPORTS,Represented school in district-level sports competition,Participant,2024-09-16,5
+52,Quiz Bowl Regional Finals,ACADEMICS,Participated in science and technology exhibition,Certificate of Merit,2024-09-30,5
+53,Science Model Exhibition,ACADEMICS,Competed in regional academic olympiad,Second Place,2024-11-18,5
+53,Annual Art Exhibition,ARTS,Participated in cultural exchange program,Silver Medal,2024-04-21,5
+54,Spelling Bee Competition,ACADEMICS,Represented school in national-level quiz competition,Special Mention,2024-05-08,5
+54,School Band Performance,ARTS,Displayed artwork at district-level art exhibition,Participant,2024-08-14,5
+55,Astronomy Night Observation,ACADEMICS,Competed in regional academic olympiad,Second Place,2024-10-18,5
+55,School Debate Competition,ACADEMICS,Selected for state-level academic challenge,Second Place,2025-01-08,5
+56,Annual Sports Day 100m Sprint,SPORTS,Participated in inter-school athletic meet,Special Mention,2024-05-18,6
+56,Table Tennis Inter-House,SPORTS,Part of school team for annual sports event,Certificate of Merit,2024-04-08,6
+57,Traffic Awareness Campaign,COMMUNITY_SERVICE,Volunteered for community development initiative,Second Place,2024-10-25,6
+58,Code-a-thon 2025,ACADEMICS,Represented school in national-level quiz competition,Silver Medal,2025-01-03,6
+59,Classical Music Recital,ARTS,Displayed artwork at district-level art exhibition,Special Mention,2024-08-30,6
+59,School Captain Election,LEADERSHIP,Served as student leader for school program,Second Place,2025-03-22,6
+60,Inter-School Cricket Tournament,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2024-08-10,6
+60,Inter-School Football League,SPORTS,Trained and competed in zonal championship,Certificate of Merit,2024-09-22,6
+61,Cultural Dance Festival,ARTS,Performed in front of distinguished guests at school event,Certificate of Merit,2024-10-26,6
+62,Inter-School Cricket Tournament,SPORTS,Part of school team for annual sports event,Special Mention,2024-12-12,6
+62,Cooking Without Fire Contest,OTHER,Contributed to special school program initiative,Second Place,2025-01-01,6
+63,State Volleyball Championship,SPORTS,Part of school team for annual sports event,Special Mention,2024-06-10,6
+64,Peer Tutoring Program,LEADERSHIP,Demonstrated leadership in school governance activities,Certificate of Merit,2025-02-02,6
+65,Blood Donation Camp Volunteer,COMMUNITY_SERVICE,Volunteered for community development initiative,Participant,2024-04-19,6
+65,Hindi Kavita Recitation,ARTS,Performed in front of distinguished guests at school event,Special Mention,2025-03-22,6
+66,Classical Music Recital,ARTS,Performed in front of distinguished guests at school event,Special Mention,2025-03-05,6
+66,Peer Tutoring Program,LEADERSHIP,Led fellow students in organizational responsibilities,Second Place,2024-04-09,6
+67,NCC Camp,LEADERSHIP,Coordinated peers in extracurricular leadership role,Certificate of Merit,2025-01-14,6
+68,Table Tennis Inter-House,SPORTS,Part of school team for annual sports event,Silver Medal,2024-04-12,7
+68,Robotics Workshop,ACADEMICS,Competed in regional academic olympiad,Special Mention,2025-02-05,7
+69,Robotics Workshop,ACADEMICS,Competed in regional academic olympiad,Certificate of Merit,2024-04-13,7
+69,Table Tennis Inter-House,SPORTS,Participated in inter-school athletic meet,Silver Medal,2024-05-26,7
+70,Inter-House Basketball Tournament,SPORTS,Participated in inter-school athletic meet,Certificate of Merit,2025-01-25,7
+71,Annual Sports Day Long Jump,SPORTS,Part of school team for annual sports event,Special Mention,2024-04-17,7
+71,Annual Sports Day 100m Sprint,SPORTS,Participated in inter-school athletic meet,Silver Medal,2024-11-30,7
+72,Hindi Kavita Recitation,ARTS,Presented creative work at inter-school competition,Second Place,2024-05-08,7
+72,Table Tennis Inter-House,SPORTS,Participated in inter-school athletic meet,Participant,2024-07-31,7
+73,District Swimming Meet,SPORTS,Trained and competed in zonal championship,Second Place,2024-05-08,7
+73,Peer Tutoring Program,LEADERSHIP,Managed logistics and team coordination for school event,Second Place,2024-10-11,7
+74,Inter-School Cricket Tournament,SPORTS,Participated in inter-school athletic meet,Silver Medal,2024-09-20,7
+75,National Mathematics Olympiad,ACADEMICS,Represented school in national-level quiz competition,Special Mention,2024-06-21,7
+75,Annual Art Exhibition,ARTS,Presented creative work at inter-school competition,Second Place,2024-04-29,7
+76,Essay Writing Contest English,ARTS,Participated in cultural exchange program,Special Mention,2024-07-29,7
+77,Model United Nations,LEADERSHIP,Coordinated peers in extracurricular leadership role,Silver Medal,2024-07-03,7
+77,Inter-School Football League,SPORTS,Trained and competed in zonal championship,Participant,2024-08-25,7
+78,Essay Writing Contest Hindi,ARTS,Presented creative work at inter-school competition,Special Mention,2025-01-03,7
+78,Kho-Kho District Championship,SPORTS,Participated in inter-school athletic meet,Silver Medal,2025-01-06,7
+79,Scout and Guide Camp,LEADERSHIP,Led fellow students in organizational responsibilities,Participant,2024-06-17,8
+79,Science Model Exhibition,ACADEMICS,Competed in regional academic olympiad,Second Place,2024-04-14,8
+80,Peer Tutoring Program,LEADERSHIP,Demonstrated leadership in school governance activities,Certificate of Merit,2025-01-09,8
+80,Spelling Bee Competition,ACADEMICS,Presented research project at district science fair,Certificate of Merit,2024-10-30,8
+81,Independence Day Cultural Program,ARTS,Performed in front of distinguished guests at school event,Certificate of Merit,2024-09-13,8
+81,Essay Writing Contest Hindi,ARTS,Showcased creative talent at annual cultural festival,Participant,2024-10-27,8
+82,Science Model Exhibition,ACADEMICS,Presented research project at district science fair,Certificate of Merit,2024-04-10,8
+82,Traffic Awareness Campaign,COMMUNITY_SERVICE,Organized and participated in neighborhood improvement drive,Certificate of Merit,2024-06-19,8
+83,Badminton Inter-School Meet,SPORTS,Participated in inter-school athletic meet,Special Mention,2024-11-23,8
+84,Robotics Workshop,ACADEMICS,Participated in science and technology exhibition,Special Mention,2025-03-22,8
+84,Essay Writing Contest Hindi,ARTS,Presented creative work at inter-school competition,Certificate of Merit,2025-01-06,8
+85,Traffic Awareness Campaign,COMMUNITY_SERVICE,Helped coordinate awareness drive in local community,Certificate of Merit,2024-04-02,8
+86,Inter-School Football League,SPORTS,Part of school team for annual sports event,Special Mention,2024-12-02,8
+86,Cooking Without Fire Contest,OTHER,Contributed to special school program initiative,Silver Medal,2024-04-28,8
+87,Annual Sports Day Long Jump,SPORTS,Trained and competed in zonal championship,Participant,2024-12-20,8
+88,Code-a-thon 2025,ACADEMICS,Participated in science and technology exhibition,Second Place,2025-01-05,8
+88,Street Play on Social Awareness,COMMUNITY_SERVICE,Volunteered for community development initiative,Participant,2024-12-24,8
+89,Essay Writing Contest English,ARTS,Participated in cultural exchange program,Silver Medal,2024-06-15,8
+90,State Volleyball Championship,SPORTS,Competed in state-level tournament with distinction,Silver Medal,2024-10-11,9
+90,Traffic Awareness Campaign,COMMUNITY_SERVICE,Volunteered for community development initiative,Certificate of Merit,2024-04-14,9
+91,Essay Writing Contest Hindi,ARTS,Presented creative work at inter-school competition,Special Mention,2024-05-09,9
+92,District Chess Championship,SPORTS,Part of school team for annual sports event,Participant,2024-10-16,9
+93,Inter-School Cricket Tournament,SPORTS,Represented school in district-level sports competition,Special Mention,2024-07-13,9
+93,Classical Music Recital,ARTS,Participated in cultural exchange program,Participant,2024-09-04,9
+94,District Swimming Meet,SPORTS,Participated in inter-school athletic meet,Special Mention,2024-05-03,9
+94,Independence Day Cultural Program,ARTS,Performed in front of distinguished guests at school event,Silver Medal,2024-12-25,9
+95,Handwriting Competition,ARTS,Performed in front of distinguished guests at school event,Participant,2024-08-13,9
+96,Badminton Inter-School Meet,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2024-07-31,9
+96,National Mathematics Olympiad,ACADEMICS,Competed in regional academic olympiad,Silver Medal,2024-10-22,9
+97,Annual Sports Day 100m Sprint,SPORTS,Trained and competed in zonal championship,Participant,2024-05-14,9
+97,Table Tennis Inter-House,SPORTS,Trained and competed in zonal championship,Silver Medal,2024-08-12,9
+98,Traffic Awareness Campaign,COMMUNITY_SERVICE,Volunteered for community development initiative,Special Mention,2024-04-02,9
+98,Inter-School Cricket Tournament,SPORTS,Trained and competed in zonal championship,Special Mention,2025-03-21,9
+99,School Debate Competition,ACADEMICS,Represented school in national-level quiz competition,Silver Medal,2024-10-05,9
+99,Astronomy Night Observation,ACADEMICS,Competed in regional academic olympiad,Silver Medal,2024-11-26,9
+100,Rangoli Competition,ARTS,Displayed artwork at district-level art exhibition,Second Place,2024-04-30,9
+100,Annual Science Fair,ACADEMICS,Selected for state-level academic challenge,Participant,2024-11-04,9
+101,Vedic Mathematics Competition,ACADEMICS,Selected for state-level academic challenge,Special Mention,2024-11-13,10
+101,Traffic Awareness Campaign,COMMUNITY_SERVICE,Led a team of students in social awareness campaign,Certificate of Merit,2025-03-25,10
+102,National Mathematics Olympiad,ACADEMICS,Competed in regional academic olympiad,Certificate of Merit,2025-03-09,10
+102,Community Cleanliness Drive,COMMUNITY_SERVICE,Volunteered for community development initiative,Participant,2024-05-17,10
+103,NCC Camp,LEADERSHIP,Coordinated peers in extracurricular leadership role,Silver Medal,2025-03-13,10
+104,Essay Writing Contest Hindi,ARTS,Displayed artwork at district-level art exhibition,Silver Medal,2025-01-10,10
+105,Hindi Kavita Recitation,ARTS,Displayed artwork at district-level art exhibition,Silver Medal,2024-04-07,10
+105,Code-a-thon 2025,ACADEMICS,Participated in science and technology exhibition,Participant,2024-09-26,10
+106,Kho-Kho District Championship,SPORTS,Participated in inter-school athletic meet,Participant,2025-03-18,10
+106,Hindi Kavita Recitation,ARTS,Showcased creative talent at annual cultural festival,Silver Medal,2024-04-17,10
+107,Hindi Kavita Recitation,ARTS,Participated in cultural exchange program,Certificate of Merit,2025-02-12,10
+107,Annual Sports Day Long Jump,SPORTS,Part of school team for annual sports event,Certificate of Merit,2025-02-03,10
+108,Robotics Workshop,ACADEMICS,Participated in science and technology exhibition,Second Place,2025-03-12,10
+108,Annual Sports Day 100m Sprint,SPORTS,Competed in state-level tournament with distinction,Participant,2024-11-03,10
+109,Traffic Awareness Campaign,COMMUNITY_SERVICE,Organized and participated in neighborhood improvement drive,Second Place,2024-09-06,10
+109,Kabaddi State Tournament,SPORTS,Part of school team for annual sports event,Participant,2024-06-17,10
+110,Spelling Bee Competition,ACADEMICS,Represented school in national-level quiz competition,Silver Medal,2025-03-09,10
+110,Rangoli Competition,ARTS,Participated in cultural exchange program,Certificate of Merit,2024-05-13,10
+111,Kabaddi State Tournament,SPORTS,Part of school team for annual sports event,Certificate of Merit,2024-07-18,10
+112,Table Tennis Inter-House,SPORTS,Represented school in district-level sports competition,Second Place,2024-10-05,11
+113,Robotics Workshop,ACADEMICS,Represented school in national-level quiz competition,Special Mention,2025-02-08,11
+114,Handwriting Competition,ARTS,Presented creative work at inter-school competition,Participant,2024-10-20,11
+114,Traffic Awareness Campaign,COMMUNITY_SERVICE,Helped coordinate awareness drive in local community,Silver Medal,2024-10-12,11
+115,Table Tennis Inter-House,SPORTS,Represented school in district-level sports competition,Participant,2024-10-10,11
+115,Inter-School Football League,SPORTS,Part of school team for annual sports event,Silver Medal,2024-09-23,11
+116,School Band Performance,ARTS,Showcased creative talent at annual cultural festival,Certificate of Merit,2025-02-01,11
+116,Poster Making Competition,ARTS,Presented creative work at inter-school competition,Special Mention,2024-08-31,11
+117,Essay Writing Contest English,ARTS,Displayed artwork at district-level art exhibition,Certificate of Merit,2024-05-11,11
+117,Independence Day Cultural Program,ARTS,Showcased creative talent at annual cultural festival,Participant,2025-02-08,11
+118,Inter-House Basketball Tournament,SPORTS,Trained and competed in zonal championship,Special Mention,2024-09-20,11
+119,Rangoli Competition,ARTS,Displayed artwork at district-level art exhibition,Special Mention,2024-04-24,11
+120,Spelling Bee Competition,ACADEMICS,Competed in regional academic olympiad,Participant,2024-09-17,11
+120,Annual Sports Day Long Jump,SPORTS,Trained and competed in zonal championship,Special Mention,2025-01-21,11
+121,Hindi Kavita Recitation,ARTS,Displayed artwork at district-level art exhibition,Second Place,2024-08-11,11
+122,Code-a-thon 2025,ACADEMICS,Selected for state-level academic challenge,Silver Medal,2024-11-12,11
+122,School Debate Competition,ACADEMICS,Competed in regional academic olympiad,Silver Medal,2024-05-30,11
+123,Poster Making Competition,ARTS,Showcased creative talent at annual cultural festival,Participant,2024-10-08,12
+123,Spelling Bee Competition,ACADEMICS,Presented research project at district science fair,Participant,2024-10-28,12
+124,School Captain Election,LEADERSHIP,Served as student leader for school program,Participant,2025-03-09,12
+124,Annual Science Fair,ACADEMICS,Competed in regional academic olympiad,Second Place,2024-06-24,12
+125,Peer Tutoring Program,LEADERSHIP,Demonstrated leadership in school governance activities,Participant,2024-10-28,12
+125,Carrom Tournament,SPORTS,Represented school in district-level sports competition,Special Mention,2024-07-17,12
+126,Science Model Exhibition,ACADEMICS,Participated in science and technology exhibition,Participant,2024-07-11,12
+126,Inter-School Cricket Tournament,SPORTS,Participated in inter-school athletic meet,Second Place,2024-04-21,12
+127,Blood Donation Camp Volunteer,COMMUNITY_SERVICE,Led a team of students in social awareness campaign,Certificate of Merit,2024-08-14,12
+127,Annual Sports Day Long Jump,SPORTS,Participated in inter-school athletic meet,Silver Medal,2024-12-10,12
+128,District Chess Championship,SPORTS,Trained and competed in zonal championship,Second Place,2024-08-30,12
+128,Peer Tutoring Program,LEADERSHIP,Coordinated peers in extracurricular leadership role,Participant,2024-12-21,12
+129,Quiz Bowl Regional Finals,ACADEMICS,Represented school in national-level quiz competition,Silver Medal,2025-02-07,12
+130,Astronomy Night Observation,ACADEMICS,Participated in science and technology exhibition,Participant,2025-03-16,12
+130,Vedic Mathematics Competition,ACADEMICS,Participated in science and technology exhibition,Special Mention,2025-01-02,12
+131,Classical Music Recital,ARTS,Displayed artwork at district-level art exhibition,Second Place,2024-04-03,12
+131,Independence Day Cultural Program,ARTS,Participated in cultural exchange program,Silver Medal,2024-08-05,12
+132,Vedic Mathematics Competition,ACADEMICS,Participated in science and technology exhibition,Special Mention,2025-01-06,12
+132,Hindi Kavita Recitation,ARTS,Displayed artwork at district-level art exhibition,Special Mention,2024-05-12,12
+133,Robotics Workshop,ACADEMICS,Presented research project at district science fair,Certificate of Merit,2024-07-03,12
+134,NCC Camp,LEADERSHIP,Served as student leader for school program,Second Place,2024-08-17,12
+134,Annual Sports Day Long Jump,SPORTS,Part of school team for annual sports event,Special Mention,2024-07-02,12
+135,Annual Sports Day Long Jump,SPORTS,Trained and competed in zonal championship,Participant,2024-12-14,13
+135,Robotics Workshop,ACADEMICS,Selected for state-level academic challenge,Participant,2025-01-27,13
+136,Astronomy Night Observation,ACADEMICS,Participated in science and technology exhibition,Certificate of Merit,2024-09-17,13
+136,District Chess Championship,SPORTS,Competed in state-level tournament with distinction,Special Mention,2024-12-19,13
+137,Community Cleanliness Drive,COMMUNITY_SERVICE,Organized and participated in neighborhood improvement drive,Silver Medal,2024-07-30,13
+137,District Yoga Championship,SPORTS,Participated in inter-school athletic meet,Participant,2025-02-07,13
+138,Inter-House Basketball Tournament,SPORTS,Represented school in district-level sports competition,Certificate of Merit,2024-10-30,13
+138,Annual Sports Day 100m Sprint,SPORTS,Participated in inter-school athletic meet,Special Mention,2024-11-09,13
+139,Carrom Tournament,SPORTS,Trained and competed in zonal championship,Second Place,2024-05-03,13
+139,Spelling Bee Competition,ACADEMICS,Represented school in national-level quiz competition,Participant,2024-10-10,13
+140,State-Level Science Olympiad,ACADEMICS,Represented school in national-level quiz competition,Certificate of Merit,2024-05-27,13
+140,Poster Making Competition,ARTS,Displayed artwork at district-level art exhibition,Special Mention,2024-08-25,13
+141,Republic Day March Past,LEADERSHIP,Served as student leader for school program,Special Mention,2024-11-03,13
+141,District Yoga Championship,SPORTS,Competed in state-level tournament with distinction,Special Mention,2024-05-06,13
+142,Street Play on Social Awareness,COMMUNITY_SERVICE,Led a team of students in social awareness campaign,Second Place,2024-06-09,13
+142,NCC Camp,LEADERSHIP,Demonstrated leadership in school governance activities,Special Mention,2024-11-25,13
+143,Annual Sports Day Long Jump,SPORTS,Trained and competed in zonal championship,Silver Medal,2024-08-08,13
+143,Inter-School Football League,SPORTS,Represented school in district-level sports competition,Special Mention,2024-07-28,13
+144,Cultural Dance Festival,ARTS,Performed in front of distinguished guests at school event,Special Mention,2025-03-28,13
+145,School Band Performance,ARTS,Performed in front of distinguished guests at school event,Silver Medal,2024-08-02,13
+145,Inter-House Basketball Tournament,SPORTS,Participated in inter-school athletic meet,Special Mention,2024-11-12,13
+146,Photography Contest,ARTS,Performed in front of distinguished guests at school event,Certificate of Merit,2024-10-29,14
+147,Robotics Workshop,ACADEMICS,Presented research project at district science fair,Second Place,2024-09-28,14
+147,Community Cleanliness Drive,COMMUNITY_SERVICE,Led a team of students in social awareness campaign,Silver Medal,2024-05-24,14
+148,Photography Contest,ARTS,Showcased creative talent at annual cultural festival,Special Mention,2025-03-24,14
+149,Hindi Kavita Recitation,ARTS,Participated in cultural exchange program,Participant,2025-01-11,14
+149,Handwriting Competition,ARTS,Participated in cultural exchange program,Special Mention,2024-04-25,14
+150,Inter-School Football League,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2025-03-23,14
+151,Essay Writing Contest English,ARTS,Presented creative work at inter-school competition,Special Mention,2024-09-17,14
+151,Classical Music Recital,ARTS,Displayed artwork at district-level art exhibition,Special Mention,2024-07-28,14
+152,Quiz Bowl Regional Finals,ACADEMICS,Competed in regional academic olympiad,Participant,2024-08-30,14
+152,State-Level Science Olympiad,ACADEMICS,Selected for state-level academic challenge,Participant,2024-06-24,14
+153,District Chess Championship,SPORTS,Represented school in district-level sports competition,Second Place,2024-06-11,14
+154,Poster Making Competition,ARTS,Presented creative work at inter-school competition,Special Mention,2025-03-27,14
+154,Tree Plantation Drive,COMMUNITY_SERVICE,Volunteered for community development initiative,Certificate of Merit,2025-01-25,14
+155,Model United Nations,LEADERSHIP,Managed logistics and team coordination for school event,Participant,2024-10-17,14
+155,Poster Making Competition,ARTS,Performed in front of distinguished guests at school event,Participant,2024-09-06,14
+156,Kho-Kho District Championship,SPORTS,Trained and competed in zonal championship,Certificate of Merit,2025-03-21,14
+156,Traffic Awareness Campaign,COMMUNITY_SERVICE,Organized and participated in neighborhood improvement drive,Second Place,2024-04-19,14
+157,Republic Day March Past,LEADERSHIP,Led fellow students in organizational responsibilities,Second Place,2024-05-11,14
+158,Photography Contest,ARTS,Participated in cultural exchange program,Silver Medal,2025-01-10,15
+158,Vedic Mathematics Competition,ACADEMICS,Represented school in national-level quiz competition,Second Place,2024-06-25,15
+159,Inter-House Basketball Tournament,SPORTS,Part of school team for annual sports event,Participant,2024-11-08,15
+160,Rangoli Competition,ARTS,Participated in cultural exchange program,Special Mention,2024-06-04,15
+160,Photography Contest,ARTS,Performed in front of distinguished guests at school event,Special Mention,2024-10-17,15
+161,Science Model Exhibition,ACADEMICS,Participated in science and technology exhibition,Second Place,2025-03-06,15
+161,Astronomy Night Observation,ACADEMICS,Selected for state-level academic challenge,Special Mention,2024-06-13,15
+162,Classical Music Recital,ARTS,Performed in front of distinguished guests at school event,Second Place,2024-04-15,15
+162,Inter-School Cricket Tournament,SPORTS,Part of school team for annual sports event,Special Mention,2024-12-15,15
+163,Annual Science Fair,ACADEMICS,Presented research project at district science fair,Silver Medal,2024-08-16,15
+163,Sanskrit Shloka Recitation,ARTS,Participated in cultural exchange program,Second Place,2024-04-04,15
+164,Photography Contest,ARTS,Performed in front of distinguished guests at school event,Certificate of Merit,2024-07-26,15
+164,District Swimming Meet,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2025-02-19,15
+165,Republic Day March Past,LEADERSHIP,Coordinated peers in extracurricular leadership role,Second Place,2024-09-23,15
+165,Scout and Guide Camp,LEADERSHIP,Led fellow students in organizational responsibilities,Special Mention,2025-02-27,15
+166,State Volleyball Championship,SPORTS,Represented school in district-level sports competition,Certificate of Merit,2024-04-19,15
+166,District Chess Championship,SPORTS,Competed in state-level tournament with distinction,Participant,2024-07-19,15
+167,Quiz Bowl Regional Finals,ACADEMICS,Presented research project at district science fair,Second Place,2025-01-25,15
+167,NCC Camp,LEADERSHIP,Coordinated peers in extracurricular leadership role,Second Place,2024-06-04,15
+168,District Swimming Meet,SPORTS,Participated in inter-school athletic meet,Second Place,2025-03-09,15
+168,School Captain Election,LEADERSHIP,Coordinated peers in extracurricular leadership role,Silver Medal,2024-09-24,15
+169,Quiz Bowl Regional Finals,ACADEMICS,Participated in science and technology exhibition,Silver Medal,2024-06-23,15
+169,Handwriting Competition,ARTS,Displayed artwork at district-level art exhibition,Certificate of Merit,2024-06-18,15
+170,Rangoli Competition,ARTS,Presented creative work at inter-school competition,Participant,2024-10-28,16
+170,Vedic Mathematics Competition,ACADEMICS,Represented school in national-level quiz competition,Participant,2025-03-25,16
+171,Robotics Workshop,ACADEMICS,Competed in regional academic olympiad,Certificate of Merit,2025-02-27,16
+171,School Debate Competition,ACADEMICS,Presented research project at district science fair,Special Mention,2024-05-24,16
+172,Photography Contest,ARTS,Displayed artwork at district-level art exhibition,Participant,2024-05-06,16
+172,Blood Donation Camp Volunteer,COMMUNITY_SERVICE,Organized and participated in neighborhood improvement drive,Special Mention,2025-02-21,16
+173,Robotics Workshop,ACADEMICS,Selected for state-level academic challenge,Special Mention,2024-07-29,16
+173,District Chess Championship,SPORTS,Trained and competed in zonal championship,Silver Medal,2024-10-12,16
+174,Model United Nations,LEADERSHIP,Served as student leader for school program,Special Mention,2024-12-20,16
+174,Essay Writing Contest Hindi,ARTS,Performed in front of distinguished guests at school event,Second Place,2024-07-26,16
+175,Hindi Kavita Recitation,ARTS,Showcased creative talent at annual cultural festival,Second Place,2025-02-14,16
+175,Rangoli Competition,ARTS,Presented creative work at inter-school competition,Certificate of Merit,2025-01-04,16
+176,Photography Contest,ARTS,Participated in cultural exchange program,Silver Medal,2024-11-25,16
+176,Inter-School Cricket Tournament,SPORTS,Part of school team for annual sports event,Second Place,2025-03-04,16
+177,Table Tennis Inter-House,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2025-02-09,16
+178,Independence Day Cultural Program,ARTS,Displayed artwork at district-level art exhibition,Second Place,2025-03-13,16
+178,Blood Donation Camp Volunteer,COMMUNITY_SERVICE,Volunteered for community development initiative,Special Mention,2024-08-19,16
+179,State-Level Science Olympiad,ACADEMICS,Selected for state-level academic challenge,Participant,2025-02-20,16
+179,Inter-School Football League,SPORTS,Represented school in district-level sports competition,Silver Medal,2024-07-15,16
+180,Quiz Bowl Regional Finals,ACADEMICS,Represented school in national-level quiz competition,Second Place,2024-04-25,16
+181,Essay Writing Contest English,ARTS,Showcased creative talent at annual cultural festival,Second Place,2024-04-15,16
+181,Vedic Mathematics Competition,ACADEMICS,Presented research project at district science fair,Silver Medal,2024-12-15,16
+182,Code-a-thon 2025,ACADEMICS,Represented school in national-level quiz competition,Second Place,2025-01-04,17
+182,Kabaddi State Tournament,SPORTS,Trained and competed in zonal championship,Participant,2024-11-04,17
+183,Inter-School Football League,SPORTS,Represented school in district-level sports competition,Silver Medal,2025-01-06,17
+184,Table Tennis Inter-House,SPORTS,Represented school in district-level sports competition,Certificate of Merit,2024-04-09,17
+184,Inter-House Basketball Tournament,SPORTS,Part of school team for annual sports event,Certificate of Merit,2024-07-15,17
+185,Inter-School Football League,SPORTS,Part of school team for annual sports event,Silver Medal,2024-10-24,17
+186,District Swimming Meet,SPORTS,Part of school team for annual sports event,Special Mention,2025-03-02,17
+187,Essay Writing Contest English,ARTS,Showcased creative talent at annual cultural festival,Certificate of Merit,2024-11-22,17
+188,Badminton Inter-School Meet,SPORTS,Part of school team for annual sports event,Participant,2025-02-06,17
+188,Badminton Inter-School Meet,SPORTS,Trained and competed in zonal championship,Certificate of Merit,2024-11-23,17
+189,Essay Writing Contest Hindi,ARTS,Presented creative work at inter-school competition,Certificate of Merit,2024-09-22,17
+189,Annual Sports Day Long Jump,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2025-01-17,17
+190,District Chess Championship,SPORTS,Participated in inter-school athletic meet,Special Mention,2024-09-13,17
+191,Peer Tutoring Program,LEADERSHIP,Demonstrated leadership in school governance activities,Special Mention,2025-03-30,17
+192,School Band Performance,ARTS,Displayed artwork at district-level art exhibition,Certificate of Merit,2024-12-20,17
+193,School Captain Election,LEADERSHIP,Managed logistics and team coordination for school event,Certificate of Merit,2024-07-24,18
+194,Science Model Exhibition,ACADEMICS,Represented school in national-level quiz competition,Certificate of Merit,2024-09-08,18
+195,NCC Camp,LEADERSHIP,Managed logistics and team coordination for school event,Participant,2024-11-19,18
+196,Cooking Without Fire Contest,OTHER,Contributed to special school program initiative,Certificate of Merit,2024-05-09,18
+197,Community Cleanliness Drive,COMMUNITY_SERVICE,Led a team of students in social awareness campaign,Silver Medal,2025-02-07,18
+198,Badminton Inter-School Meet,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2024-12-08,18
+198,Inter-School Football League,SPORTS,Represented school in district-level sports competition,Second Place,2024-06-16,18
+199,Carrom Tournament,SPORTS,Part of school team for annual sports event,Special Mention,2024-06-09,18
+200,Spelling Bee Competition,ACADEMICS,Represented school in national-level quiz competition,Silver Medal,2024-11-24,18
+200,Essay Writing Contest English,ARTS,Performed in front of distinguished guests at school event,Certificate of Merit,2025-01-06,18
+201,Scout and Guide Camp,LEADERSHIP,Led fellow students in organizational responsibilities,Second Place,2024-10-03,18
+202,National Mathematics Olympiad,ACADEMICS,Participated in science and technology exhibition,Certificate of Merit,2024-06-26,18
+202,Inter-School Cricket Tournament,SPORTS,Participated in inter-school athletic meet,Participant,2025-03-26,18
+203,Cooking Without Fire Contest,OTHER,Participated in unique inter-school event,Certificate of Merit,2024-11-10,18
+204,State-Level Science Olympiad,ACADEMICS,Participated in science and technology exhibition,Bronze Medal,2025-01-20,19
+206,National Mathematics Olympiad,ACADEMICS,Competed in regional academic olympiad,Participant,2025-01-08,19
+207,Carrom Tournament,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2024-06-24,19
+208,Inter-School Football League,SPORTS,Trained and competed in zonal championship,Bronze Medal,2025-01-24,19
+209,State-Level Science Olympiad,ACADEMICS,Presented research project at district science fair,Participant,2024-08-23,19
+212,Republic Day March Past,LEADERSHIP,Served as student leader for school program,Participant,2024-06-18,19
+213,Inter-School Cricket Tournament,SPORTS,Trained and competed in zonal championship,Bronze Medal,2024-05-15,19
+216,Sanskrit Shloka Recitation,ARTS,Displayed artwork at district-level art exhibition,Participant,2024-07-29,20
+217,Community Cleanliness Drive,COMMUNITY_SERVICE,Led a team of students in social awareness campaign,Certificate of Merit,2024-07-13,20
+218,Hindi Kavita Recitation,ARTS,Participated in cultural exchange program,Certificate of Merit,2024-11-23,20
+221,Republic Day March Past,LEADERSHIP,Led fellow students in organizational responsibilities,Bronze Medal,2024-08-27,20
+226,National Mathematics Olympiad,ACADEMICS,Represented school in national-level quiz competition,Bronze Medal,2025-03-23,20
+230,Independence Day Cultural Program,ARTS,Presented creative work at inter-school competition,Bronze Medal,2024-09-04,21
+232,Poster Making Competition,ARTS,Showcased creative talent at annual cultural festival,Bronze Medal,2025-02-03,21
+233,Classical Music Recital,ARTS,Participated in cultural exchange program,Participant,2025-03-13,21
+234,Kho-Kho District Championship,SPORTS,Represented school in district-level sports competition,Bronze Medal,2024-07-06,21
+235,Peer Tutoring Program,LEADERSHIP,Demonstrated leadership in school governance activities,Third Place,2025-01-28,21
+237,Inter-House Basketball Tournament,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2024-07-08,21
+238,Vedic Mathematics Competition,ACADEMICS,Represented school in national-level quiz competition,Bronze Medal,2025-03-23,22
+239,Code-a-thon 2025,ACADEMICS,Presented research project at district science fair,Certificate of Merit,2024-07-29,22
+240,NCC Camp,LEADERSHIP,Demonstrated leadership in school governance activities,Certificate of Merit,2024-09-01,22
+243,Inter-House Basketball Tournament,SPORTS,Trained and competed in zonal championship,Bronze Medal,2025-03-20,22
+244,District Yoga Championship,SPORTS,Part of school team for annual sports event,Participant,2024-12-16,22
+246,State-Level Science Olympiad,ACADEMICS,Represented school in national-level quiz competition,Third Place,2024-05-28,22
+250,Spelling Bee Competition,ACADEMICS,Participated in science and technology exhibition,Certificate of Merit,2025-01-29,23
+252,Community Cleanliness Drive,COMMUNITY_SERVICE,Helped coordinate awareness drive in local community,Certificate of Merit,2024-08-10,23
+253,Kabaddi State Tournament,SPORTS,Part of school team for annual sports event,Certificate of Merit,2024-04-30,23
+254,Handwriting Competition,ARTS,Performed in front of distinguished guests at school event,Participant,2025-03-27,23
+255,State Volleyball Championship,SPORTS,Participated in inter-school athletic meet,Third Place,2024-11-22,23
+257,Handwriting Competition,ARTS,Showcased creative talent at annual cultural festival,Certificate of Merit,2024-07-16,23
+260,Essay Writing Contest Hindi,ARTS,Presented creative work at inter-school competition,Bronze Medal,2025-02-23,23
+262,Carrom Tournament,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2024-04-29,24
+265,Annual Sports Day Long Jump,SPORTS,Participated in inter-school athletic meet,Bronze Medal,2024-10-12,24
+266,Street Play on Social Awareness,COMMUNITY_SERVICE,Volunteered for community development initiative,Bronze Medal,2024-11-23,24
+267,Annual Sports Day 100m Sprint,SPORTS,Competed in state-level tournament with distinction,Certificate of Merit,2025-02-06,24
+268,Street Play on Social Awareness,COMMUNITY_SERVICE,Helped coordinate awareness drive in local community,Third Place,2024-10-21,24
+269,Cultural Dance Festival,ARTS,Performed in front of distinguished guests at school event,Certificate of Merit,2024-08-05,24
+272,School Debate Competition,ACADEMICS,Participated in science and technology exhibition,Bronze Medal,2025-03-15,25
+274,Essay Writing Contest Hindi,ARTS,Displayed artwork at district-level art exhibition,Bronze Medal,2024-05-04,25
+275,Blood Donation Camp Volunteer,COMMUNITY_SERVICE,Led a team of students in social awareness campaign,Third Place,2024-07-11,25
+277,Inter-House Basketball Tournament,SPORTS,Part of school team for annual sports event,Participant,2024-04-16,25
+278,Cooking Without Fire Contest,OTHER,Contributed to special school program initiative,Participant,2024-12-08,25
+279,Photography Contest,ARTS,Presented creative work at inter-school competition,Third Place,2025-03-22,25
+280,State Volleyball Championship,SPORTS,Participated in inter-school athletic meet,Certificate of Merit,2024-06-27,25
+281,Annual Sports Day 100m Sprint,SPORTS,Trained and competed in zonal championship,Certificate of Merit,2024-04-03,25
+284,Inter-School Football League,SPORTS,Participated in inter-school athletic meet,Participant,2025-01-03,26
+285,District Chess Championship,SPORTS,Competed in state-level tournament with distinction,Participant,2024-08-19,26
+288,Cooking Without Fire Contest,OTHER,Contributed to special school program initiative,Bronze Medal,2024-05-29,26
+290,Poster Making Competition,ARTS,Performed in front of distinguished guests at school event,Certificate of Merit,2024-06-24,26
+291,Photography Contest,ARTS,Performed in front of distinguished guests at school event,Certificate of Merit,2025-01-13,26
+293,Peer Tutoring Program,LEADERSHIP,Led fellow students in organizational responsibilities,Third Place,2025-02-20,26
+295,State-Level Science Olympiad,ACADEMICS,Participated in science and technology exhibition,Third Place,2024-04-17,27
+296,Spelling Bee Competition,ACADEMICS,Participated in science and technology exhibition,Participant,2024-11-11,27
+297,Blood Donation Camp Volunteer,COMMUNITY_SERVICE,Helped coordinate awareness drive in local community,Certificate of Merit,2024-08-19,27
+298,Astronomy Night Observation,ACADEMICS,Participated in science and technology exhibition,Bronze Medal,2025-03-31,27
+299,Annual Science Fair,ACADEMICS,Competed in regional academic olympiad,Third Place,2024-12-08,27
+301,Annual Science Fair,ACADEMICS,Presented research project at district science fair,Participant,2024-05-25,27
+302,Kho-Kho District Championship,SPORTS,Part of school team for annual sports event,Certificate of Merit,2025-01-20,27
+303,Annual Art Exhibition,ARTS,Displayed artwork at district-level art exhibition,Participant,2024-06-02,27
+304,School Band Performance,ARTS,Presented creative work at inter-school competition,Bronze Medal,2024-04-03,27
