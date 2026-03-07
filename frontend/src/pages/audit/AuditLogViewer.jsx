@@ -38,7 +38,7 @@ export default function AuditLogViewer() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-4">
-        <h1 className="text-2xl font-bold text-gray-900">Audit Log</h1>
+        <h1 className="text-2xl font-bold text-white">Audit Log</h1>
         <form onSubmit={handleSearch} className="flex items-center gap-2">
           <input
             type="text"
@@ -54,7 +54,7 @@ export default function AuditLogViewer() {
             onChange={(e) => setEntityId(e.target.value)}
             className="input w-28"
           />
-          <button type="submit" className="p-2 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors">
+          <button type="submit" className="p-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 transition-colors">
             <Search className="w-4 h-4" />
           </button>
         </form>
@@ -62,17 +62,17 @@ export default function AuditLogViewer() {
 
       {loading ? (
         <div className="flex justify-center py-12">
-          <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
+          <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin" />
         </div>
       ) : logs.length === 0 ? (
         <div className="card text-center py-12">
-          <Shield className="mx-auto h-12 w-12 text-gray-300" />
-          <p className="mt-4 text-gray-500">No audit logs found</p>
+          <Shield className="mx-auto h-12 w-12 text-white/30" />
+          <p className="mt-4 text-white/50">No audit logs found</p>
         </div>
       ) : (
         <div className="card overflow-hidden p-0">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 text-gray-600 text-left">
+            <thead className="bg-white/5 text-white/60 text-left">
               <tr>
                 <th className="px-4 py-3 font-medium">Action</th>
                 <th className="px-4 py-3 font-medium">Entity</th>
@@ -82,21 +82,21 @@ export default function AuditLogViewer() {
                 <th className="px-4 py-3 font-medium">Timestamp</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-white/5">
               {logs.map((log) => (
-                <tr key={log.id} className="hover:bg-gray-50 transition-colors">
+                <tr key={log.id} className="hover:bg-white/5 transition-colors">
                   <td className="px-4 py-3">
-                    <span className="inline-block px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                    <span className="inline-block px-2 py-1 rounded-full text-xs font-medium bg-blue-500/15 text-blue-400">
                       {log.action}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-gray-700">{log.entityType} #{log.entityId}</td>
-                  <td className="px-4 py-3 text-gray-600">{log.userEmail}</td>
-                  <td className="px-4 py-3 text-gray-500 font-mono text-xs">{log.ipAddress}</td>
-                  <td className="px-4 py-3 text-gray-500 text-xs max-w-xs truncate">
+                  <td className="px-4 py-3 text-white/70">{log.entityType} #{log.entityId}</td>
+                  <td className="px-4 py-3 text-white/60">{log.userEmail}</td>
+                  <td className="px-4 py-3 text-white/50 font-mono text-xs">{log.ipAddress}</td>
+                  <td className="px-4 py-3 text-white/50 text-xs max-w-xs truncate">
                     {log.details ? JSON.stringify(log.details) : '—'}
                   </td>
-                  <td className="px-4 py-3 text-gray-500">{new Date(log.createdAt).toLocaleString()}</td>
+                  <td className="px-4 py-3 text-white/50">{new Date(log.createdAt).toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
@@ -110,7 +110,7 @@ export default function AuditLogViewer() {
             className="p-2 rounded-lg border disabled:opacity-30">
             <ChevronLeft className="w-4 h-4" />
           </button>
-          <span className="text-sm text-gray-600">Page {page + 1} of {totalPages}</span>
+          <span className="text-sm text-white/60">Page {page + 1} of {totalPages}</span>
           <button onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))} disabled={page >= totalPages - 1}
             className="p-2 rounded-lg border disabled:opacity-30">
             <ChevronRight className="w-4 h-4" />

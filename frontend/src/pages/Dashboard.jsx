@@ -4,13 +4,18 @@ import { useAuthStore } from '../store/authStore';
 import {
   BarChart3, Users, ClipboardCheck, Award, GraduationCap, Shield, BookOpen,
 } from 'lucide-react';
+import BlurText from '../components/ui/BlurText';
+import GradientText from '../components/ui/GradientText';
+import AnimatedCard from '../components/ui/AnimatedCard';
+import PageTransition from '../components/ui/PageTransition';
+import { StaggerContainer, StaggerItem } from '../components/ui/StaggerContainer';
 
 const ROLE_CONFIG = {
   STUDENT: {
     title: 'Student Dashboard',
     subtitle: 'Track your academic performance and discover scholarships',
     icon: GraduationCap,
-    color: 'primary',
+    gradient: 'from-indigo-500 to-blue-500',
     cards: [
       { title: 'My Performance',  desc: 'View grades, ranking, and trends',     icon: BarChart3, path: '/performance' },
       { title: 'Merit Score',     desc: 'Your composite merit ranking',          icon: Award, path: '/merit' },
@@ -21,7 +26,7 @@ const ROLE_CONFIG = {
     title: 'Parent Dashboard',
     subtitle: "Monitor your child's academic journey",
     icon: Users,
-    color: 'primary',
+    gradient: 'from-purple-500 to-indigo-500',
     cards: [
       { title: 'Child Performance', desc: 'Track academic progress',      icon: BarChart3, path: '/performance' },
       { title: 'Merit Ranking',     desc: 'See ranking across schools',    icon: Award, path: '/merit' },
@@ -32,7 +37,7 @@ const ROLE_CONFIG = {
     title: 'School Administrator',
     subtitle: 'Manage student records and institutional data',
     icon: Shield,
-    color: 'accent',
+    gradient: 'from-emerald-500 to-teal-500',
     cards: [
       { title: 'Student Records',  desc: 'Manage and upload student data',     icon: Users, path: '/students' },
       { title: 'Bulk Uploads',     desc: 'CSV / Excel batch import',            icon: ClipboardCheck, path: '/upload' },
@@ -44,7 +49,7 @@ const ROLE_CONFIG = {
     title: 'Data Verifier',
     subtitle: 'Review and approve submitted student records',
     icon: ClipboardCheck,
-    color: 'amber',
+    gradient: 'from-amber-500 to-orange-500',
     cards: [
       { title: 'Verification Queue', desc: 'Pending records to review',      icon: ClipboardCheck, path: '/verification' },
       { title: 'Merit Lists',        desc: 'View merit rankings',            icon: Award, path: '/merit' },
@@ -55,7 +60,7 @@ const ROLE_CONFIG = {
     title: 'NGO Dashboard',
     subtitle: 'Post scholarships and track student outreach impact',
     icon: BookOpen,
-    color: 'green',
+    gradient: 'from-green-500 to-emerald-500',
     cards: [
       { title: 'Post Scholarship',  desc: 'Create new scholarship offers',     icon: BookOpen, path: '/scholarships/create' },
       { title: 'Applicants',        desc: 'Review student applications',        icon: Users, path: '/applicants' },
@@ -66,7 +71,7 @@ const ROLE_CONFIG = {
     title: 'Government Dashboard',
     subtitle: 'Regional analytics, merit insights, and policy tools',
     icon: Shield,
-    color: 'indigo',
+    gradient: 'from-indigo-500 to-violet-500',
     cards: [
       { title: 'Regional Analytics', desc: 'District and state performance',   icon: BarChart3, path: '/analytics' },
       { title: 'Merit Rankings',     desc: 'Cross-school merit comparisons',   icon: Award, path: '/merit' },
@@ -78,7 +83,7 @@ const ROLE_CONFIG = {
     title: 'System Administration',
     subtitle: 'Full platform management and monitoring',
     icon: Shield,
-    color: 'red',
+    gradient: 'from-red-500 to-rose-500',
     cards: [
       { title: 'User Management',   desc: 'Manage all users and roles',       icon: Users, path: '/admin/users' },
       { title: 'Institutions',      desc: 'Manage schools and colleges',      icon: Shield, path: '/admin/institutions' },
@@ -89,15 +94,6 @@ const ROLE_CONFIG = {
   },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.4, ease: 'easeOut' },
-  }),
-};
-
 export default function Dashboard() {
   const { user } = useAuthStore();
   const navigate = useNavigate();
@@ -105,66 +101,62 @@ export default function Dashboard() {
   const Icon = config.icon;
 
   return (
-    <div className="space-y-8">
+    <PageTransition className="space-y-8">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         className="flex items-center gap-4"
       >
-        <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-primary-100 text-primary-600">
+        <div className={`flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${config.gradient} text-white shadow-glow-sm`}>
           <Icon className="w-7 h-7" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">{config.title}</h1>
-          <p className="text-gray-500">{config.subtitle}</p>
+          <BlurText text={config.title} className="text-2xl font-bold text-white block" delay={80} />
+          <p className="text-white/50">{config.subtitle}</p>
         </div>
       </motion.div>
 
-      {/* Stat cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {config.cards.map((card, i) => {
+      {/* Quick action cards */}
+      <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {config.cards.map((card) => {
           const CardIcon = card.icon;
           return (
-            <motion.div
-              key={card.title}
-              custom={i}
-              initial="hidden"
-              animate="visible"
-              variants={cardVariants}
-              whileHover={{ scale: 1.02, y: -2 }}
-              onClick={() => navigate(card.path)}
-              className="card cursor-pointer hover:shadow-md transition-shadow"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-primary-50 text-primary-600">
-                  <CardIcon className="w-5 h-5" />
+            <StaggerItem key={card.title}>
+              <AnimatedCard onClick={() => navigate(card.path)} className="h-full">
+                <div className="flex items-start gap-4">
+                  <div className={`flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br ${config.gradient} text-white/90 shadow-sm`}>
+                    <CardIcon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">{card.title}</h3>
+                    <p className="text-sm text-white/50 mt-1">{card.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">{card.title}</h3>
-                  <p className="text-sm text-gray-500 mt-1">{card.desc}</p>
-                </div>
-              </div>
-            </motion.div>
+              </AnimatedCard>
+            </StaggerItem>
           );
         })}
-      </div>
+      </StaggerContainer>
 
       {/* Welcome banner */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="card bg-gradient-to-r from-primary-600 to-accent-600 text-white"
+        className="glass rounded-2xl p-6 relative overflow-hidden"
       >
-        <h2 className="text-xl font-bold">
-          Welcome, {user?.firstName} {user?.lastName}!
-        </h2>
-        <p className="mt-2 text-primary-100">
-          You are signed in as <strong>{user?.role?.replace('_', ' ')}</strong>.
-          Use the sidebar to navigate through available features.
-        </p>
+        <div className={`absolute inset-0 bg-gradient-to-r ${config.gradient} opacity-10`} />
+        <div className="relative z-10">
+          <h2 className="text-xl font-bold text-white">
+            Welcome, <GradientText colors={['#818cf8', '#a78bfa', '#c4b5fd', '#818cf8']} animationSpeed={4}>{user?.firstName} {user?.lastName}</GradientText>!
+          </h2>
+          <p className="mt-2 text-white/50">
+            You are signed in as <strong className="text-white/70">{user?.role?.replace('_', ' ')}</strong>.
+            Use the sidebar to navigate through available features.
+          </p>
+        </div>
       </motion.div>
-    </div>
+    </PageTransition>
   );
 }

@@ -124,7 +124,7 @@ export default function ScholarshipDetail() {
   if (loading) {
     return (
       <div className="flex justify-center py-12">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-400"></div>
       </div>
     );
   }
@@ -139,7 +139,7 @@ export default function ScholarshipDetail() {
       {/* Back */}
       <button
         onClick={() => navigate('/scholarships')}
-        className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors"
+        className="inline-flex items-center gap-2 text-white/50 hover:text-white/70 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" /> Back to Scholarships
       </button>
@@ -148,23 +148,23 @@ export default function ScholarshipDetail() {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="card">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">{scholarship.title}</h1>
-            <div className="flex items-center gap-2 mt-1 text-gray-500">
+            <h1 className="text-2xl font-bold text-white">{scholarship.title}</h1>
+            <div className="flex items-center gap-2 mt-1 text-white/50">
               <Building className="w-4 h-4" />
               <span>{scholarship.organizationName}</span>
               <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                 scholarship.organizationType === 'NGO' ? 'bg-purple-100 text-purple-700' :
-                scholarship.organizationType === 'GOVERNMENT' ? 'bg-blue-100 text-blue-700' :
-                'bg-orange-100 text-orange-700'
+                scholarship.organizationType === 'GOVERNMENT' ? 'bg-blue-500/15 text-blue-400' :
+                'bg-orange-500/15 text-orange-400'
               }`}>
                 {scholarship.organizationType}
               </span>
             </div>
           </div>
           <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-            scholarship.status === 'ACTIVE' ? 'bg-green-100 text-green-700' :
-            scholarship.status === 'CLOSED' ? 'bg-gray-100 text-gray-600' :
-            'bg-yellow-100 text-yellow-700'
+            scholarship.status === 'ACTIVE' ? 'bg-emerald-500/15 text-emerald-400' :
+            scholarship.status === 'CLOSED' ? 'bg-white/10 text-white/60' :
+            'bg-amber-500/15 text-amber-400'
           }`}>
             {scholarship.status}
           </span>
@@ -172,41 +172,41 @@ export default function ScholarshipDetail() {
 
         {/* Details Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-          <div className="bg-green-50 rounded-lg p-3 text-center">
-            <DollarSign className="w-5 h-5 text-green-600 mx-auto mb-1" />
-            <p className="text-sm text-gray-500">Amount</p>
-            <p className="font-semibold text-gray-900">{formatCurrency(scholarship.amount, scholarship.currency)}</p>
+          <div className="bg-emerald-500/10 rounded-lg p-3 text-center">
+            <DollarSign className="w-5 h-5 text-emerald-400 mx-auto mb-1" />
+            <p className="text-sm text-white/50">Amount</p>
+            <p className="font-semibold text-white">{formatCurrency(scholarship.amount, scholarship.currency)}</p>
           </div>
           <div className="bg-blue-50 rounded-lg p-3 text-center">
-            <Calendar className="w-5 h-5 text-blue-600 mx-auto mb-1" />
-            <p className="text-sm text-gray-500">Deadline</p>
-            <p className="font-semibold text-gray-900">{scholarship.applicationDeadline ? formatDate(scholarship.applicationDeadline) : 'Open'}</p>
+            <Calendar className="w-5 h-5 text-blue-400 mx-auto mb-1" />
+            <p className="text-sm text-white/50">Deadline</p>
+            <p className="font-semibold text-white">{scholarship.applicationDeadline ? formatDate(scholarship.applicationDeadline) : 'Open'}</p>
           </div>
           <div className="bg-purple-50 rounded-lg p-3 text-center">
-            <Users className="w-5 h-5 text-purple-600 mx-auto mb-1" />
-            <p className="text-sm text-gray-500">Slots</p>
-            <p className="font-semibold text-gray-900">{scholarship.totalSlots ? `${scholarship.filledSlots}/${scholarship.totalSlots}` : 'Unlimited'}</p>
+            <Users className="w-5 h-5 text-purple-400 mx-auto mb-1" />
+            <p className="text-sm text-white/50">Slots</p>
+            <p className="font-semibold text-white">{scholarship.totalSlots ? `${scholarship.filledSlots}/${scholarship.totalSlots}` : 'Unlimited'}</p>
           </div>
           <div className="bg-amber-50 rounded-lg p-3 text-center">
-            <Award className="w-5 h-5 text-amber-600 mx-auto mb-1" />
-            <p className="text-sm text-gray-500">Applicants</p>
-            <p className="font-semibold text-gray-900">{scholarship.applicationCount || 0}</p>
+            <Award className="w-5 h-5 text-amber-400 mx-auto mb-1" />
+            <p className="text-sm text-white/50">Applicants</p>
+            <p className="font-semibold text-white">{scholarship.applicationCount || 0}</p>
           </div>
         </div>
 
         {/* Description */}
         {scholarship.description && (
           <div className="mb-6">
-            <h3 className="text-sm font-medium text-gray-700 mb-2">Description</h3>
-            <p className="text-gray-600 whitespace-pre-wrap">{scholarship.description}</p>
+            <h3 className="text-sm font-medium text-white/70 mb-2">Description</h3>
+            <p className="text-white/60 whitespace-pre-wrap">{scholarship.description}</p>
           </div>
         )}
 
         {/* Eligibility Criteria */}
         {scholarship.eligibilityCriteria && Object.keys(scholarship.eligibilityCriteria).length > 0 && (
           <div className="mb-6">
-            <h3 className="text-sm font-medium text-gray-700 mb-2">Eligibility Criteria</h3>
-            <div className="bg-gray-50 rounded-lg p-4 space-y-2">
+            <h3 className="text-sm font-medium text-white/70 mb-2">Eligibility Criteria</h3>
+            <div className="bg-white/5 rounded-lg p-4 space-y-2">
               {scholarship.eligibilityCriteria.minCompositeScore != null && (
                 <div className="flex items-center gap-2 text-sm">
                   <Award className="w-4 h-4 text-amber-500" />
@@ -236,7 +236,7 @@ export default function ScholarshipDetail() {
         )}
 
         {/* Dates */}
-        <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+        <div className="flex flex-wrap gap-4 text-sm text-white/50">
           {scholarship.startDate && <span>Starts: {formatDate(scholarship.startDate)}</span>}
           {scholarship.endDate && <span>Ends: {formatDate(scholarship.endDate)}</span>}
           <span>Posted: {formatDate(scholarship.createdAt)}</span>
@@ -252,13 +252,13 @@ export default function ScholarshipDetail() {
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-6 h-6 text-green-500" />
                 <div>
-                  <p className="font-medium text-gray-900">You have applied to this scholarship</p>
-                  <p className="text-sm text-gray-500">Your application is being reviewed</p>
+                  <p className="font-medium text-white">You have applied to this scholarship</p>
+                  <p className="text-sm text-white/50">Your application is being reviewed</p>
                 </div>
               </div>
               <button
                 onClick={handleWithdraw}
-                className="px-4 py-2 border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition-colors text-sm"
+                className="px-4 py-2 border border-red-300 text-red-400 rounded-lg hover:bg-red-500/10 transition-colors text-sm"
               >
                 Withdraw
               </button>
@@ -267,23 +267,23 @@ export default function ScholarshipDetail() {
             !showApplyForm ? (
               <button
                 onClick={() => setShowApplyForm(true)}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition-colors font-medium"
               >
                 <Send className="w-4 h-4" />
                 Apply Now
               </button>
             ) : (
               <div className="space-y-4">
-                <h3 className="font-medium text-gray-900">Apply to {scholarship.title}</h3>
+                <h3 className="font-medium text-white">Apply to {scholarship.title}</h3>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-white/60 mb-1">
                     Personal Statement (optional)
                   </label>
                   <textarea
                     value={statement}
                     onChange={(e) => setStatement(e.target.value)}
                     rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    className="w-full px-3 py-2 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                     placeholder="Tell us why you deserve this scholarship..."
                   />
                 </div>
@@ -291,7 +291,7 @@ export default function ScholarshipDetail() {
                   <button
                     onClick={handleApply}
                     disabled={applying}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium disabled:opacity-50"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition-colors font-medium disabled:opacity-50"
                   >
                     {applying ? (
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
@@ -304,7 +304,7 @@ export default function ScholarshipDetail() {
                   </button>
                   <button
                     onClick={() => { setShowApplyForm(false); setStatement(''); }}
-                    className="px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="px-4 py-2 border border-white/10 text-white/60 rounded-lg hover:bg-white/5 transition-colors"
                   >
                     Cancel
                   </button>
@@ -312,7 +312,7 @@ export default function ScholarshipDetail() {
               </div>
             )
           ) : (
-            <div className="flex items-center gap-3 text-gray-500">
+            <div className="flex items-center gap-3 text-white/50">
               <Clock className="w-5 h-5" />
               <span>
                 {deadlinePassed ? 'The application deadline has passed' :
@@ -332,13 +332,13 @@ export default function ScholarshipDetail() {
               <>
                 <button
                   onClick={() => navigate(`/scholarships/${id}/edit`)}
-                  className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium"
+                  className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition-colors text-sm font-medium"
                 >
                   Edit Scholarship
                 </button>
                 <button
                   onClick={handleClose}
-                  className="px-4 py-2 border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition-colors text-sm"
+                  className="px-4 py-2 border border-red-300 text-red-400 rounded-lg hover:bg-red-500/10 transition-colors text-sm"
                 >
                   Close Scholarship
                 </button>
@@ -346,7 +346,7 @@ export default function ScholarshipDetail() {
             )}
             <button
               onClick={fetchEligible}
-              className="px-4 py-2 border border-indigo-300 text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors text-sm"
+              className="px-4 py-2 border border-indigo-300 text-indigo-400 rounded-lg hover:bg-indigo-50 transition-colors text-sm"
             >
               View Eligible Students
             </button>
@@ -358,40 +358,40 @@ export default function ScholarshipDetail() {
       {showEligible && eligible && (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="card">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-white">
               Eligible Students ({eligible.totalEligible})
             </h3>
-            <button onClick={() => setShowEligible(false)} className="text-gray-400 hover:text-gray-600">
+            <button onClick={() => setShowEligible(false)} className="text-white/40 hover:text-white/70">
               <XCircle className="w-5 h-5" />
             </button>
           </div>
           {eligible.students.length > 0 ? (
             <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
+              <table className="min-w-full divide-y divide-white/10">
+                <thead className="bg-white/5">
                   <tr>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Student</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Grade</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Institution</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Score</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-white/50 uppercase">Student</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-white/50 uppercase">Grade</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-white/50 uppercase">Institution</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-white/50 uppercase">Score</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-white/50 uppercase">Status</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200">
+                <tbody className="divide-y divide-white/10">
                   {eligible.students.map((s) => (
-                    <tr key={s.studentId} className="hover:bg-gray-50">
+                    <tr key={s.studentId} className="hover:bg-white/5">
                       <td className="px-4 py-3">
-                        <p className="text-sm font-medium text-gray-900">{s.studentName}</p>
-                        <p className="text-xs text-gray-500">{s.enrollmentNumber}</p>
+                        <p className="text-sm font-medium text-white">{s.studentName}</p>
+                        <p className="text-xs text-white/50">{s.enrollmentNumber}</p>
                       </td>
-                      <td className="px-4 py-3 text-sm text-gray-600">{s.grade}</td>
-                      <td className="px-4 py-3 text-sm text-gray-600">{s.institutionName}</td>
-                      <td className="px-4 py-3 text-sm font-medium text-gray-900">{s.compositeScore.toFixed(4)}</td>
+                      <td className="px-4 py-3 text-sm text-white/60">{s.grade}</td>
+                      <td className="px-4 py-3 text-sm text-white/60">{s.institutionName}</td>
+                      <td className="px-4 py-3 text-sm font-medium text-white">{s.compositeScore.toFixed(4)}</td>
                       <td className="px-4 py-3">
                         {s.alreadyApplied ? (
-                          <span className="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full text-xs font-medium">Applied</span>
+                          <span className="px-2 py-0.5 bg-indigo-500/15 text-indigo-400 rounded-full text-xs font-medium">Applied</span>
                         ) : (
-                          <span className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">Not Applied</span>
+                          <span className="px-2 py-0.5 bg-white/10 text-white/60 rounded-full text-xs font-medium">Not Applied</span>
                         )}
                       </td>
                     </tr>
@@ -400,7 +400,7 @@ export default function ScholarshipDetail() {
               </table>
             </div>
           ) : (
-            <p className="text-gray-500 text-sm">No eligible students found based on criteria.</p>
+            <p className="text-white/50 text-sm">No eligible students found based on criteria.</p>
           )}
         </motion.div>
       )}
@@ -408,7 +408,7 @@ export default function ScholarshipDetail() {
       {/* Applications (for managers) */}
       {canManage && applications.length > 0 && (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0, transition: { delay: 0.15 } }} className="card">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Applications ({scholarship.applicationCount})</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Applications ({scholarship.applicationCount})</h3>
           <div className="space-y-3">
             {applications.map((app) => (
               <ApplicationCard key={app.id} app={app} onDecision={handleDecision} />
@@ -419,15 +419,15 @@ export default function ScholarshipDetail() {
               <button
                 onClick={() => setAppPage(p => Math.max(0, p - 1))}
                 disabled={appPage === 0}
-                className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50"
+                className="px-3 py-1 text-sm border border-white/10 rounded hover:bg-white/5 disabled:opacity-50"
               >
                 Previous
               </button>
-              <span className="px-3 py-1 text-sm text-gray-600">Page {appPage + 1} of {appTotalPages}</span>
+              <span className="px-3 py-1 text-sm text-white/60">Page {appPage + 1} of {appTotalPages}</span>
               <button
                 onClick={() => setAppPage(p => Math.min(appTotalPages - 1, p + 1))}
                 disabled={appPage >= appTotalPages - 1}
-                className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50"
+                className="px-3 py-1 text-sm border border-white/10 rounded hover:bg-white/5 disabled:opacity-50"
               >
                 Next
               </button>
@@ -444,26 +444,26 @@ function ApplicationCard({ app, onDecision }) {
   const [comment, setComment] = useState('');
 
   const statusColors = {
-    PENDING: 'bg-yellow-100 text-yellow-700',
-    APPROVED: 'bg-green-100 text-green-700',
-    REJECTED: 'bg-red-100 text-red-600',
-    WITHDRAWN: 'bg-gray-100 text-gray-600',
+    PENDING: 'bg-amber-500/15 text-amber-400',
+    APPROVED: 'bg-emerald-500/15 text-emerald-400',
+    REJECTED: 'bg-red-100 text-red-400',
+    WITHDRAWN: 'bg-white/10 text-white/60',
   };
 
   return (
-    <div className="border border-gray-200 rounded-lg p-4">
+    <div className="border border-white/10 rounded-lg p-4">
       <div className="flex items-center justify-between">
         <div className="flex-1">
           <div className="flex items-center gap-3">
-            <p className="font-medium text-gray-900">{app.studentName}</p>
+            <p className="font-medium text-white">{app.studentName}</p>
             <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${statusColors[app.status]}`}>
               {app.status}
             </span>
           </div>
-          <p className="text-sm text-gray-500 mt-0.5">
+          <p className="text-sm text-white/50 mt-0.5">
             {app.enrollmentNumber} &middot; Grade {app.grade} &middot; {app.institutionName}
             {app.meritScoreAtApplication != null && (
-              <span className="ml-2 font-medium text-indigo-600">
+              <span className="ml-2 font-medium text-indigo-400">
                 Score: {Number(app.meritScoreAtApplication).toFixed(4)}
               </span>
             )}
@@ -471,21 +471,21 @@ function ApplicationCard({ app, onDecision }) {
         </div>
         <button
           onClick={() => setExpanded(!expanded)}
-          className="text-gray-400 hover:text-gray-600"
+          className="text-white/40 hover:text-white/70"
         >
           {expanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
         </button>
       </div>
 
       {expanded && (
-        <div className="mt-3 pt-3 border-t border-gray-100 space-y-3">
+        <div className="mt-3 pt-3 border-t border-white/5 space-y-3">
           {app.statement && (
             <div>
-              <p className="text-xs font-medium text-gray-500 mb-1">Statement:</p>
-              <p className="text-sm text-gray-700">{app.statement}</p>
+              <p className="text-xs font-medium text-white/50 mb-1">Statement:</p>
+              <p className="text-sm text-white/70">{app.statement}</p>
             </div>
           )}
-          <p className="text-xs text-gray-500">Applied: {new Date(app.appliedAt).toLocaleDateString()}</p>
+          <p className="text-xs text-white/50">Applied: {new Date(app.appliedAt).toLocaleDateString()}</p>
 
           {app.status === 'PENDING' && (
             <div className="space-y-2">
@@ -494,7 +494,7 @@ function ApplicationCard({ app, onDecision }) {
                 placeholder="Comment (optional)"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                className="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-1.5 text-sm border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500"
               />
               <div className="flex gap-2">
                 <button
@@ -514,7 +514,7 @@ function ApplicationCard({ app, onDecision }) {
           )}
 
           {app.reviewerName && (
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-white/50">
               Reviewed by {app.reviewerName}
               {app.reviewerComment && ` — "${app.reviewerComment}"`}
               {app.reviewedAt && ` on ${new Date(app.reviewedAt).toLocaleDateString()}`}

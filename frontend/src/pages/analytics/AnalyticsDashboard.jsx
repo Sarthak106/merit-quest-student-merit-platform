@@ -79,8 +79,8 @@ export default function AnalyticsDashboard() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <RefreshCw className="w-8 h-8 text-primary-600 animate-spin" />
-        <span className="ml-3 text-gray-600">Loading analytics...</span>
+        <RefreshCw className="w-8 h-8 text-indigo-400 animate-spin" />
+        <span className="ml-3 text-white/60">Loading analytics...</span>
       </div>
     );
   }
@@ -88,7 +88,7 @@ export default function AnalyticsDashboard() {
   if (error) {
     return (
       <div className="card text-center">
-        <p className="text-red-600 mb-4">{error}</p>
+        <p className="text-red-400 mb-4">{error}</p>
         <button onClick={fetchAll} className="btn-primary">Retry</button>
       </div>
     );
@@ -99,14 +99,14 @@ export default function AnalyticsDashboard() {
       {/* Header */}
       <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary-100 text-primary-600">
+          <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-500/15 text-indigo-400">
             <BarChart3 className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-2xl font-bold text-white">
               {isGovOrAdmin ? 'Platform Analytics' : 'School Analytics'}
             </h1>
-            <p className="text-gray-500">
+            <p className="text-white/50">
               {isGovOrAdmin ? 'Cross-institution performance insights' : 'Your institution performance overview'}
             </p>
           </div>
@@ -120,10 +120,10 @@ export default function AnalyticsDashboard() {
       {overview && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { label: 'Total Students', value: overview.totalStudents, icon: Users, color: 'bg-blue-50 text-blue-600' },
-            { label: 'Approved', value: overview.approvedStudents, icon: Award, color: 'bg-green-50 text-green-600' },
-            { label: 'Avg Merit Score', value: overview.averageCompositeScore?.toFixed(4) ?? '—', icon: TrendingUp, color: 'bg-purple-50 text-purple-600' },
-            { label: isGovOrAdmin ? 'Institutions' : 'Pending Verification', value: isGovOrAdmin ? overview.totalInstitutions : overview.pendingVerification, icon: isGovOrAdmin ? Building2 : BookOpen, color: 'bg-amber-50 text-amber-600' },
+            { label: 'Total Students', value: overview.totalStudents, icon: Users, color: 'bg-blue-500/15 text-blue-400' },
+            { label: 'Approved', value: overview.approvedStudents, icon: Award, color: 'bg-emerald-500/15 text-emerald-400' },
+            { label: 'Avg Merit Score', value: overview.averageCompositeScore?.toFixed(4) ?? '—', icon: TrendingUp, color: 'bg-purple-500/15 text-purple-400' },
+            { label: isGovOrAdmin ? 'Institutions' : 'Pending Verification', value: isGovOrAdmin ? overview.totalInstitutions : overview.pendingVerification, icon: isGovOrAdmin ? Building2 : BookOpen, color: 'bg-amber-500/15 text-amber-400' },
           ].map((stat, i) => {
             const Icon = stat.icon;
             return (
@@ -133,8 +133,8 @@ export default function AnalyticsDashboard() {
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">{stat.label}</p>
-                    <p className="text-xl font-bold text-gray-900">{stat.value}</p>
+                    <p className="text-sm text-white/50">{stat.label}</p>
+                    <p className="text-xl font-bold text-white">{stat.value}</p>
                   </div>
                 </div>
               </motion.div>
@@ -147,35 +147,35 @@ export default function AnalyticsDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Grade Distribution Bar Chart */}
         <motion.div custom={4} initial="hidden" animate="visible" variants={cardVariants} className="card">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Score by Grade</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Score by Grade</h3>
           {gradeDistribution.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={gradeDistribution}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="grade" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" />
+                <XAxis tick={{ fill: "rgba(255,255,255,0.5)" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} dataKey="grade" />
+                <YAxis tick={{ fill: "rgba(255,255,255,0.5)" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} />
+                <Tooltip contentStyle={{ backgroundColor: "rgba(15,23,42,0.95)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", color: "#fff" }} />
+                <Legend wrapperStyle={{ color: "rgba(255,255,255,0.6)" }} />
                 <Bar dataKey="avgCompositeScore" name="Composite" fill="#4f46e5" radius={[4,4,0,0]} />
                 <Bar dataKey="avgAcademicZScore" name="Academic" fill="#0ea5e9" radius={[4,4,0,0]} />
                 <Bar dataKey="avgAttendanceZScore" name="Attendance" fill="#10b981" radius={[4,4,0,0]} />
               </BarChart>
             </ResponsiveContainer>
           ) : (
-            <p className="text-gray-400 text-center py-12">No grade distribution data available</p>
+            <p className="text-white/40 text-center py-12">No grade distribution data available</p>
           )}
         </motion.div>
 
         {/* Score Histogram */}
         <motion.div custom={5} initial="hidden" animate="visible" variants={cardVariants} className="card">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Composite Score Distribution</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Composite Score Distribution</h3>
           {scoreHistogram.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={scoreHistogram}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="range" fontSize={12} />
-                <YAxis />
-                <Tooltip />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" />
+                <XAxis tick={{ fill: "rgba(255,255,255,0.5)" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} dataKey="range" fontSize={12} />
+                <YAxis tick={{ fill: "rgba(255,255,255,0.5)" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} />
+                <Tooltip contentStyle={{ backgroundColor: "rgba(15,23,42,0.95)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", color: "#fff" }} />
                 <Bar dataKey="count" name="Students" fill="#8b5cf6" radius={[4,4,0,0]}>
                   {scoreHistogram.map((_, idx) => (
                     <Cell key={idx} fill={COLORS[idx % COLORS.length]} />
@@ -184,7 +184,7 @@ export default function AnalyticsDashboard() {
               </BarChart>
             </ResponsiveContainer>
           ) : (
-            <p className="text-gray-400 text-center py-12">No score data available</p>
+            <p className="text-white/40 text-center py-12">No score data available</p>
           )}
         </motion.div>
       </div>
@@ -193,40 +193,40 @@ export default function AnalyticsDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Subject Performance Radar */}
         <motion.div custom={6} initial="hidden" animate="visible" variants={cardVariants} className="card">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Subject Performance ({academicYear})</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Subject Performance ({academicYear})</h3>
           {subjectPerformance.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
               <RadarChart data={subjectPerformance}>
-                <PolarGrid />
-                <PolarAngleAxis dataKey="subject" fontSize={12} />
-                <PolarRadiusAxis angle={30} domain={[0, 100]} />
+                <PolarGrid stroke="rgba(255,255,255,0.1)" />
+                <PolarAngleAxis tick={{ fill: "rgba(255,255,255,0.5)" }} dataKey="subject" fontSize={12} />
+                <PolarRadiusAxis tick={{ fill: "rgba(255,255,255,0.4)" }} angle={30} domain={[0, 100]} />
                 <Radar name="Avg %" dataKey="avgPercentage" stroke="#4f46e5" fill="#4f46e5" fillOpacity={0.3} />
                 <Radar name="Max %" dataKey="maxPercentage" stroke="#10b981" fill="#10b981" fillOpacity={0.15} />
-                <Tooltip />
-                <Legend />
+                <Tooltip contentStyle={{ backgroundColor: "rgba(15,23,42,0.95)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", color: "#fff" }} />
+                <Legend wrapperStyle={{ color: "rgba(255,255,255,0.6)" }} />
               </RadarChart>
             </ResponsiveContainer>
           ) : (
-            <p className="text-gray-400 text-center py-12">No subject data available</p>
+            <p className="text-white/40 text-center py-12">No subject data available</p>
           )}
         </motion.div>
 
         {/* Attendance Trends */}
         <motion.div custom={7} initial="hidden" animate="visible" variants={cardVariants} className="card">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Attendance Trends ({academicYear})</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Attendance Trends ({academicYear})</h3>
           {attendanceTrends.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={attendanceTrends}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="month" fontSize={12} />
-                <YAxis domain={[0, 100]} />
-                <Tooltip />
-                <Legend />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" />
+                <XAxis tick={{ fill: "rgba(255,255,255,0.5)" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} dataKey="month" fontSize={12} />
+                <YAxis tick={{ fill: "rgba(255,255,255,0.5)" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} domain={[0, 100]} />
+                <Tooltip contentStyle={{ backgroundColor: "rgba(15,23,42,0.95)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", color: "#fff" }} />
+                <Legend wrapperStyle={{ color: "rgba(255,255,255,0.6)" }} />
                 <Line type="monotone" dataKey="avgAttendancePercent" name="Avg Attendance %" stroke="#10b981" strokeWidth={2} dot={{ r: 4 }} />
               </LineChart>
             </ResponsiveContainer>
           ) : (
-            <p className="text-gray-400 text-center py-12">No attendance data available</p>
+            <p className="text-white/40 text-center py-12">No attendance data available</p>
           )}
         </motion.div>
       </div>
@@ -234,14 +234,14 @@ export default function AnalyticsDashboard() {
       {/* Institution Comparison (Gov/Admin only) */}
       {isGovOrAdmin && institutionComparison.length > 0 && (
         <motion.div custom={8} initial="hidden" animate="visible" variants={cardVariants} className="card">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Institution Comparison</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Institution Comparison</h3>
           <ResponsiveContainer width="100%" height={350}>
             <BarChart data={institutionComparison} layout="vertical">
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" />
               <XAxis type="number" />
-              <YAxis dataKey="institutionName" type="category" width={150} fontSize={12} />
-              <Tooltip />
-              <Legend />
+              <YAxis tick={{ fill: "rgba(255,255,255,0.5)" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} dataKey="institutionName" type="category" width={150} fontSize={12} />
+              <Tooltip contentStyle={{ backgroundColor: "rgba(15,23,42,0.95)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", color: "#fff" }} />
+              <Legend wrapperStyle={{ color: "rgba(255,255,255,0.6)" }} />
               <Bar dataKey="avgCompositeScore" name="Avg Composite" fill="#4f46e5" radius={[0,4,4,0]} />
               <Bar dataKey="avgAcademicZScore" name="Avg Academic" fill="#0ea5e9" radius={[0,4,4,0]} />
             </BarChart>
@@ -251,11 +251,11 @@ export default function AnalyticsDashboard() {
 
       {/* Top Performers Table */}
       <motion.div custom={9} initial="hidden" animate="visible" variants={cardVariants} className="card">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Top Performers</h3>
+        <h3 className="text-lg font-semibold text-white mb-4">Top Performers</h3>
         {topPerformers.length > 0 ? (
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+            <table className="min-w-full divide-y divide-white/10">
+              <thead className="bg-white/5">
                 <tr>
                   <th className="table-header">#</th>
                   <th className="table-header">Student</th>
@@ -267,14 +267,14 @@ export default function AnalyticsDashboard() {
                   {isGovOrAdmin && <th className="table-header">State Rank</th>}
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="divide-y divide-white/5">
                 {topPerformers.map((tp, idx) => (
                   <motion.tr
                     key={tp.studentId}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="hover:bg-gray-50"
+                    className="hover:bg-white/5"
                   >
                     <td className="table-cell font-medium">
                       {idx < 3 ? (
@@ -284,12 +284,12 @@ export default function AnalyticsDashboard() {
                       ) : idx + 1}
                     </td>
                     <td className="table-cell">
-                      <div className="font-medium text-gray-900">{tp.studentName}</div>
-                      <div className="text-xs text-gray-500">{tp.enrollmentNumber}</div>
+                      <div className="font-medium text-white">{tp.studentName}</div>
+                      <div className="text-xs text-white/50">{tp.enrollmentNumber}</div>
                     </td>
                     <td className="table-cell">{tp.grade}</td>
-                    {isGovOrAdmin && <td className="table-cell text-gray-600">{tp.institutionName}</td>}
-                    <td className="table-cell font-semibold text-primary-600">{tp.compositeScore?.toFixed(4)}</td>
+                    {isGovOrAdmin && <td className="table-cell text-white/60">{tp.institutionName}</td>}
+                    <td className="table-cell font-semibold text-indigo-400">{tp.compositeScore?.toFixed(4)}</td>
                     <td className="table-cell">{tp.rankSchool ?? '—'}</td>
                     {isGovOrAdmin && <td className="table-cell">{tp.rankDistrict ?? '—'}</td>}
                     {isGovOrAdmin && <td className="table-cell">{tp.rankState ?? '—'}</td>}
@@ -299,7 +299,7 @@ export default function AnalyticsDashboard() {
             </table>
           </div>
         ) : (
-          <p className="text-gray-400 text-center py-8">No performers data available. Run a merit calculation first.</p>
+          <p className="text-white/40 text-center py-8">No performers data available. Run a merit calculation first.</p>
         )}
       </motion.div>
     </div>

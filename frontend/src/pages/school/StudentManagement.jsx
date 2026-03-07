@@ -128,10 +128,10 @@ export default function StudentManagement() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Student Management</h1>
-          <p className="text-sm text-gray-500 mt-1">Manage student records for your institution</p>
+          <h1 className="text-2xl font-bold text-white">Student Management</h1>
+          <p className="text-sm text-white/50 mt-1">Manage student records for your institution</p>
         </div>
-        <button onClick={openCreate} className="btn-primary flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+        <button onClick={openCreate} className="btn-primary flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition-colors">
           <Plus className="w-4 h-4" /> Add Student
         </button>
       </div>
@@ -139,42 +139,42 @@ export default function StudentManagement() {
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
           <input type="text" placeholder="Search by name or enrollment..." value={search} onChange={handleSearchChange}
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" />
+            className="w-full pl-10 pr-4 py-2 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white/5 text-white" />
         </div>
         <input type="text" placeholder="Filter by grade" value={gradeFilter} onChange={(e) => { setGradeFilter(e.target.value); setPage(0); }}
-          className="w-40 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" />
+          className="w-40 px-4 py-2 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white/5 text-white" />
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+      <div className="glass rounded-2xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="bg-white/5 border-b border-white/10">
               <tr>
                 {['Enrollment #', 'Name', 'Grade', 'Gender', 'DOB', 'Guardian', 'Actions'].map((h) => (
-                  <th key={h} className="px-4 py-3 text-left font-medium text-gray-600">{h}</th>
+                  <th key={h} className="px-4 py-3 text-left font-medium text-white/60">{h}</th>
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-white/5">
               {loading ? (
-                <tr><td colSpan={7} className="px-4 py-8 text-center text-gray-400">Loading...</td></tr>
+                <tr><td colSpan={7} className="px-4 py-8 text-center text-white/40">Loading...</td></tr>
               ) : students.length === 0 ? (
-                <tr><td colSpan={7} className="px-4 py-8 text-center text-gray-400">No students found</td></tr>
+                <tr><td colSpan={7} className="px-4 py-8 text-center text-white/40">No students found</td></tr>
               ) : students.map((s) => (
-                <motion.tr key={s.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="hover:bg-gray-50">
+                <motion.tr key={s.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="hover:bg-white/5">
                   <td className="px-4 py-3 font-mono text-xs">{s.enrollmentNumber}</td>
                   <td className="px-4 py-3 font-medium">{s.firstName} {s.lastName}</td>
                   <td className="px-4 py-3">{s.grade}{s.section ? `-${s.section}` : ''}</td>
                   <td className="px-4 py-3 capitalize">{s.gender?.toLowerCase()}</td>
                   <td className="px-4 py-3">{s.dateOfBirth}</td>
-                  <td className="px-4 py-3 text-gray-500">{s.guardianName || '—'}</td>
+                  <td className="px-4 py-3 text-white/50">{s.guardianName || '—'}</td>
                   <td className="px-4 py-3">
                     <div className="flex gap-2">
-                      <button onClick={() => openEdit(s)} className="p-1.5 text-gray-400 hover:text-primary-600 rounded-md hover:bg-primary-50"><Edit2 className="w-4 h-4" /></button>
-                      <button onClick={() => handleDelete(s.id)} className="p-1.5 text-gray-400 hover:text-red-600 rounded-md hover:bg-red-50"><Trash2 className="w-4 h-4" /></button>
+                      <button onClick={() => openEdit(s)} className="p-1.5 text-white/40 hover:text-indigo-400 rounded-md hover:bg-indigo-500/10"><Edit2 className="w-4 h-4" /></button>
+                      <button onClick={() => handleDelete(s.id)} className="p-1.5 text-white/40 hover:text-red-400 rounded-md hover:bg-red-500/10"><Trash2 className="w-4 h-4" /></button>
                     </div>
                   </td>
                 </motion.tr>
@@ -185,13 +185,13 @@ export default function StudentManagement() {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-between px-4 py-3 border-t border-gray-200 bg-gray-50">
-            <span className="text-sm text-gray-500">Page {page + 1} of {totalPages}</span>
+          <div className="flex items-center justify-between px-4 py-3 border-t border-white/10 bg-white/5">
+            <span className="text-sm text-white/50">Page {page + 1} of {totalPages}</span>
             <div className="flex gap-2">
               <button onClick={() => setPage(p => Math.max(0, p - 1))} disabled={page === 0}
-                className="p-1.5 rounded-md border border-gray-300 disabled:opacity-40 hover:bg-white"><ChevronLeft className="w-4 h-4" /></button>
+                className="p-1.5 rounded-md border border-white/10 disabled:opacity-40 hover:bg-white/10"><ChevronLeft className="w-4 h-4" /></button>
               <button onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))} disabled={page >= totalPages - 1}
-                className="p-1.5 rounded-md border border-gray-300 disabled:opacity-40 hover:bg-white"><ChevronRight className="w-4 h-4" /></button>
+                className="p-1.5 rounded-md border border-white/10 disabled:opacity-40 hover:bg-white/10"><ChevronRight className="w-4 h-4" /></button>
             </div>
           </div>
         )}
@@ -201,16 +201,16 @@ export default function StudentManagement() {
       <AnimatePresence>
         {showForm && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
             <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+              className="glass rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
                 <h2 className="text-lg font-semibold">{editing ? 'Edit Student' : 'Add Student'}</h2>
-                <button onClick={() => setShowForm(false)} className="p-1 rounded-md hover:bg-gray-100"><X className="w-5 h-5" /></button>
+                <button onClick={() => setShowForm(false)} className="p-1 rounded-md hover:bg-white/10"><X className="w-5 h-5" /></button>
               </div>
 
               <form onSubmit={handleSubmit} className="p-6 space-y-4">
-                {errors._form && <div className="p-3 bg-red-50 text-red-700 text-sm rounded-lg">{errors._form}</div>}
+                {errors._form && <div className="p-3 bg-red-50 text-red-400 text-sm rounded-lg">{errors._form}</div>}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Field label="Enrollment #" error={errors.enrollmentNumber}>
@@ -255,16 +255,16 @@ export default function StudentManagement() {
                 {!captchaVerified ? (
                   <TextCaptcha onVerified={() => setCaptchaVerified(true)} />
                 ) : (
-                  <div className="flex items-center gap-2 text-sm text-green-600 bg-green-50 rounded-lg p-3">
+                  <div className="flex items-center gap-2 text-sm text-emerald-400 bg-emerald-500/10 rounded-lg p-3">
                     <span>✓ Human verified</span>
                   </div>
                 )}
 
                 <div className="flex justify-end gap-3 pt-2">
                   <button type="button" onClick={() => setShowForm(false)}
-                    className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200">Cancel</button>
+                    className="px-4 py-2 text-sm font-medium text-white/70 bg-white/10 rounded-lg hover:bg-white/10">Cancel</button>
                   <button type="submit" disabled={submitting}
-                    className="px-4 py-2 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 disabled:opacity-50">
+                    className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-500 disabled:opacity-50">
                     {submitting ? 'Saving...' : (editing ? 'Update' : 'Create')}
                   </button>
                 </div>
@@ -280,7 +280,7 @@ export default function StudentManagement() {
 function Field({ label, error, children }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
+      <label className="block text-sm font-medium text-white/60 mb-1">{label}</label>
       {children}
       {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
     </div>
