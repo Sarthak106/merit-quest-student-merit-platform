@@ -10,6 +10,7 @@ const NAV_ITEMS = {
     { label: 'My Performance', path: '/performance', icon: BarChart3 },
     { label: 'Merit Score',  path: '/merit',        icon: Award },
     { label: 'Scholarships', path: '/scholarships', icon: BookOpen },
+    { label: 'My Applications', path: '/my-applications', icon: GraduationCap },
     { label: 'Alerts',       path: '/alerts',       icon: Bell },
   ],
   PARENT: [
@@ -52,6 +53,7 @@ const NAV_ITEMS = {
     { label: 'Institutions',  path: '/admin/institutions', icon: Shield },
     { label: 'Analytics',     path: '/analytics',       icon: BarChart3 },
     { label: 'Merit Lists',   path: '/merit',           icon: Award },
+    { label: 'Scholarships',  path: '/scholarships',    icon: BookOpen },
     { label: 'Audit Logs',    path: '/audit-log',       icon: ClipboardCheck },
     { label: 'ML Models',     path: '/admin/ml-models', icon: Settings },
   ],

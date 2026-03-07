@@ -17,7 +17,7 @@
 <br />
 
 <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square" alt="Status" />
-<img src="https://img.shields.io/badge/Phase-5%20of%208-blue?style=flat-square" alt="Phase" />
+<img src="https://img.shields.io/badge/Phase-6%20of%208-blue?style=flat-square" alt="Phase" />
 <img src="https://img.shields.io/github/last-commit/ayush-mishra7/merit-quest-full-stack-student-merit-platform?style=flat-square&color=green" alt="Last Commit" />
 
 ---
@@ -130,9 +130,12 @@
 - **Redis-cached** — sub-second dashboard loads with intelligent caching
 
 ### 🎓 Scholarship Management
-- **Post opportunities** with eligibility filters (merit score, income, grades, district)
-- **Auto-matching** — students automatically discover scholarships they qualify for
-- **Application workflow** — apply, track status, manage applicants
+- **Post opportunities** with JSONB eligibility criteria (min composite score, grades, districts, boards)
+- **Auto-matching** — `ScholarshipMatchingService` automatically finds eligible students per criteria
+- **Application workflow** — students apply with personal statement, managers approve/reject with comments
+- **Slot management** — filled-slots counter incremented on approval, capacity enforcement
+- **Merit score snapshot** — composite score captured at application time for fairness
+- **Card grid UI** — responsive scholarship cards with search, filters, "Expiring Soon" animations
 
 ### 🤖 ML-Powered Early Warning System
 - **Dropout risk prediction** using Random Forest / Gradient Boosting
@@ -216,6 +219,12 @@ merit-quest/
 │   │   │   ├── controller/        # AnalyticsController (9 endpoints)
 │   │   │   ├── dto/               # OverviewStats, TopPerformer, GradeDistribution, etc.
 │   │   │   └── service/           # AnalyticsService (Redis @Cacheable)
+│   │   ├── scholarship/            # Scholarship management
+│   │   │   ├── controller/        # ScholarshipController (12 endpoints)
+│   │   │   ├── dto/               # ScholarshipRequest/Response, Application DTOs
+│   │   │   ├── entity/            # Scholarship (JSONB criteria), ScholarshipApplication
+│   │   │   ├── repository/        # JOIN FETCH queries, eligibility filters
+│   │   │   └── service/           # ScholarshipService, ScholarshipMatchingService
 │   │   ├── config/                # SecurityConfig, AsyncConfig, RedisConfig
 │   │   ├── notification/          # NotificationService interface
 │   │   ├── student/               # Student data management
@@ -242,16 +251,17 @@ merit-quest/
 │   │       └── service/           # MeritCalculationService, MeritConfigService
 │   ├── src/main/resources/
 │   │   ├── application.yml        # App configuration
-│   │   └── db/migration/          # Flyway SQL migrations (V1–V6)
+│   │   └── db/migration/          # Flyway SQL migrations (V1–V7)
 │   ├── build.gradle               # Gradle build config
 │   └── Dockerfile                 # Multi-stage Docker build
 │
 ├── 📁 frontend/                   # React 18 + Vite
 │   ├── src/
 │   │   ├── components/            # Layout, Sidebar, ProtectedRoute
-│   │   ├── pages/                 # Login, Dashboard, StudentManagement,
-│   │   │                          # BulkUpload, VerificationQueue, AuditLogViewer,
-│   │   │                          # MeritLists, AnalyticsDashboard, StudentPerformance
+│   │   ├── pages/                 # Login, Dashboard, StudentManagement, BulkUpload,
+│   │   │                          # VerificationQueue, AuditLogViewer, MeritLists,
+│   │   │                          # AnalyticsDashboard, StudentPerformance,
+│   │   │                          # ScholarshipList, ScholarshipDetail, ScholarshipForm
 │   │   ├── services/              # Axios API client with JWT interceptor
 │   │   ├── store/                 # Zustand auth store (persisted)
 │   │   └── utils/                 # Role-based navigation config
@@ -468,6 +478,23 @@ docker-compose up --build
 | `GET` | `/api/analytics/institution-comparison` | Cross-institution comparison | SYSTEM_ADMIN, GOV_AUTHORITY |
 | `GET` | `/api/analytics/student/{studentId}?academicYear=` | Individual student performance | Bearer Token |
 | `POST` | `/api/analytics/cache/evict` | Evict all analytics caches | SYSTEM_ADMIN |
+
+### Scholarship Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| `POST` | `/api/scholarships` | Create a scholarship | NGO_REP, GOV_AUTHORITY, SYSTEM_ADMIN |
+| `PUT` | `/api/scholarships/{id}` | Update a scholarship | NGO_REP, GOV_AUTHORITY, SYSTEM_ADMIN |
+| `POST` | `/api/scholarships/{id}/close` | Close a scholarship | NGO_REP, GOV_AUTHORITY, SYSTEM_ADMIN |
+| `GET` | `/api/scholarships` | List active scholarships (paginated) | Bearer Token |
+| `GET` | `/api/scholarships/mine` | List own posted scholarships | NGO_REP, GOV_AUTHORITY, SYSTEM_ADMIN |
+| `GET` | `/api/scholarships/{id}` | Get scholarship details | Bearer Token |
+| `POST` | `/api/scholarships/apply` | Apply to a scholarship | STUDENT |
+| `POST` | `/api/scholarships/applications/{id}/decide` | Approve/reject application | NGO_REP, GOV_AUTHORITY, SYSTEM_ADMIN |
+| `DELETE` | `/api/scholarships/{id}/withdraw` | Withdraw application | STUDENT |
+| `GET` | `/api/scholarships/{id}/applications` | List applicants with merit scores | NGO_REP, GOV_AUTHORITY, SYSTEM_ADMIN |
+| `GET` | `/api/scholarships/my-applications` | Student's own applications | STUDENT |
+| `GET` | `/api/scholarships/{id}/eligible-students` | Auto-match eligible students | NGO_REP, GOV_AUTHORITY, SYSTEM_ADMIN |
 
 ### Sample Requests
 
@@ -732,6 +759,80 @@ docker-compose up --build
 ```
 </details>
 
+<details>
+<summary><b>POST /api/scholarships</b> — Create a Scholarship</summary>
+
+```json
+{
+  "title": "National Merit Scholarship 2026",
+  "description": "For outstanding students across India",
+  "organizationName": "Ministry of Education",
+  "organizationType": "GOVERNMENT",
+  "amount": 50000,
+  "currency": "INR",
+  "totalSlots": 100,
+  "applicationDeadline": "2026-12-31",
+  "startDate": "2027-01-01",
+  "endDate": "2027-12-31",
+  "eligibilityCriteria": {
+    "minCompositeScore": 0.5,
+    "grades": ["10", "12"],
+    "boards": ["CBSE", "ICSE"]
+  }
+}
+```
+
+**Response (201 Created):**
+```json
+{
+  "success": true,
+  "message": "Scholarship created",
+  "data": {
+    "id": 1,
+    "title": "National Merit Scholarship 2026",
+    "organizationName": "Ministry of Education",
+    "organizationType": "GOVERNMENT",
+    "amount": 50000,
+    "totalSlots": 100,
+    "filledSlots": 0,
+    "status": "ACTIVE",
+    "eligibilityCriteria": {
+      "minCompositeScore": 0.5,
+      "grades": ["10", "12"],
+      "boards": ["CBSE", "ICSE"]
+    }
+  }
+}
+```
+</details>
+
+<details>
+<summary><b>GET /api/scholarships/{id}/eligible-students</b> — Auto-Match Eligible Students</summary>
+
+**Response (200 OK):**
+```json
+{
+  "success": true,
+  "data": {
+    "scholarshipId": 1,
+    "scholarshipTitle": "National Merit Scholarship 2026",
+    "totalEligible": 2,
+    "students": [
+      {
+        "studentId": 5,
+        "enrollmentNumber": "MERIT-TEST-1",
+        "studentName": "Student1 Test",
+        "grade": "10",
+        "institutionName": "Merit Quest Central",
+        "compositeScore": 1.32576,
+        "alreadyApplied": false
+      }
+    ]
+  }
+}
+```
+</details>
+
 ---
 
 ## 🔒 Security
@@ -760,7 +861,7 @@ docker-compose up --build
 | **Phase 3** | Verification Workflow & Audit Logging | ✅ Complete |
 | **Phase 4** | Merit Calculation Engine (Z-score, rankings) | ✅ Complete |
 | **Phase 5** | Analytics Dashboards (Recharts + Redis Caching) | ✅ Complete |
-| **Phase 6** | Scholarship Management | 🔲 Planned |
+| **Phase 6** | Scholarship Management (JSONB Eligibility + Auto-Matching) | ✅ Complete |
 | **Phase 7** | ML Pipeline — Dropout Prediction | 🔲 Planned |
 | **Phase 8** | Production Deployment & DevOps | 🔲 Planned |
 

@@ -12,6 +12,9 @@ import AuditLogViewer from './pages/audit/AuditLogViewer';
 import MeritLists from './pages/merit/MeritLists';
 import AnalyticsDashboard from './pages/analytics/AnalyticsDashboard';
 import StudentPerformance from './pages/performance/StudentPerformance';
+import ScholarshipList from './pages/scholarship/ScholarshipList';
+import ScholarshipDetail from './pages/scholarship/ScholarshipDetail';
+import ScholarshipForm from './pages/scholarship/ScholarshipForm';
 
 export default function App() {
   return (
@@ -35,14 +38,18 @@ export default function App() {
         <Route path="/performance" element={<StudentPerformance />} />
         <Route path="/performance/:studentId" element={<StudentPerformance />} />
         <Route path="/merit" element={<MeritLists />} />
-        <Route path="/scholarships" element={<Placeholder title="Scholarships" />} />
+        <Route path="/scholarships" element={<ScholarshipList />} />
+        <Route path="/scholarships/create" element={<ScholarshipForm />} />
+        <Route path="/scholarships/:id" element={<ScholarshipDetail />} />
+        <Route path="/scholarships/:id/edit" element={<ScholarshipForm />} />
+        <Route path="/my-applications" element={<ScholarshipList myApplications />} />
         <Route path="/alerts" element={<Placeholder title="Alerts" />} />
         <Route path="/students" element={<StudentManagement />} />
         <Route path="/upload" element={<BulkUpload />} />
         <Route path="/certificates" element={<Placeholder title="Certificates" />} />
         <Route path="/verification" element={<VerificationQueue />} />
         <Route path="/analytics" element={<AnalyticsDashboard />} />
-        <Route path="/applicants" element={<Placeholder title="Applicants" />} />
+        <Route path="/applicants" element={<ScholarshipList />} />
         <Route path="/audit-log" element={<AuditLogViewer />} />
         <Route path="/admin/users" element={<Placeholder title="User Management" />} />
         <Route path="/admin/institutions" element={<Placeholder title="Institutions" />} />
