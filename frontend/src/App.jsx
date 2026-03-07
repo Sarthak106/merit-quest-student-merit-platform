@@ -15,6 +15,8 @@ import StudentPerformance from './pages/performance/StudentPerformance';
 import ScholarshipList from './pages/scholarship/ScholarshipList';
 import ScholarshipDetail from './pages/scholarship/ScholarshipDetail';
 import ScholarshipForm from './pages/scholarship/ScholarshipForm';
+import AlertPanel from './pages/ml/AlertPanel';
+import MLModelManagement from './pages/ml/MLModelManagement';
 
 export default function App() {
   return (
@@ -43,7 +45,7 @@ export default function App() {
         <Route path="/scholarships/:id" element={<ScholarshipDetail />} />
         <Route path="/scholarships/:id/edit" element={<ScholarshipForm />} />
         <Route path="/my-applications" element={<ScholarshipList myApplications />} />
-        <Route path="/alerts" element={<Placeholder title="Alerts" />} />
+        <Route path="/alerts" element={<AlertPanel />} />
         <Route path="/students" element={<StudentManagement />} />
         <Route path="/upload" element={<BulkUpload />} />
         <Route path="/certificates" element={<Placeholder title="Certificates" />} />
@@ -53,7 +55,7 @@ export default function App() {
         <Route path="/audit-log" element={<AuditLogViewer />} />
         <Route path="/admin/users" element={<Placeholder title="User Management" />} />
         <Route path="/admin/institutions" element={<Placeholder title="Institutions" />} />
-        <Route path="/admin/ml-models" element={<Placeholder title="ML Models" />} />
+        <Route path="/admin/ml-models" element={<MLModelManagement />} />
       </Route>
 
       {/* Default redirect */}

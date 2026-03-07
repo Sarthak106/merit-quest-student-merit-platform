@@ -17,7 +17,7 @@
 <br />
 
 <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square" alt="Status" />
-<img src="https://img.shields.io/badge/Phase-6%20of%208-blue?style=flat-square" alt="Phase" />
+<img src="https://img.shields.io/badge/Phase-7%20of%208-blue?style=flat-square" alt="Phase" />
 <img src="https://img.shields.io/github/last-commit/ayush-mishra7/merit-quest-full-stack-student-merit-platform?style=flat-square&color=green" alt="Last Commit" />
 
 ---
@@ -243,15 +243,21 @@ merit-quest/
 │   │   │   ├── entity/            # VerificationItem
 │   │   │   ├── repository/        # VerificationRepository
 │   │   │   └── service/           # VerificationService
-│   │   └── merit/                 # Merit calculation engine
-│   │       ├── controller/        # MeritController (calculate, lists, config)
-│   │       ├── dto/               # MeritScoreResponse, BatchResponse, etc.
-│   │       ├── entity/            # MeritScore, MeritCalculationBatch, MeritConfig
-│   │       ├── repository/        # Score/Batch/Config repositories
-│   │       └── service/           # MeritCalculationService, MeritConfigService
+│   │   ├── merit/                 # Merit calculation engine
+│   │   │   ├── controller/        # MeritController (calculate, lists, config)
+│   │   │   ├── dto/               # MeritScoreResponse, BatchResponse, etc.
+│   │   │   ├── entity/            # MeritScore, MeritCalculationBatch, MeritConfig
+│   │   │   ├── repository/        # Score/Batch/Config repositories
+│   │   │   └── service/           # MeritCalculationService, MeritConfigService
+│   │   └── ml/                    # ML pipeline integration
+│   │       ├── controller/        # AlertController, MLModelController
+│   │       ├── dto/               # AlertResponse, MLServiceDto, MLModelVersionResponse
+│   │       ├── entity/            # Alert, MLModelVersion
+│   │       ├── repository/        # AlertRepository, MLModelVersionRepository
+│   │       └── service/           # AlertService, MLServiceClient, MLModelService
 │   ├── src/main/resources/
 │   │   ├── application.yml        # App configuration
-│   │   └── db/migration/          # Flyway SQL migrations (V1–V7)
+│   │   └── db/migration/          # Flyway SQL migrations (V1–V8)
 │   ├── build.gradle               # Gradle build config
 │   └── Dockerfile                 # Multi-stage Docker build
 │
@@ -261,7 +267,8 @@ merit-quest/
 │   │   ├── pages/                 # Login, Dashboard, StudentManagement, BulkUpload,
 │   │   │                          # VerificationQueue, AuditLogViewer, MeritLists,
 │   │   │                          # AnalyticsDashboard, StudentPerformance,
-│   │   │                          # ScholarshipList, ScholarshipDetail, ScholarshipForm
+│   │   │                          # ScholarshipList, ScholarshipDetail, ScholarshipForm,
+│   │   │                          # AlertPanel, MLModelManagement
 │   │   ├── services/              # Axios API client with JWT interceptor
 │   │   ├── store/                 # Zustand auth store (persisted)
 │   │   └── utils/                 # Role-based navigation config
@@ -269,7 +276,17 @@ merit-quest/
 │   ├── vite.config.js
 │   └── Dockerfile
 │
-├── 📁 ml-service/                 # Python FastAPI (Phase 7)
+├── 📁 ml-service/                 # Python FastAPI ML microservice
+│   ├── app/
+│   │   ├── main.py                # FastAPI endpoints (predict, train, health)
+│   │   ├── schemas.py             # Pydantic request/response models
+│   │   └── pipeline/
+│   │       ├── data_loader.py     # SQL feature extraction from PostgreSQL
+│   │       ├── preprocessor.py    # Feature engineering & label creation
+│   │       ├── trainer.py         # Model training (Random Forest / Gradient Boosting)
+│   │       └── registry.py        # Model versioning via MinIO + PostgreSQL
+│   ├── requirements.txt
+│   └── Dockerfile
 ├── 📁 nginx/                      # Reverse proxy config
 │   └── nginx.conf                 # Rate limiting, security headers, proxy
 │
@@ -370,20 +387,26 @@ cd merit-quest-full-stack-student-merit-platform
 # 2. Start infrastructure services
 docker-compose up -d postgres redis minio
 
-# 3. Start the backend (new terminal)
+# 3. Start the ML service (new terminal)
+cd ml-service
+pip install -r requirements.txt
+uvicorn app.main:app --host 0.0.0.0 --port 5000
+
+# 4. Start the backend (new terminal)
 cd backend
 ./gradlew bootRun          # Linux/Mac
 .\gradlew.bat bootRun      # Windows
 
-# 4. Start the frontend (new terminal)
+# 5. Start the frontend (new terminal)
 cd frontend
 npm install
 npm run dev
 
-# 5. Open in browser
-#    Frontend:  http://localhost:3000
-#    API:       http://localhost:8080
-#    MinIO UI:  http://localhost:9001
+# 6. Open in browser
+#    Frontend:    http://localhost:3000
+#    API:         http://localhost:8080
+#    ML Service:  http://localhost:5000
+#    MinIO UI:    http://localhost:9001
 ```
 
 ### Default Credentials
@@ -495,6 +518,21 @@ docker-compose up --build
 | `GET` | `/api/scholarships/{id}/applications` | List applicants with merit scores | NGO_REP, GOV_AUTHORITY, SYSTEM_ADMIN |
 | `GET` | `/api/scholarships/my-applications` | Student's own applications | STUDENT |
 | `GET` | `/api/scholarships/{id}/eligible-students` | Auto-match eligible students | NGO_REP, GOV_AUTHORITY, SYSTEM_ADMIN |
+
+### ML & Alert Endpoints
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| `GET` | `/api/admin/ml-models` | List all ML model versions | SYSTEM_ADMIN |
+| `GET` | `/api/admin/ml-models/health` | ML service health check | SYSTEM_ADMIN |
+| `POST` | `/api/admin/ml-models/train?modelType=` | Train a new model | SYSTEM_ADMIN |
+| `POST` | `/api/alerts/generate/{institutionId}` | Generate dropout risk alerts | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `GET` | `/api/alerts/institution/{institutionId}` | List institution alerts (paginated) | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `GET` | `/api/alerts/student/{studentId}` | List student alerts | STUDENT, PARENT, SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `GET` | `/api/alerts/institution/{id}/unacknowledged` | Unacknowledged alerts | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `PUT` | `/api/alerts/{alertId}/acknowledge` | Acknowledge an alert | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `GET` | `/api/alerts/count/institution/{id}` | Unacknowledged alert count | SCHOOL_ADMIN, SYSTEM_ADMIN |
+| `GET` | `/api/alerts/count/student/{id}` | Student unacknowledged count | STUDENT, PARENT, SCHOOL_ADMIN, SYSTEM_ADMIN |
 
 ### Sample Requests
 
@@ -862,7 +900,7 @@ docker-compose up --build
 | **Phase 4** | Merit Calculation Engine (Z-score, rankings) | ✅ Complete |
 | **Phase 5** | Analytics Dashboards (Recharts + Redis Caching) | ✅ Complete |
 | **Phase 6** | Scholarship Management (JSONB Eligibility + Auto-Matching) | ✅ Complete |
-| **Phase 7** | ML Pipeline — Dropout Prediction | 🔲 Planned |
+| **Phase 7** | ML Pipeline — Dropout Prediction & Early Warning | ✅ Complete |
 | **Phase 8** | Production Deployment & DevOps | 🔲 Planned |
 
 ---
@@ -929,6 +967,25 @@ docker-compose up --build
                      │ completed_at         │ │ rank_district    │
                      └──────────────────────┘ │ rank_state       │
                                               └──────────────────┘
+
+┌──────────────────┐ ┌──────────────────┐
+│ ml_model_versions│ │     alerts       │
+├──────────────────┤ ├──────────────────┤
+│ id           PK  │ │ id           PK  │
+│ model_type       │ │ student_id   FK  │
+│ version          │ │ institution_id FK│
+│ file_key         │ │ alert_type       │
+│ metrics (jsonb)  │ │ severity         │
+│ feature_impor    │ │ risk_score       │
+│   tances (jsonb) │ │ message          │
+│ training_samples │ │ feature_impor    │
+│ feature_count    │ │   tances (jsonb) │
+│ trained_at       │ │ model_version    │
+│ created_at       │ │ acknowledged     │
+└──────────────────┘ │ acknowledged_by  │
+                     │ acknowledged_at  │
+                     │ created_at       │
+                     └──────────────────┘
 ```
 
 ---

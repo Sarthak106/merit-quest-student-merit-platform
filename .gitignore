@@ -24,7 +24,7 @@ frontend/dist/
 frontend/.cache/
 
 # === ML Service (Python) ===
-ml-service/__pycache__/
+**/__pycache__/
 ml-service/*.pyc
 ml-service/.venv/
 ml-service/venv/

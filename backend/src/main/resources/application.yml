@@ -46,6 +46,9 @@ app:
   cors:
     allowed-origins: http://localhost:3000,http://localhost:80
 
+  ml-service:
+    base-url: http://localhost:5000
+
 minio:
   endpoint: http://localhost:9000
   access-key: minioadmin

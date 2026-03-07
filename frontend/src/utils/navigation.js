@@ -18,6 +18,7 @@ const NAV_ITEMS = {
     { label: 'Child Performance', path: '/performance', icon: BarChart3 },
     { label: 'Merit Score',  path: '/merit',         icon: Award },
     { label: 'Scholarships', path: '/scholarships',  icon: BookOpen },
+    { label: 'Alerts',       path: '/alerts',        icon: Bell },
   ],
   SCHOOL_ADMIN: [
     { label: 'Dashboard',      path: '/dashboard',      icon: LayoutDashboard },
@@ -26,6 +27,7 @@ const NAV_ITEMS = {
     { label: 'Merit Lists',    path: '/merit',          icon: Award },
     { label: 'Analytics',      path: '/analytics',      icon: BarChart3 },
     { label: 'Certificates',   path: '/certificates',   icon: GraduationCap },
+    { label: 'Alerts',         path: '/alerts',         icon: Bell },
   ],
   DATA_VERIFIER: [
     { label: 'Dashboard',        path: '/dashboard',      icon: LayoutDashboard },
