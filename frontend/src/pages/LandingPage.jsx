@@ -28,6 +28,7 @@ import GradientText from '../components/ui/GradientText';
 import CountUp from '../components/ui/CountUp';
 import GlowButton from '../components/ui/GlowButton';
 import Particles from '../components/ui/Particles';
+import GooeyNav from '../components/ui/GooeyNav';
 
 const FluidGlass = lazy(() => import('../components/ui/FluidGlass'));
 
@@ -679,10 +680,23 @@ export default function LandingPage() {
             </div>
             <span className="font-display font-bold text-white text-xl">Merit Quest</span>
           </Link>
-          <div className="hidden md:flex items-center gap-8 text-sm text-white/50">
-            <a href="#features" className="hover:text-white transition-colors">Features</a>
-            <a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a>
-            <a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a>
+          <div className="hidden md:flex items-center">
+            <GooeyNav
+              items={[
+                { label: 'Features', href: '#features' },
+                { label: 'How It Works', href: '#how-it-works' },
+                { label: 'Stats', href: '#stats' },
+                { label: 'Tech', href: '#tech' },
+                { label: 'Testimonials', href: '#testimonials' },
+              ]}
+              animationTime={600}
+              particleCount={15}
+              particleDistances={[90, 10]}
+              particleR={100}
+              timeVariance={300}
+              colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+              initialActiveIndex={0}
+            />
           </div>
           <div className="flex items-center gap-3">
             <Link to="/login">
@@ -701,11 +715,15 @@ export default function LandingPage() {
       <div id="features">
         <FeaturesSection />
       </div>
-      <StatsSection />
+      <div id="stats">
+        <StatsSection />
+      </div>
       <div id="how-it-works">
         <HowItWorksSection />
       </div>
-      <TechSection />
+      <div id="tech">
+        <TechSection />
+      </div>
       <div id="testimonials">
         <TestimonialsSection />
       </div>
