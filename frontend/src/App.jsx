@@ -3,6 +3,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Unauthorized from './pages/Unauthorized';
+import LandingPage from './pages/LandingPage';
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 import StudentManagement from './pages/school/StudentManagement';
@@ -24,6 +25,9 @@ import CertificateManagement from './pages/school/CertificateManagement';
 export default function App() {
   return (
     <Routes>
+      {/* Landing page */}
+      <Route path="/" element={<LandingPage />} />
+
       {/* Public routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
@@ -76,7 +80,7 @@ export default function App() {
       </Route>
 
       {/* Default redirect */}
-      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
