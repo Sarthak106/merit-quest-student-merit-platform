@@ -93,7 +93,7 @@ function HeroSection() {
       {/* LiquidEther Background */}
       <div className="absolute inset-0 z-0">
         <LiquidEther
-          colors={['#818cf8', '#a78bfa', '#c4b5fd', '#93c5fd']}
+          colors={['#6366f1', '#8b5cf6', '#a78bfa', '#60a5fa']}
           autoDemo={true}
           autoSpeed={0.6}
           autoIntensity={2.5}
@@ -104,7 +104,7 @@ function HeroSection() {
       </div>
 
       {/* Light overlay for readability */}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-white/30" />
+      <div className="absolute inset-0 z-10 pointer-events-none bg-white/10" />
       <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-white" />
 
       {/* Hero content overlay */}
@@ -115,14 +115,14 @@ function HeroSection() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-center pointer-events-auto"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-200 backdrop-blur-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 border border-indigo-200 backdrop-blur-md mb-6 shadow-sm">
             <Sparkles className="w-4 h-4 text-indigo-500" />
-            <span className="text-sm text-indigo-600">AI-Powered Student Merit Tracking</span>
+            <span className="text-sm font-medium text-indigo-600">AI-Powered Student Merit Tracking</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-800 mb-4 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-4 tracking-tight drop-shadow-sm">
             Merit <span className="bg-gradient-to-r from-indigo-600 via-purple-500 to-indigo-400 bg-clip-text text-transparent">Quest</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-500 max-w-xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-slate-600 max-w-xl mx-auto mb-8">
             The next-generation platform for tracking, verifying, and celebrating student achievements
           </p>
           <div className="flex gap-4 justify-center">
@@ -132,7 +132,7 @@ function HeroSection() {
               </GlowButton>
             </Link>
             <Link to="/login">
-              <GlowButton variant="ghost" size="lg">
+              <GlowButton variant="ghost" size="lg" className="!bg-white/60 !backdrop-blur-sm !border-white/80 !text-slate-700 hover:!bg-white/80">
                 Sign In
               </GlowButton>
             </Link>
@@ -169,16 +169,16 @@ const TRUST_ITEMS = [
 
 function TrustStrip() {
   return (
-    <RevealSection className="py-16 border-y border-slate-100">
+    <RevealSection className="py-10 border-y border-slate-100">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-8">
+        <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-6">
           Trusted by institutions across India
         </p>
         <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
           {TRUST_ITEMS.map((item) => (
             <span
               key={item}
-              className="text-slate-300 text-lg font-display font-semibold tracking-wide hover:text-slate-500 transition-colors"
+              className="text-slate-400 text-lg font-display font-semibold tracking-wide hover:text-indigo-500 transition-colors"
             >
               {item}
             </span>
@@ -237,9 +237,9 @@ const FEATURES = [
 
 function FeaturesSection() {
   return (
-    <RevealSection className="py-28 relative">
+    <RevealSection className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -307,7 +307,7 @@ function StatsSection() {
   const bgY = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
 
   return (
-    <section ref={ref} className="relative py-28 overflow-hidden">
+    <section ref={ref} className="relative py-20 overflow-hidden">
       {/* Parallax background */}
       <motion.div
         className="absolute inset-0 -z-10"
@@ -374,9 +374,9 @@ const STEPS = [
 
 function HowItWorksSection() {
   return (
-    <RevealSection className="py-28 relative">
+    <RevealSection className="py-20 relative bg-slate-50/60">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -448,9 +448,9 @@ const TECH_HIGHLIGHTS = [
 
 function TechSection() {
   return (
-    <RevealSection className="py-28 relative">
+    <RevealSection className="py-20 relative bg-slate-50/80">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-800 mb-4">
             Built with{' '}
             <GradientText
@@ -518,13 +518,13 @@ const TESTIMONIALS = [
 
 function TestimonialsSection() {
   return (
-    <RevealSection className="py-28 relative overflow-hidden">
+    <RevealSection className="py-20 relative overflow-hidden">
       {/* Background glows */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-purple-100/50 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-100/50 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -583,7 +583,7 @@ function CTASection() {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   return (
-    <section ref={ref} className="py-28 px-6 relative">
+    <section ref={ref} className="py-20 px-6 relative">
       <motion.div
         style={{ scale, opacity }}
         className="max-w-4xl mx-auto relative rounded-3xl border border-indigo-200 overflow-hidden shadow-xl"
@@ -602,7 +602,7 @@ function CTASection() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
               Ready to Transform{' '}
               <GradientText
-                colors={['#818cf8', '#a78bfa', '#c084fc', '#818cf8']}
+                colors={['#e0e7ff', '#c7d2fe', '#fde68a', '#e0e7ff']}
                 animationSpeed={6}
                 className="inline"
               >
@@ -689,7 +689,7 @@ export default function LandingPage() {
           </div>
           <div className="flex items-center gap-3">
             <Link to="/login">
-              <GlowButton variant="ghost" size="sm">Sign In</GlowButton>
+              <GlowButton variant="ghost" size="sm" className="!bg-transparent !border-slate-300 !text-slate-600 hover:!text-indigo-600 hover:!border-indigo-300">Sign In</GlowButton>
             </Link>
             <Link to="/register">
               <GlowButton variant="primary" size="sm">Get Started</GlowButton>
