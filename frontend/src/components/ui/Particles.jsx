@@ -24,7 +24,7 @@ export default function Particles({ count = 30, className = '' }) {
       {dots.map(d => (
         <motion.div
           key={d.id}
-          className="absolute rounded-full bg-indigo-400"
+          className="absolute rounded-full bg-indigo-300"
           style={{
             width: d.size,
             height: d.size,

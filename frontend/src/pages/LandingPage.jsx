@@ -93,7 +93,7 @@ function HeroSection() {
       {/* LiquidEther Background */}
       <div className="absolute inset-0 z-0">
         <LiquidEther
-          colors={['#4f46e5', '#7c3aed', '#a855f7', '#6366f1']}
+          colors={['#818cf8', '#a78bfa', '#c4b5fd', '#93c5fd']}
           autoDemo={true}
           autoSpeed={0.6}
           autoIntensity={2.5}
@@ -103,9 +103,9 @@ function HeroSection() {
         />
       </div>
 
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-[#020617]/40" />
-      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-[#020617]" />
+      {/* Light overlay for readability */}
+      <div className="absolute inset-0 z-10 pointer-events-none bg-white/30" />
+      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-white" />
 
       {/* Hero content overlay */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none">
@@ -115,14 +115,14 @@ function HeroSection() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-center pointer-events-auto"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6">
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span className="text-sm text-white/70">AI-Powered Student Merit Tracking</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-200 backdrop-blur-sm mb-6">
+            <Sparkles className="w-4 h-4 text-indigo-500" />
+            <span className="text-sm text-indigo-600">AI-Powered Student Merit Tracking</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-4 tracking-tight">
-            Merit <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-300 bg-clip-text text-transparent">Quest</span>
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-800 mb-4 tracking-tight">
+            Merit <span className="bg-gradient-to-r from-indigo-600 via-purple-500 to-indigo-400 bg-clip-text text-transparent">Quest</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/50 max-w-xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-slate-500 max-w-xl mx-auto mb-8">
             The next-generation platform for tracking, verifying, and celebrating student achievements
           </p>
           <div className="flex gap-4 justify-center">
@@ -146,7 +146,7 @@ function HeroSection() {
         animate={{ y: [0, 12, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
+        <div className="w-6 h-10 rounded-full border-2 border-slate-300 flex justify-center pt-2">
           <motion.div
             className="w-1.5 h-1.5 rounded-full bg-indigo-400"
             animate={{ opacity: [1, 0], y: [0, 16] }}
@@ -169,16 +169,16 @@ const TRUST_ITEMS = [
 
 function TrustStrip() {
   return (
-    <RevealSection className="py-16 border-y border-white/5">
+    <RevealSection className="py-16 border-y border-slate-100">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <p className="text-xs uppercase tracking-[0.2em] text-white/30 mb-8">
+        <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-8">
           Trusted by institutions across India
         </p>
         <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
           {TRUST_ITEMS.map((item) => (
             <span
               key={item}
-              className="text-white/20 text-lg font-display font-semibold tracking-wide hover:text-white/40 transition-colors"
+              className="text-slate-300 text-lg font-display font-semibold tracking-wide hover:text-slate-500 transition-colors"
             >
               {item}
             </span>
@@ -245,12 +245,12 @@ function FeaturesSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-4"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 mb-4"
           >
-            <Zap className="w-3.5 h-3.5 text-indigo-400" />
-            <span className="text-xs uppercase tracking-wider text-indigo-300">Features</span>
+            <Zap className="w-3.5 h-3.5 text-indigo-500" />
+            <span className="text-xs uppercase tracking-wider text-indigo-600">Features</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-800 mb-4">
             Everything You Need to{' '}
             <GradientText
               colors={['#818cf8', '#6366f1', '#a78bfa', '#818cf8']}
@@ -260,7 +260,7 @@ function FeaturesSection() {
               Excel
             </GradientText>
           </h2>
-          <p className="text-lg text-white/40 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
             A unified platform where academic merit is tracked, verified, and rewarded transparently.
           </p>
         </div>
@@ -270,7 +270,7 @@ function FeaturesSection() {
             <FloatingCard
               key={feature.title}
               index={i}
-              className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-7 hover:border-white/[0.12] transition-all duration-500"
+              className="group relative rounded-2xl border border-slate-200 bg-white p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-500 shadow-sm"
             >
               {/* Glow effect on hover */}
               <div
@@ -280,8 +280,8 @@ function FeaturesSection() {
               <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-5 shadow-lg`}>
                 <feature.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-display font-semibold text-white mb-2">{feature.title}</h3>
-              <p className="text-white/40 leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-display font-semibold text-slate-800 mb-2">{feature.title}</h3>
+              <p className="text-slate-500 leading-relaxed">{feature.description}</p>
             </FloatingCard>
           ))}
         </div>
@@ -313,8 +313,8 @@ function StatsSection() {
         className="absolute inset-0 -z-10"
         style={{ y: bgY }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/50 via-[#020617] to-purple-950/30" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-100/50 rounded-full blur-[120px]" />
       </motion.div>
 
       <div className="max-w-6xl mx-auto px-6">
@@ -329,7 +329,7 @@ function StatsSection() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">
+                <div className="text-4xl md:text-5xl font-display font-bold text-slate-800 mb-2">
                   <CountUp
                     to={stat.value}
                     duration={2}
@@ -338,7 +338,7 @@ function StatsSection() {
                     className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400"
                   />
                 </div>
-                <p className="text-white/40 text-sm">{stat.label}</p>
+                <p className="text-slate-500 text-sm">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -382,12 +382,12 @@ function HowItWorksSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 mb-4"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 mb-4"
           >
-            <Globe className="w-3.5 h-3.5 text-amber-400" />
-            <span className="text-xs uppercase tracking-wider text-amber-300">How It Works</span>
+            <Globe className="w-3.5 h-3.5 text-amber-500" />
+            <span className="text-xs uppercase tracking-wider text-amber-600">How It Works</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-800 mb-4">
             Simple.{' '}
             <GradientText
               colors={['#fbbf24', '#f59e0b', '#d97706', '#fbbf24']}
@@ -402,22 +402,22 @@ function HowItWorksSection() {
 
         <div className="relative">
           {/* Connecting line */}
-          <div className="hidden lg:block absolute top-24 left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="hidden lg:block absolute top-24 left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {STEPS.map((step, i) => (
               <FloatingCard key={step.title} index={i} className="text-center relative">
                 {/* Step number */}
                 <div className="relative inline-flex mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center">
                     <step.icon className="w-6 h-6 text-amber-400" />
                   </div>
                   <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 text-[10px] font-bold text-white flex items-center justify-center">
                     {i + 1}
                   </span>
                 </div>
-                <h3 className="text-lg font-display font-semibold text-white mb-2">{step.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">{step.description}</p>
+                <h3 className="text-lg font-display font-semibold text-slate-800 mb-2">{step.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{step.description}</p>
               </FloatingCard>
             ))}
           </div>
@@ -451,7 +451,7 @@ function TechSection() {
     <RevealSection className="py-28 relative">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-800 mb-4">
             Built with{' '}
             <GradientText
               colors={['#10b981', '#14b8a6', '#06b6d4', '#10b981']}
@@ -462,7 +462,7 @@ function TechSection() {
             </GradientText>
             {' '}Technology
           </h2>
-          <p className="text-lg text-white/40 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
             Enterprise-grade architecture designed for scale, security, and performance.
           </p>
         </div>
@@ -472,16 +472,16 @@ function TechSection() {
             <FloatingCard
               key={tech.title}
               index={i}
-              className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 hover:border-white/[0.12] transition-all duration-500"
+              className="group relative rounded-2xl border border-slate-200 bg-white p-8 hover:border-emerald-300 hover:shadow-lg transition-all duration-500 shadow-sm"
             >
-              <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mb-6">
-                <tech.icon className="w-6 h-6 text-emerald-400" />
+              <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-6">
+                <tech.icon className="w-6 h-6 text-emerald-500" />
               </div>
-              <h3 className="text-xl font-display font-semibold text-white mb-4">{tech.title}</h3>
+              <h3 className="text-xl font-display font-semibold text-slate-800 mb-4">{tech.title}</h3>
               <ul className="space-y-3">
                 {tech.items.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-white/40 text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400/60 flex-shrink-0" />
+                  <li key={item} className="flex items-center gap-3 text-slate-500 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -520,8 +520,8 @@ function TestimonialsSection() {
   return (
     <RevealSection className="py-28 relative overflow-hidden">
       {/* Background glows */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-purple-100/50 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-100/50 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -530,12 +530,12 @@ function TestimonialsSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 mb-4"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 border border-purple-200 mb-4"
           >
-            <Star className="w-3.5 h-3.5 text-purple-400" />
-            <span className="text-xs uppercase tracking-wider text-purple-300">Testimonials</span>
+            <Star className="w-3.5 h-3.5 text-purple-500" />
+            <span className="text-xs uppercase tracking-wider text-purple-600">Testimonials</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-800">
             Loved by{' '}
             <GradientText
               colors={['#c084fc', '#a855f7', '#7c3aed', '#c084fc']}
@@ -552,17 +552,17 @@ function TestimonialsSection() {
             <FloatingCard
               key={t.name}
               index={i}
-              className="relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 hover:border-white/[0.12] transition-all duration-500"
+              className="relative rounded-2xl border border-slate-200 bg-white p-8 hover:border-purple-300 hover:shadow-lg transition-all duration-500 shadow-sm"
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.rating }).map((_, j) => (
                   <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-white/60 italic leading-relaxed mb-6">&ldquo;{t.quote}&rdquo;</p>
+              <p className="text-slate-600 italic leading-relaxed mb-6">&ldquo;{t.quote}&rdquo;</p>
               <div>
-                <p className="text-white font-semibold">{t.name}</p>
-                <p className="text-white/30 text-sm">{t.role}</p>
+                <p className="text-slate-800 font-semibold">{t.name}</p>
+                <p className="text-slate-400 text-sm">{t.role}</p>
               </div>
             </FloatingCard>
           ))}
@@ -586,11 +586,11 @@ function CTASection() {
     <section ref={ref} className="py-28 px-6 relative">
       <motion.div
         style={{ scale, opacity }}
-        className="max-w-4xl mx-auto relative rounded-3xl border border-white/[0.08] overflow-hidden"
+        className="max-w-4xl mx-auto relative rounded-3xl border border-indigo-200 overflow-hidden shadow-xl"
       >
         {/* Background glow */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/80 via-[#0f172a] to-purple-950/60" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-indigo-500/10 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-indigo-500 to-purple-600" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-white/10 rounded-full blur-[100px]" />
 
         <div className="relative z-10 py-20 px-8 text-center">
           <motion.div
@@ -609,7 +609,7 @@ function CTASection() {
                 Student Merit?
               </GradientText>
             </h2>
-            <p className="text-lg text-white/40 max-w-xl mx-auto mb-10">
+            <p className="text-lg text-white/70 max-w-xl mx-auto mb-10">
               Join hundreds of institutions already using Merit Quest to track, verify, and
               reward academic excellence.
             </p>
@@ -620,7 +620,7 @@ function CTASection() {
                 </GlowButton>
               </Link>
               <Link to="/login">
-                <GlowButton variant="ghost" size="lg" icon={ChevronRight}>
+                <GlowButton variant="ghost" size="lg" icon={ChevronRight} className="!bg-white/10 !text-white !border-white/20 hover:!bg-white/20 hover:!text-white">
                   Explore Dashboard
                 </GlowButton>
               </Link>
@@ -635,20 +635,20 @@ function CTASection() {
 /* ─── Footer ─── */
 function Footer() {
   return (
-    <footer className="border-t border-white/[0.05] py-12 px-6">
+    <footer className="border-t border-slate-200 py-12 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
             <GraduationCap className="w-4 h-4 text-white" />
           </div>
-          <span className="font-display font-bold text-white text-lg">Merit Quest</span>
+          <span className="font-display font-bold text-slate-800 text-lg">Merit Quest</span>
         </div>
-        <div className="flex gap-8 text-sm text-white/30">
-          <Link to="/login" className="hover:text-white/60 transition-colors">Login</Link>
-          <Link to="/register" className="hover:text-white/60 transition-colors">Register</Link>
-          <a href="https://github.com/ayush-mishra7/merit-quest-full-stack-student-merit-platform" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">GitHub</a>
+        <div className="flex gap-8 text-sm text-slate-500">
+          <Link to="/login" className="hover:text-slate-800 transition-colors">Login</Link>
+          <Link to="/register" className="hover:text-slate-800 transition-colors">Register</Link>
+          <a href="https://github.com/ayush-mishra7/merit-quest-full-stack-student-merit-platform" target="_blank" rel="noopener noreferrer" className="hover:text-slate-800 transition-colors">GitHub</a>
         </div>
-        <p className="text-xs text-white/20">&copy; {new Date().getFullYear()} Merit Quest. All rights reserved.</p>
+        <p className="text-xs text-slate-400">&copy; {new Date().getFullYear()} Merit Quest. All rights reserved.</p>
       </div>
     </footer>
   );
@@ -657,17 +657,17 @@ function Footer() {
 /* ─── Main Landing Page ─── */
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#020617] text-white overflow-x-hidden relative">
+    <div className="min-h-screen bg-white text-slate-800 overflow-x-hidden relative">
       <Particles count={25} />
 
       {/* Fixed navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#020617]/70 border-b border-white/[0.05]">
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/80 border-b border-slate-200/60 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shadow-glow-sm">
               <GraduationCap className="w-5 h-5 text-white" />
             </div>
-            <span className="font-display font-bold text-white text-xl">Merit Quest</span>
+            <span className="font-display font-bold text-slate-800 text-xl">Merit Quest</span>
           </Link>
           <div className="hidden md:flex items-center">
             <GooeyNav
