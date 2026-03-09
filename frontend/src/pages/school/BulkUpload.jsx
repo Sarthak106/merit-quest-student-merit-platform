@@ -5,10 +5,10 @@ import api from '../../services/api';
 import TextCaptcha from '../../components/TextCaptcha';
 
 const STATUS_CONFIG = {
-  PENDING:    { icon: Clock,        color: 'text-amber-400', bg: 'bg-yellow-50', label: 'Pending' },
-  PROCESSING: { icon: RefreshCw,    color: 'text-blue-400',   bg: 'bg-blue-50',   label: 'Processing' },
-  COMPLETED:  { icon: CheckCircle2, color: 'text-emerald-400',  bg: 'bg-green-50',  label: 'Completed' },
-  FAILED:     { icon: XCircle,      color: 'text-red-400',    bg: 'bg-red-50',    label: 'Failed' },
+  PENDING:    { icon: Clock,        color: 'text-amber-600', bg: 'bg-yellow-50', label: 'Pending' },
+  PROCESSING: { icon: RefreshCw,    color: 'text-blue-600',   bg: 'bg-blue-50',   label: 'Processing' },
+  COMPLETED:  { icon: CheckCircle2, color: 'text-emerald-600',  bg: 'bg-green-50',  label: 'Completed' },
+  FAILED:     { icon: XCircle,      color: 'text-red-600',    bg: 'bg-red-50',    label: 'Failed' },
 };
 
 const UPLOAD_TYPES = [
@@ -139,19 +139,19 @@ export default function BulkUpload() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-white">Bulk Upload</h1>
-        <p className="text-sm text-white/50 mt-1">Upload CSV or Excel files to import data</p>
+        <h1 className="text-2xl font-bold text-slate-900">Bulk Upload</h1>
+        <p className="text-sm text-slate-500 mt-1">Upload CSV or Excel files to import data</p>
       </div>
 
       {/* Upload type selector */}
       <div className="flex flex-wrap items-center gap-3">
-        <label className="text-sm font-medium text-white/70">Upload Type:</label>
+        <label className="text-sm font-medium text-slate-600">Upload Type:</label>
         {UPLOAD_TYPES.map(t => (
           <button key={t.value} onClick={() => setUploadType(t.value)}
             className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
               uploadType === t.value
                 ? 'bg-indigo-600 text-white'
-                : 'bg-white/10 text-white/70 hover:bg-white/10'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
             }`}>{t.label}</button>
         ))}
       </div>
@@ -166,7 +166,7 @@ export default function BulkUpload() {
               </p>
               <TextCaptcha onVerified={onCaptchaVerified} />
               <button onClick={() => { setPendingFile(null); if (fileInputRef.current) fileInputRef.current.value = ''; }}
-                className="mt-2 text-xs text-white/50 hover:text-white/70">Cancel upload</button>
+                className="mt-2 text-xs text-slate-500 hover:text-slate-700">Cancel upload</button>
             </div>
           </motion.div>
         )}
@@ -178,7 +178,7 @@ export default function BulkUpload() {
         onDragLeave={() => setDragOver(false)}
         onDrop={onDrop}
         className={`relative border-2 border-dashed rounded-2xl p-10 text-center transition-colors cursor-pointer
-          ${dragOver ? 'border-indigo-500 bg-indigo-500/10' : 'border-white/10 hover:border-indigo-400 hover:bg-white/5'}`}
+          ${dragOver ? 'border-indigo-500 bg-indigo-50' : 'border-slate-200 hover:border-indigo-400 hover:bg-slate-50'}`}
         onClick={() => fileInputRef.current?.click()}
         whileHover={{ scale: 1.005 }}
       >
@@ -188,13 +188,13 @@ export default function BulkUpload() {
           {uploading ? (
             <RefreshCw className="w-12 h-12 text-indigo-400 animate-spin" />
           ) : (
-            <Upload className="w-12 h-12 text-white/40" />
+            <Upload className="w-12 h-12 text-slate-400" />
           )}
           <div>
-            <p className="text-lg font-medium text-white/70">
+            <p className="text-lg font-medium text-slate-600">
               {uploading ? 'Uploading...' : 'Drop your file here, or click to browse'}
             </p>
-            <p className="text-sm text-white/40 mt-1">Supports CSV, XLSX, XLS files</p>
+            <p className="text-sm text-slate-400 mt-1">Supports CSV, XLSX, XLS files</p>
           </div>
         </div>
       </motion.div>
@@ -221,38 +221,38 @@ export default function BulkUpload() {
       })()}
 
       {/* Upload history */}
-      <div className="glass rounded-2xl">
-        <div className="px-5 py-4 border-b border-white/10">
-          <h2 className="text-lg font-semibold text-white">Upload History</h2>
+      <div className="bg-white border border-slate-200 rounded-2xl">
+        <div className="px-5 py-4 border-b border-slate-200">
+          <h2 className="text-lg font-semibold text-slate-900">Upload History</h2>
         </div>
 
         {uploads.length === 0 ? (
-          <div className="p-8 text-center text-white/40">
+          <div className="p-8 text-center text-slate-400">
             <FileSpreadsheet className="w-10 h-10 mx-auto mb-2 opacity-50" />
             <p>No uploads yet</p>
           </div>
         ) : (
-          <div className="divide-y divide-white/5">
+          <div className="divide-y divide-slate-100">
             {uploads.map((u) => {
               const cfg = STATUS_CONFIG[u.status] || STATUS_CONFIG.PENDING;
               const Icon = cfg.icon;
               return (
                 <motion.div key={u.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                  className="px-5 py-4 flex items-center gap-4 hover:bg-white/5 cursor-pointer"
+                  className="px-5 py-4 flex items-center gap-4 hover:bg-slate-50 cursor-pointer"
                   onClick={() => setSelectedUpload(selectedUpload?.id === u.id ? null : u)}>
                   <div className={`p-2 rounded-lg ${cfg.bg}`}>
                     <Icon className={`w-5 h-5 ${cfg.color} ${u.status === 'PROCESSING' ? 'animate-spin' : ''}`} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-white truncate">{u.fileName}</p>
-                    <p className="text-xs text-white/40">{new Date(u.createdAt).toLocaleString()}</p>
+                    <p className="font-medium text-slate-800 truncate">{u.fileName}</p>
+                    <p className="text-xs text-slate-400">{new Date(u.createdAt).toLocaleString()}</p>
                   </div>
                   <div className="text-right shrink-0">
                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${cfg.bg} ${cfg.color}`}>
                       {cfg.label}
                     </span>
                     {u.status === 'COMPLETED' && (
-                      <p className="text-xs text-white/50 mt-1">
+                      <p className="text-xs text-slate-500 mt-1">
                         {u.successRows}/{u.totalRows} rows imported
                       </p>
                     )}
@@ -268,16 +268,16 @@ export default function BulkUpload() {
       <AnimatePresence>
         {selectedUpload && selectedUpload.errorDetails?.rowErrors && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-            className="bg-white/5 rounded-xl  border border-red-200 overflow-hidden">
+            className="bg-slate-50 rounded-xl border border-red-200 overflow-hidden">
             <div className="px-5 py-4 border-b border-red-100 bg-red-50">
               <h3 className="font-semibold text-red-800">Row Errors — {selectedUpload.fileName}</h3>
-              <p className="text-xs text-red-400 mt-1">{selectedUpload.failedRows} rows failed</p>
+              <p className="text-xs text-red-600 mt-1">{selectedUpload.failedRows} rows failed</p>
             </div>
-            <div className="max-h-64 overflow-y-auto divide-y divide-white/5">
+            <div className="max-h-64 overflow-y-auto divide-y divide-slate-100">
               {selectedUpload.errorDetails.rowErrors.map((err, i) => (
                 <div key={i} className="px-5 py-3 flex gap-3 text-sm">
                   <span className="font-mono text-red-500 shrink-0">Row {err.row}</span>
-                  <span className="text-white/70">{err.errors}</span>
+                  <span className="text-slate-600">{err.errors}</span>
                 </div>
               ))}
             </div>

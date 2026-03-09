@@ -92,21 +92,21 @@ export default function CertificateManagement() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white">Certificates</h1>
-          <p className="text-sm text-white/50 mt-1">Upload and manage student certificates</p>
+          <h1 className="text-2xl font-bold text-slate-900">Certificates</h1>
+          <p className="text-sm text-slate-500 mt-1">Upload and manage student certificates</p>
         </div>
       </div>
 
       {/* Student search */}
       <div className="card">
-        <label className="block text-sm font-medium text-white/70 mb-2">Select Student</label>
+        <label className="block text-sm font-medium text-slate-600 mb-2">Select Student</label>
         <div className="relative max-w-md">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
           <input type="text" placeholder="Search student by name or enrollment..."
             value={studentSearch}
             onChange={(e) => { setStudentSearch(e.target.value); }}
             onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); searchStudents(); } }}
-            className="w-full pl-10 pr-4 py-2 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white/5 text-white" />
+            className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-slate-800" />
           <button onClick={searchStudents} className="absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs bg-indigo-600 text-white rounded-md hover:bg-indigo-500">
             Search
           </button>
@@ -114,12 +114,12 @@ export default function CertificateManagement() {
 
         {/* Student dropdown */}
         {students.length > 0 && (
-          <div className="mt-2 max-w-md bg-white/5 border border-white/10 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+          <div className="mt-2 max-w-md bg-white border border-slate-200 rounded-lg shadow-lg max-h-48 overflow-y-auto">
             {students.map(s => (
               <button key={s.id} onClick={() => selectStudent(s)}
-                className="w-full text-left px-4 py-2 hover:bg-indigo-500/10 text-sm flex justify-between">
-                <span className="font-medium">{s.firstName} {s.lastName}</span>
-                <span className="text-white/40 font-mono text-xs">{s.enrollmentNumber}</span>
+                className="w-full text-left px-4 py-2 hover:bg-indigo-50 text-sm flex justify-between">
+                <span className="font-medium text-slate-800">{s.firstName} {s.lastName}</span>
+                <span className="text-slate-400 font-mono text-xs">{s.enrollmentNumber}</span>
               </button>
             ))}
           </div>
@@ -130,7 +130,7 @@ export default function CertificateManagement() {
       {studentId && (
         <>
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-white">Certificates</h2>
+            <h2 className="text-lg font-semibold text-slate-900">Certificates</h2>
             <button onClick={() => setShowUpload(true)}
               className="btn-primary flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition-colors">
               <Upload className="w-4 h-4" /> Upload Certificate
@@ -143,8 +143,8 @@ export default function CertificateManagement() {
             </div>
           ) : certificates.length === 0 ? (
             <div className="card text-center py-12">
-              <Award className="mx-auto h-12 w-12 text-white/30" />
-              <p className="mt-4 text-white/50">No certificates uploaded for this student</p>
+              <Award className="mx-auto h-12 w-12 text-slate-300" />
+              <p className="mt-4 text-slate-500">No certificates uploaded for this student</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -152,21 +152,21 @@ export default function CertificateManagement() {
                 <motion.div key={cert.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
                   className="card p-4 flex flex-col gap-3">
                   <div className="flex items-start gap-3">
-                    <FileText className="w-8 h-8 text-indigo-400 flex-shrink-0 mt-0.5" />
+                    <FileText className="w-8 h-8 text-indigo-600 flex-shrink-0 mt-0.5" />
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-white truncate">{cert.title}</h3>
-                      {cert.issuingBody && <p className="text-sm text-white/50">{cert.issuingBody}</p>}
-                      {cert.issueDate && <p className="text-xs text-white/40 mt-1">{cert.issueDate}</p>}
+                      <h3 className="font-semibold text-slate-900 truncate">{cert.title}</h3>
+                      {cert.issuingBody && <p className="text-sm text-slate-500">{cert.issuingBody}</p>}
+                      {cert.issueDate && <p className="text-xs text-slate-400 mt-1">{cert.issueDate}</p>}
                     </div>
                   </div>
-                  <div className="text-xs text-white/40">{cert.fileName} ({(cert.fileSize / 1024).toFixed(1)} KB)</div>
-                  <div className="flex gap-2 mt-auto pt-2 border-t border-white/5">
+                  <div className="text-xs text-slate-400">{cert.fileName} ({(cert.fileSize / 1024).toFixed(1)} KB)</div>
+                  <div className="flex gap-2 mt-auto pt-2 border-t border-slate-100">
                     <button onClick={() => handleDownload(cert.id)}
-                      className="flex-1 flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-medium text-indigo-400 bg-indigo-500/10 rounded-lg hover:bg-primary-100">
+                      className="flex-1 flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 rounded-lg hover:bg-indigo-100">
                       <Download className="w-3 h-3" /> Download
                     </button>
                     <button onClick={() => handleDelete(cert.id)}
-                      className="flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-medium text-red-400 bg-red-500/10 rounded-lg hover:bg-red-100">
+                      className="flex items-center justify-center gap-1 px-3 py-1.5 text-xs font-medium text-red-600 bg-red-50 rounded-lg hover:bg-red-100">
                       <Trash2 className="w-3 h-3" />
                     </button>
                   </div>
@@ -181,37 +181,37 @@ export default function CertificateManagement() {
       <AnimatePresence>
         {showUpload && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
             <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
-              className="glass rounded-2xl w-full max-w-md">
-              <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
-                <h2 className="text-lg font-semibold">Upload Certificate</h2>
-                <button onClick={() => setShowUpload(false)} className="p-1 rounded-md hover:bg-white/10"><X className="w-5 h-5" /></button>
+              className="bg-white border border-slate-200 rounded-2xl w-full max-w-md">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
+                <h2 className="text-lg font-semibold text-slate-900">Upload Certificate</h2>
+                <button onClick={() => setShowUpload(false)} className="p-1 rounded-md hover:bg-slate-100"><X className="w-5 h-5 text-slate-500" /></button>
               </div>
               <form onSubmit={handleUpload} className="p-6 space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-white/60 mb-1">Title *</label>
+                  <label className="block text-sm font-medium text-slate-600 mb-1">Title *</label>
                   <input value={form.title} onChange={e => setForm({...form, title: e.target.value})}
                     className="input w-full" placeholder="e.g. Math Olympiad Gold Medal" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-white/60 mb-1">Issuing Body</label>
+                  <label className="block text-sm font-medium text-slate-600 mb-1">Issuing Body</label>
                   <input value={form.issuingBody} onChange={e => setForm({...form, issuingBody: e.target.value})}
                     className="input w-full" placeholder="e.g. CBSE Board" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-white/60 mb-1">Issue Date</label>
+                  <label className="block text-sm font-medium text-slate-600 mb-1">Issue Date</label>
                   <input type="date" value={form.issueDate} onChange={e => setForm({...form, issueDate: e.target.value})}
                     className="input w-full" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-white/60 mb-1">Certificate File *</label>
+                  <label className="block text-sm font-medium text-slate-600 mb-1">Certificate File *</label>
                   <input ref={fileRef} type="file" accept=".pdf,.jpg,.jpeg,.png" required
-                    className="w-full text-sm text-white/50 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-indigo-500/10 file:text-indigo-400 hover:file:bg-primary-100" />
+                    className="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" />
                 </div>
                 <div className="flex justify-end gap-3 pt-2">
                   <button type="button" onClick={() => setShowUpload(false)}
-                    className="px-4 py-2 text-sm font-medium text-white/70 bg-white/10 rounded-lg hover:bg-white/10">Cancel</button>
+                    className="px-4 py-2 text-sm font-medium text-slate-600 bg-slate-100 rounded-lg hover:bg-slate-200">Cancel</button>
                   <button type="submit" disabled={uploading}
                     className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-500 disabled:opacity-50">
                     {uploading ? 'Uploading...' : 'Upload'}

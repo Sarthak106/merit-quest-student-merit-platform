@@ -6,9 +6,9 @@ import api from '../../services/api';
 const STATUS_OPTIONS = ['', 'PENDING_VERIFICATION', 'APPROVED', 'REJECTED'];
 const STATUS_LABELS = { PENDING_VERIFICATION: 'Pending', APPROVED: 'Approved', REJECTED: 'Rejected' };
 const STATUS_COLORS = {
-  PENDING_VERIFICATION: 'bg-amber-500/15 text-amber-400',
-  APPROVED: 'bg-emerald-500/15 text-emerald-400',
-  REJECTED: 'bg-red-500/15 text-red-400',
+  PENDING_VERIFICATION: 'bg-amber-50 text-amber-700',
+  APPROVED: 'bg-emerald-50 text-emerald-700',
+  REJECTED: 'bg-red-50 text-red-700',
 };
 
 export default function VerificationQueue() {
@@ -57,7 +57,7 @@ export default function VerificationQueue() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-white">Verification Queue</h1>
+        <h1 className="text-2xl font-bold text-slate-900">Verification Queue</h1>
         <select
           value={statusFilter}
           onChange={(e) => { setStatusFilter(e.target.value); setPage(0); }}
@@ -76,13 +76,13 @@ export default function VerificationQueue() {
         </div>
       ) : items.length === 0 ? (
         <div className="card text-center py-12">
-          <Clock className="mx-auto h-12 w-12 text-white/30" />
-          <p className="mt-4 text-white/50">No items in the queue</p>
+          <Clock className="mx-auto h-12 w-12 text-slate-300" />
+          <p className="mt-4 text-slate-500">No items in the queue</p>
         </div>
       ) : (
         <div className="card overflow-hidden p-0">
           <table className="w-full text-sm">
-            <thead className="bg-white/5 text-white/60 text-left">
+            <thead className="bg-slate-50 text-slate-600 text-left">
               <tr>
                 <th className="px-4 py-3 font-medium">Type</th>
                 <th className="px-4 py-3 font-medium">Record</th>
@@ -93,23 +93,23 @@ export default function VerificationQueue() {
                 <th className="px-4 py-3 font-medium text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5">
+            <tbody className="divide-y divide-slate-100">
               {items.map((item) => (
-                <tr key={item.id} className="hover:bg-white/5 transition-colors">
-                  <td className="px-4 py-3 font-medium text-white">{item.recordType}</td>
-                  <td className="px-4 py-3 text-white/70">{item.recordSummary}</td>
-                  <td className="px-4 py-3 text-white/60">{item.institutionName}</td>
-                  <td className="px-4 py-3 text-white/60">{item.submittedByName}</td>
+                <tr key={item.id} className="hover:bg-slate-50 transition-colors">
+                  <td className="px-4 py-3 font-medium text-slate-900">{item.recordType}</td>
+                  <td className="px-4 py-3 text-slate-600">{item.recordSummary}</td>
+                  <td className="px-4 py-3 text-slate-500">{item.institutionName}</td>
+                  <td className="px-4 py-3 text-slate-500">{item.submittedByName}</td>
                   <td className="px-4 py-3">
                     <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${STATUS_COLORS[item.status]}`}>
                       {STATUS_LABELS[item.status]}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-white/50">{new Date(item.createdAt).toLocaleDateString()}</td>
+                  <td className="px-4 py-3 text-slate-500">{new Date(item.createdAt).toLocaleDateString()}</td>
                   <td className="px-4 py-3 text-right">
                     <button
                       onClick={() => { setSelected(item); setComment(''); }}
-                      className="p-1.5 text-white/40 hover:text-indigo-400 transition-colors"
+                      className="p-1.5 text-slate-400 hover:text-indigo-600 transition-colors"
                     >
                       <Eye className="w-4 h-4" />
                     </button>
@@ -128,7 +128,7 @@ export default function VerificationQueue() {
             className="p-2 rounded-lg border disabled:opacity-30">
             <ChevronLeft className="w-4 h-4" />
           </button>
-          <span className="text-sm text-white/60">Page {page + 1} of {totalPages}</span>
+          <span className="text-sm text-slate-600">Page {page + 1} of {totalPages}</span>
           <button onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))} disabled={page >= totalPages - 1}
             className="p-2 rounded-lg border disabled:opacity-30">
             <ChevronRight className="w-4 h-4" />
@@ -141,32 +141,32 @@ export default function VerificationQueue() {
         {selected && (
           <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
             onClick={() => setSelected(null)}
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white/5 rounded-xl shadow-2xl shadow-black/50 w-full max-w-lg p-6 space-y-4"
+              className="bg-white border border-slate-200 rounded-xl shadow-2xl w-full max-w-lg p-6 space-y-4"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-lg font-semibold text-white">Review Item #{selected.id}</h2>
+              <h2 className="text-lg font-semibold text-slate-900">Review Item #{selected.id}</h2>
 
               <div className="grid grid-cols-2 gap-3 text-sm">
-                <div><span className="text-white/50">Type:</span> <span className="font-medium">{selected.recordType}</span></div>
-                <div><span className="text-white/50">Record:</span> <span className="font-medium">{selected.recordSummary}</span></div>
-                <div><span className="text-white/50">Institution:</span> <span className="font-medium">{selected.institutionName}</span></div>
-                <div><span className="text-white/50">Submitted By:</span> <span className="font-medium">{selected.submittedByName}</span></div>
-                <div><span className="text-white/50">Status:</span>
+                <div><span className="text-slate-500">Type:</span> <span className="font-medium text-slate-800">{selected.recordType}</span></div>
+                <div><span className="text-slate-500">Record:</span> <span className="font-medium text-slate-800">{selected.recordSummary}</span></div>
+                <div><span className="text-slate-500">Institution:</span> <span className="font-medium text-slate-800">{selected.institutionName}</span></div>
+                <div><span className="text-slate-500">Submitted By:</span> <span className="font-medium text-slate-800">{selected.submittedByName}</span></div>
+                <div><span className="text-slate-500">Status:</span>
                   <span className={`ml-1 inline-block px-2 py-0.5 rounded-full text-xs font-medium ${STATUS_COLORS[selected.status]}`}>
                     {STATUS_LABELS[selected.status]}
                   </span>
                 </div>
-                <div><span className="text-white/50">Created:</span> <span className="font-medium">{new Date(selected.createdAt).toLocaleString()}</span></div>
+                <div><span className="text-slate-500">Created:</span> <span className="font-medium text-slate-800">{new Date(selected.createdAt).toLocaleString()}</span></div>
                 {selected.reviewerName && (
-                  <div className="col-span-2"><span className="text-white/50">Reviewer:</span> <span className="font-medium">{selected.reviewerName}</span></div>
+                  <div className="col-span-2"><span className="text-slate-500">Reviewer:</span> <span className="font-medium text-slate-800">{selected.reviewerName}</span></div>
                 )}
                 {selected.comment && (
-                  <div className="col-span-2"><span className="text-white/50">Comment:</span> <span className="font-medium">{selected.comment}</span></div>
+                  <div className="col-span-2"><span className="text-slate-500">Comment:</span> <span className="font-medium text-slate-800">{selected.comment}</span></div>
                 )}
               </div>
 
@@ -199,7 +199,7 @@ export default function VerificationQueue() {
 
               {selected.status !== 'PENDING_VERIFICATION' && (
                 <div className="flex justify-end">
-                  <button onClick={() => setSelected(null)} className="btn bg-white/10 hover:bg-white/10 text-white/70 px-4 py-2 rounded-lg">
+                  <button onClick={() => setSelected(null)} className="btn bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2 rounded-lg">
                     Close
                   </button>
                 </div>

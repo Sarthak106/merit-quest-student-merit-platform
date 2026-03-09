@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 
 export default function Unauthorized() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-dark-950 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         className="text-center max-w-md"
       >
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-red-500/15 text-red-400 mb-6">
+        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-red-50 text-red-600 mb-6">
           <ShieldX className="w-10 h-10" />
         </div>
-        <h1 className="text-2xl font-bold text-white mb-2">Access Denied</h1>
-        <p className="text-white/50 mb-6">
+        <h1 className="text-2xl font-bold text-slate-900 mb-2">Access Denied</h1>
+        <p className="text-slate-500 mb-6">
           You do not have permission to access this page. Contact your administrator if you
           believe this is an error.
         </p>

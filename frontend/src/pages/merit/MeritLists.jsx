@@ -158,7 +158,7 @@ export default function MeritLists() {
     <div className="space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-white">Merit Lists</h1>
+        <h1 className="text-2xl font-bold text-slate-900">Merit Lists</h1>
         <div className="flex items-center gap-2">
           {isAdmin && (
             <button onClick={() => { setShowConfig(!showConfig); if (!showConfig) fetchConfig(); }}
@@ -180,14 +180,14 @@ export default function MeritLists() {
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {configs.map(c => (
-                  <div key={c.id} className="p-4 bg-white/5 rounded-lg">
-                    <label className="text-xs font-medium text-white/50 uppercase tracking-wider">
+                  <div key={c.id} className="p-4 bg-slate-50 rounded-lg">
+                    <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">
                       {c.configKey.replace('weight.', '')}
                     </label>
                     <input type="number" step="0.01" min="0" max="1"
                            defaultValue={c.configValue} className="input mt-1"
                            onBlur={(e) => updateConfig(c.configKey, e.target.value)} />
-                    <p className="text-xs text-white/40 mt-1">{c.description}</p>
+                    <p className="text-xs text-slate-400 mt-1">{c.description}</p>
                   </div>
                 ))}
               </div>
@@ -239,7 +239,7 @@ export default function MeritLists() {
             {batches.map(b => (
               <motion.div key={b.id} layout
                 className={`flex items-center justify-between p-3 rounded-lg cursor-pointer transition-colors ${
-                  selectedBatch?.id === b.id ? 'bg-indigo-500/10 border border-primary-200' : 'bg-white/5 hover:bg-white/10'
+                  selectedBatch?.id === b.id ? 'bg-indigo-50 border border-indigo-200' : 'bg-slate-50 hover:bg-slate-100'
                 }`}
                 onClick={() => { setSelectedBatch(b); setPage(0); }}
               >
@@ -247,10 +247,10 @@ export default function MeritLists() {
                   <BatchStatusBadge status={b.status} />
                   <div>
                     <span className="font-medium text-sm">{b.scope} — {b.scopeId}</span>
-                    <span className="text-xs text-white/50 ml-2">{b.academicYear}</span>
+                    <span className="text-xs text-slate-500 ml-2">{b.academicYear}</span>
                   </div>
                 </div>
-                <div className="text-right text-xs text-white/50">
+                <div className="text-right text-xs text-slate-500">
                   <div>{b.processed}/{b.totalStudents} students</div>
                   {b.completedAt && <div>{new Date(b.completedAt).toLocaleString()}</div>}
                 </div>
@@ -278,14 +278,14 @@ export default function MeritLists() {
             </div>
           ) : scores.length === 0 ? (
             <div className="text-center py-12">
-              <Award className="mx-auto h-12 w-12 text-white/30" />
-              <p className="mt-4 text-white/50">No merit scores found for this batch</p>
+              <Award className="mx-auto h-12 w-12 text-slate-300" />
+              <p className="mt-4 text-slate-500">No merit scores found for this batch</p>
             </div>
           ) : (
             <>
               <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-white/10">
-                  <thead className="bg-white/5">
+                <table className="min-w-full divide-y divide-slate-200">
+                  <thead className="bg-slate-50">
                     <tr>
                       <th className="table-header">School Rank</th>
                       <th className="table-header">Name</th>
@@ -301,26 +301,26 @@ export default function MeritLists() {
                       <th className="table-header">State</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-white/5">
+                  <tbody className="divide-y divide-slate-100">
                     {scores.map((s, idx) => (
                       <motion.tr key={s.id}
                         initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.03 }}
-                        className="hover:bg-white/5"
+                        className="hover:bg-slate-50"
                       >
                         <td className="table-cell">
                           <RankBadge rank={s.rankSchool} />
                         </td>
-                        <td className="table-cell font-medium text-white">{s.studentName}</td>
-                        <td className="table-cell text-white/50">{s.enrollmentNumber}</td>
+                        <td className="table-cell font-medium text-slate-800">{s.studentName}</td>
+                        <td className="table-cell text-slate-500">{s.enrollmentNumber}</td>
                         <td className="table-cell">{s.grade}{s.section ? `-${s.section}` : ''}</td>
-                        <td className="table-cell text-white/50 text-xs">{s.institutionName}</td>
+                        <td className="table-cell text-slate-500 text-xs">{s.institutionName}</td>
                         <td className="table-cell"><ZScoreBadge value={s.academicZScore} /></td>
                         <td className="table-cell"><ZScoreBadge value={s.attendanceZScore} /></td>
                         <td className="table-cell"><ZScoreBadge value={s.activityZScore} /></td>
                         <td className="table-cell"><ZScoreBadge value={s.certificateZScore} /></td>
                         <td className="table-cell">
-                          <span className="font-bold text-indigo-400">
+                          <span className="font-bold text-indigo-700">
                             {Number(s.compositeScore).toFixed(3)}
                           </span>
                         </td>
@@ -335,7 +335,7 @@ export default function MeritLists() {
               {/* Pagination */}
               {totalPages > 1 && (
                 <div className="flex items-center justify-between mt-4 pt-4 border-t">
-                  <p className="text-sm text-white/50">Page {page + 1} of {totalPages}</p>
+                  <p className="text-sm text-slate-500">Page {page + 1} of {totalPages}</p>
                   <div className="flex gap-2">
                     <button onClick={() => setPage(p => Math.max(0, p - 1))} disabled={page === 0}
                             className="btn-secondary p-2"><ChevronLeft className="w-4 h-4" /></button>
@@ -357,12 +357,12 @@ export default function MeritLists() {
             <Loader className="w-6 h-6 animate-spin text-indigo-400" />
             <div>
               <p className="font-medium">Calculation in progress...</p>
-              <p className="text-sm text-white/50">
+              <p className="text-sm text-slate-500">
                 {selectedBatch.processed}/{selectedBatch.totalStudents} students processed
               </p>
             </div>
           </div>
-          <div className="mt-3 w-full bg-white/10 rounded-full h-2">
+          <div className="mt-3 w-full bg-slate-100 rounded-full h-2">
             <div className="bg-indigo-500 h-2 rounded-full transition-all duration-500"
                  style={{ width: `${selectedBatch.totalStudents ? (selectedBatch.processed / selectedBatch.totalStudents) * 100 : 0}%` }} />
           </div>
@@ -374,27 +374,27 @@ export default function MeritLists() {
 
 function BatchStatusBadge({ status }) {
   const map = {
-    PENDING: 'bg-white/10 text-white/90',
-    RUNNING: 'bg-blue-500/15 text-blue-400',
-    COMPLETED: 'bg-emerald-500/15 text-emerald-400',
-    FAILED: 'bg-red-500/15 text-red-400',
+    PENDING: 'bg-slate-100 text-slate-600',
+    RUNNING: 'bg-blue-50 text-blue-700',
+    COMPLETED: 'bg-emerald-50 text-emerald-700',
+    FAILED: 'bg-red-50 text-red-700',
   };
   return (
-    <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${map[status] || 'bg-white/10 text-white/90'}`}>
+    <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${map[status] || 'bg-slate-100 text-slate-600'}`}>
       {status}
     </span>
   );
 }
 
 function RankBadge({ rank }) {
-  if (!rank) return <span className="text-white/40">—</span>;
+  if (!rank) return <span className="text-slate-400">—</span>;
   const colors = {
-    1: 'bg-amber-500/15 text-amber-400 border-yellow-300',
-    2: 'bg-white/10 text-white/70 border-white/10',
-    3: 'bg-orange-500/15 text-orange-400 border-orange-300',
+    1: 'bg-amber-50 text-amber-700 border-amber-200',
+    2: 'bg-slate-50 text-slate-600 border-slate-200',
+    3: 'bg-orange-50 text-orange-700 border-orange-200',
   };
   return (
-    <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold border ${colors[rank] || 'bg-white/5 text-white/60 border-white/10'}`}>
+    <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold border ${colors[rank] || 'bg-slate-50 text-slate-500 border-slate-200'}`}>
       {rank}
     </span>
   );
@@ -402,7 +402,7 @@ function RankBadge({ rank }) {
 
 function ZScoreBadge({ value }) {
   const v = Number(value);
-  if (v > 0.5) return <span className="inline-flex items-center gap-1 text-emerald-400 text-sm font-medium"><TrendingUp className="w-3 h-3" />{v.toFixed(2)}</span>;
-  if (v < -0.5) return <span className="inline-flex items-center gap-1 text-red-400 text-sm font-medium"><TrendingDown className="w-3 h-3" />{v.toFixed(2)}</span>;
-  return <span className="inline-flex items-center gap-1 text-white/50 text-sm"><Minus className="w-3 h-3" />{v.toFixed(2)}</span>;
+  if (v > 0.5) return <span className="inline-flex items-center gap-1 text-emerald-700 text-sm font-medium"><TrendingUp className="w-3 h-3" />{v.toFixed(2)}</span>;
+  if (v < -0.5) return <span className="inline-flex items-center gap-1 text-red-600 text-sm font-medium"><TrendingDown className="w-3 h-3" />{v.toFixed(2)}</span>;
+  return <span className="inline-flex items-center gap-1 text-slate-500 text-sm"><Minus className="w-3 h-3" />{v.toFixed(2)}</span>;
 }

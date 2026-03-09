@@ -38,7 +38,7 @@ export default function AuditLogViewer() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-4">
-        <h1 className="text-2xl font-bold text-white">Audit Log</h1>
+        <h1 className="text-2xl font-bold text-slate-900">Audit Log</h1>
         <form onSubmit={handleSearch} className="flex items-center gap-2">
           <input
             type="text"
@@ -66,13 +66,13 @@ export default function AuditLogViewer() {
         </div>
       ) : logs.length === 0 ? (
         <div className="card text-center py-12">
-          <Shield className="mx-auto h-12 w-12 text-white/30" />
-          <p className="mt-4 text-white/50">No audit logs found</p>
+          <Shield className="mx-auto h-12 w-12 text-slate-300" />
+          <p className="mt-4 text-slate-500">No audit logs found</p>
         </div>
       ) : (
         <div className="card overflow-hidden p-0">
           <table className="w-full text-sm">
-            <thead className="bg-white/5 text-white/60 text-left">
+            <thead className="bg-slate-50 text-slate-600 text-left">
               <tr>
                 <th className="px-4 py-3 font-medium">Action</th>
                 <th className="px-4 py-3 font-medium">Entity</th>
@@ -82,21 +82,21 @@ export default function AuditLogViewer() {
                 <th className="px-4 py-3 font-medium">Timestamp</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5">
+            <tbody className="divide-y divide-slate-100">
               {logs.map((log) => (
-                <tr key={log.id} className="hover:bg-white/5 transition-colors">
+                <tr key={log.id} className="hover:bg-slate-50 transition-colors">
                   <td className="px-4 py-3">
-                    <span className="inline-block px-2 py-1 rounded-full text-xs font-medium bg-blue-500/15 text-blue-400">
+                    <span className="inline-block px-2 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
                       {log.action}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-white/70">{log.entityType} #{log.entityId}</td>
-                  <td className="px-4 py-3 text-white/60">{log.userEmail}</td>
-                  <td className="px-4 py-3 text-white/50 font-mono text-xs">{log.ipAddress}</td>
-                  <td className="px-4 py-3 text-white/50 text-xs max-w-xs truncate">
+                  <td className="px-4 py-3 text-slate-600">{log.entityType} #{log.entityId}</td>
+                  <td className="px-4 py-3 text-slate-500">{log.userEmail}</td>
+                  <td className="px-4 py-3 text-slate-500 font-mono text-xs">{log.ipAddress}</td>
+                  <td className="px-4 py-3 text-slate-500 text-xs max-w-xs truncate">
                     {log.details ? JSON.stringify(log.details) : '—'}
                   </td>
-                  <td className="px-4 py-3 text-white/50">{new Date(log.createdAt).toLocaleString()}</td>
+                  <td className="px-4 py-3 text-slate-500">{new Date(log.createdAt).toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
@@ -110,7 +110,7 @@ export default function AuditLogViewer() {
             className="p-2 rounded-lg border disabled:opacity-30">
             <ChevronLeft className="w-4 h-4" />
           </button>
-          <span className="text-sm text-white/60">Page {page + 1} of {totalPages}</span>
+          <span className="text-sm text-slate-600">Page {page + 1} of {totalPages}</span>
           <button onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))} disabled={page >= totalPages - 1}
             className="p-2 rounded-lg border disabled:opacity-30">
             <ChevronRight className="w-4 h-4" />

@@ -9,10 +9,10 @@ import { useAuthStore } from '../../store/authStore';
 import toast from 'react-hot-toast';
 
 const severityConfig = {
-  CRITICAL: { color: 'bg-red-500/15 text-red-400 border-red-500/20', icon: ShieldAlert, barColor: 'bg-red-500' },
-  HIGH: { color: 'bg-orange-500/15 text-orange-400 border-orange-500/20', icon: AlertTriangle, barColor: 'bg-orange-500' },
-  MEDIUM: { color: 'bg-amber-500/15 text-amber-400 border-amber-500/20', icon: Bell, barColor: 'bg-yellow-500' },
-  LOW: { color: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/20', icon: CheckCircle, barColor: 'bg-green-500' },
+  CRITICAL: { color: 'bg-red-50 text-red-700 border-red-200', icon: ShieldAlert, barColor: 'bg-red-500' },
+  HIGH: { color: 'bg-orange-50 text-orange-700 border-orange-200', icon: AlertTriangle, barColor: 'bg-orange-500' },
+  MEDIUM: { color: 'bg-amber-50 text-amber-700 border-amber-200', icon: Bell, barColor: 'bg-yellow-500' },
+  LOW: { color: 'bg-emerald-50 text-emerald-700 border-emerald-200', icon: CheckCircle, barColor: 'bg-green-500' },
 };
 
 const typeLabels = {
@@ -122,14 +122,14 @@ export default function AlertPanel() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Early Warning Alerts</h1>
-          <p className="text-white/50 mt-1">
+          <h1 className="text-2xl font-bold text-slate-900">Early Warning Alerts</h1>
+          <p className="text-slate-500 mt-1">
             ML-powered dropout risk predictions and performance alerts
           </p>
         </div>
         <div className="flex items-center gap-3">
           {unackCount > 0 && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-500/15 text-red-400 rounded-full text-sm font-medium">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-50 text-red-700 rounded-full text-sm font-medium">
               <Bell className="w-4 h-4" />
               {unackCount} unacknowledged
             </span>
@@ -150,11 +150,11 @@ export default function AlertPanel() {
       <div className="card">
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex items-center gap-2">
-            <Filter className="w-4 h-4 text-white/40" />
+            <Filter className="w-4 h-4 text-slate-400" />
             <select
               value={severityFilter}
               onChange={(e) => { setSeverityFilter(e.target.value); setPage(0); }}
-              className="px-3 py-2 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              className="px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             >
               <option value="">All Severities</option>
               <option value="CRITICAL">Critical</option>
@@ -167,7 +167,7 @@ export default function AlertPanel() {
             <select
               value={typeFilter}
               onChange={(e) => { setTypeFilter(e.target.value); setPage(0); }}
-              className="px-3 py-2 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              className="px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             >
               <option value="">All Types</option>
               <option value="DROPOUT_RISK">Dropout Risk</option>
@@ -180,13 +180,13 @@ export default function AlertPanel() {
       {/* Alert List */}
       {loading ? (
         <div className="flex justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-400" />
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600" />
         </div>
       ) : alerts.length === 0 ? (
         <div className="card text-center py-12">
           <CheckCircle className="w-12 h-12 text-green-300 mx-auto mb-4" />
-          <h3 className="text-lg font-medium text-white">No alerts found</h3>
-          <p className="text-white/50 mt-1">All students are on track. No early warnings detected.</p>
+          <h3 className="text-lg font-medium text-slate-900">No alerts found</h3>
+          <p className="text-slate-500 mt-1">All students are on track. No early warnings detected.</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -215,38 +215,38 @@ export default function AlertPanel() {
                     <div className="flex items-start justify-between">
                       <div>
                         <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="font-semibold text-white">{alert.studentName}</h3>
+                          <h3 className="font-semibold text-slate-900">{alert.studentName}</h3>
                           <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${sev.color}`}>
                             {alert.severity}
                           </span>
-                          <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-white/10 text-white/60">
+                          <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                             {typeLabels[alert.alertType] || alert.alertType}
                           </span>
                           {alert.acknowledged && (
-                            <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-blue-500/15 text-blue-400">
+                            <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
                               Acknowledged
                             </span>
                           )}
                         </div>
-                        <p className="text-sm text-white/50 mt-0.5">
+                        <p className="text-sm text-slate-500 mt-0.5">
                           {alert.enrollmentNumber} &middot; Grade {alert.grade}
                         </p>
                       </div>
                       <div className="flex items-center gap-3">
                         {/* Risk Score Badge */}
                         <div className="text-right">
-                          <p className="text-xs text-white/50">Risk Score</p>
-                          <p className="text-lg font-bold text-white">
+                          <p className="text-xs text-slate-500">Risk Score</p>
+                          <p className="text-lg font-bold text-slate-900">
                             {(alert.riskScore * 100).toFixed(1)}%
                           </p>
                         </div>
-                        {expanded ? <ChevronUp className="w-5 h-5 text-white/40" /> : <ChevronDown className="w-5 h-5 text-white/40" />}
+                        {expanded ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
                       </div>
                     </div>
-                    <p className="text-sm text-white/60 mt-2">{alert.message}</p>
+                    <p className="text-sm text-slate-600 mt-2">{alert.message}</p>
 
                     {/* Risk Score Bar */}
-                    <div className="mt-3 w-full bg-white/10 rounded-full h-2">
+                    <div className="mt-3 w-full bg-slate-100 rounded-full h-2">
                       <div className={`h-2 rounded-full ${sev.barColor}`} style={{ width: `${Math.min(alert.riskScore * 100, 100)}%` }} />
                     </div>
                   </div>
@@ -257,22 +257,22 @@ export default function AlertPanel() {
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    className="mt-4 pt-4 border-t border-white/5"
+                    className="mt-4 pt-4 border-t border-slate-100"
                   >
                     {/* Feature Importances */}
                     {alert.featureImportances && Object.keys(alert.featureImportances).length > 0 && (
                       <div className="mb-4">
-                        <h4 className="text-sm font-medium text-white/70 mb-2 flex items-center gap-1">
+                        <h4 className="text-sm font-medium text-slate-600 mb-2 flex items-center gap-1">
                           <BarChart3 className="w-4 h-4" /> Key Risk Factors
                         </h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {topImportances(alert.featureImportances).map(([feature, value]) => (
                             <div key={feature} className="flex items-center gap-2">
-                              <span className="text-xs text-white/50 w-36 truncate">{feature.replace(/_/g, ' ')}</span>
-                              <div className="flex-1 bg-white/10 rounded-full h-1.5">
+                              <span className="text-xs text-slate-500 w-36 truncate">{feature.replace(/_/g, ' ')}</span>
+                              <div className="flex-1 bg-slate-100 rounded-full h-1.5">
                                 <div className="bg-indigo-500 h-1.5 rounded-full" style={{ width: `${Math.min(value * 100 * 5, 100)}%` }} />
                               </div>
-                              <span className="text-xs font-mono text-white/60">{(value * 100).toFixed(1)}%</span>
+                              <span className="text-xs font-mono text-slate-600">{(value * 100).toFixed(1)}%</span>
                             </div>
                           ))}
                         </div>
@@ -280,7 +280,7 @@ export default function AlertPanel() {
                     )}
 
                     <div className="flex items-center justify-between">
-                      <div className="text-xs text-white/50 space-y-0.5">
+                      <div className="text-xs text-slate-500 space-y-0.5">
                         <p>Model Version: v{alert.modelVersion}</p>
                         <p>Created: {new Date(alert.createdAt).toLocaleString('en-IN')}</p>
                         {alert.acknowledgedByName && (
@@ -308,12 +308,12 @@ export default function AlertPanel() {
       {totalPages > 1 && (
         <div className="flex justify-center gap-2">
           <button onClick={() => setPage(p => Math.max(0, p - 1))} disabled={page === 0}
-            className="px-4 py-2 border border-white/10 rounded-lg hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed">
+            className="px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed text-slate-700">
             Previous
           </button>
-          <span className="px-4 py-2 text-sm text-white/60">Page {page + 1} of {totalPages}</span>
+          <span className="px-4 py-2 text-sm text-slate-600">Page {page + 1} of {totalPages}</span>
           <button onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))} disabled={page >= totalPages - 1}
-            className="px-4 py-2 border border-white/10 rounded-lg hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed">
+            className="px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed text-slate-700">
             Next
           </button>
         </div>

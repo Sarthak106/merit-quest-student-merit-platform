@@ -69,10 +69,10 @@ export default function MLModelManagement() {
   };
 
   const getMetricColor = (value) => {
-    if (value == null) return 'text-white/40';
-    if (value >= 0.8) return 'text-emerald-400';
-    if (value >= 0.6) return 'text-amber-400';
-    return 'text-red-400';
+    if (value == null) return 'text-slate-400';
+    if (value >= 0.8) return 'text-emerald-700';
+    if (value >= 0.6) return 'text-amber-700';
+    return 'text-red-600';
   };
 
   return (
@@ -80,20 +80,20 @@ export default function MLModelManagement() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">ML Model Management</h1>
-          <p className="text-white/50 mt-1">Train, monitor, and manage dropout prediction models</p>
+          <h1 className="text-2xl font-bold text-slate-900">ML Model Management</h1>
+          <p className="text-slate-500 mt-1">Train, monitor, and manage dropout prediction models</p>
         </div>
         {/* ML Service Status */}
         <div className="flex items-center gap-3">
           {mlHealth && (
             <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium ${
-              mlHealth.healthy ? 'bg-emerald-500/15 text-emerald-400' : 'bg-red-500/15 text-red-400'
+              mlHealth.healthy ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'
             }`}>
               {mlHealth.healthy ? <CheckCircle className="w-4 h-4" /> : <AlertCircle className="w-4 h-4" />}
               ML Service: {mlHealth.mlServiceStatus}
             </span>
           )}
-          <button onClick={checkHealth} className="p-2 text-white/40 hover:text-white/70 rounded-lg hover:bg-white/10">
+          <button onClick={checkHealth} className="p-2 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100">
             <RefreshCw className="w-4 h-4" />
           </button>
         </div>
@@ -101,17 +101,17 @@ export default function MLModelManagement() {
 
       {/* Training Panel */}
       <div className="card">
-        <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+        <h2 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
           <Zap className="w-5 h-5 text-yellow-500" />
           Train New Model
         </h2>
         <div className="flex flex-col sm:flex-row gap-4 items-end">
           <div className="flex-1">
-            <label className="block text-sm font-medium text-white/60 mb-1">Model Type</label>
+            <label className="block text-sm font-medium text-slate-600 mb-1">Model Type</label>
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
-              className="w-full px-3 py-2 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             >
               <option value="random_forest">Random Forest</option>
               <option value="gradient_boosting">Gradient Boosting</option>
@@ -143,21 +143,21 @@ export default function MLModelManagement() {
 
       {/* Model Versions */}
       <div>
-        <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+        <h2 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
           <Database className="w-5 h-5 text-blue-500" />
           Model Versions
-          <span className="text-sm font-normal text-white/50">({models.length} total)</span>
+          <span className="text-sm font-normal text-slate-500">({models.length} total)</span>
         </h2>
 
         {loading ? (
           <div className="flex justify-center py-12">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-400" />
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600" />
           </div>
         ) : models.length === 0 ? (
           <div className="card text-center py-12">
-            <Settings className="w-12 h-12 text-white/30 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-white">No models trained yet</h3>
-            <p className="text-white/50 mt-1">Train your first model to start generating dropout predictions.</p>
+            <Settings className="w-12 h-12 text-slate-300 mx-auto mb-4" />
+            <h3 className="text-lg font-medium text-slate-900">No models trained yet</h3>
+            <p className="text-slate-500 mt-1">Train your first model to start generating dropout predictions.</p>
           </div>
         ) : (
           <div className="space-y-4">
@@ -178,24 +178,24 @@ export default function MLModelManagement() {
                     className="flex items-center gap-4 cursor-pointer"
                     onClick={() => setExpandedId(expanded ? null : model.id)}
                   >
-                    <div className="p-2 bg-indigo-500/15 rounded-lg">
-                      <Activity className="w-5 h-5 text-indigo-400" />
+                    <div className="p-2 bg-indigo-50 rounded-lg">
+                      <Activity className="w-5 h-5 text-indigo-700" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="font-semibold text-white">
+                        <h3 className="font-semibold text-slate-900">
                           {modelTypeLabels[model.modelType] || model.modelType}
                         </h3>
-                        <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-500/15 text-indigo-400">
+                        <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700">
                           v{model.version}
                         </span>
                         {i === 0 && (
-                          <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/15 text-emerald-400">
+                          <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">
                             Latest
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-white/50 mt-0.5 flex items-center gap-1">
+                      <p className="text-sm text-slate-500 mt-0.5 flex items-center gap-1">
                         <Clock className="w-3 h-3" />
                         {model.trainedAt ? new Date(model.trainedAt).toLocaleString('en-IN') : 'Unknown'}
                       </p>
@@ -204,19 +204,19 @@ export default function MLModelManagement() {
                     {/* Metrics Summary */}
                     <div className="hidden sm:flex items-center gap-6">
                       <div className="text-center">
-                        <p className="text-xs text-white/50">F1 Score</p>
+                        <p className="text-xs text-slate-500">F1 Score</p>
                         <p className={`text-lg font-bold ${getMetricColor(metrics.f1_score)}`}>
                           {formatMetric(metrics.f1_score)}
                         </p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-white/50">AUC-ROC</p>
+                        <p className="text-xs text-slate-500">AUC-ROC</p>
                         <p className={`text-lg font-bold ${getMetricColor(metrics.auc_roc)}`}>
                           {formatMetric(metrics.auc_roc)}
                         </p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-white/50">Accuracy</p>
+                        <p className="text-xs text-slate-500">Accuracy</p>
                         <p className={`text-lg font-bold ${getMetricColor(metrics.accuracy)}`}>
                           {formatMetric(metrics.accuracy)}
                         </p>
@@ -229,7 +229,7 @@ export default function MLModelManagement() {
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
-                      className="mt-4 pt-4 border-t border-white/5"
+                      className="mt-4 pt-4 border-t border-slate-100"
                     >
                       {/* Full Metrics Grid */}
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
@@ -243,9 +243,9 @@ export default function MLModelManagement() {
                           { label: 'At-Risk', value: metrics.positive_samples, raw: true },
                           { label: 'Low-Risk', value: metrics.negative_samples, raw: true },
                         ].map(({ label, value, raw }) => (
-                          <div key={label} className="bg-white/5 rounded-lg p-3">
-                            <p className="text-xs text-white/50">{label}</p>
-                            <p className={`text-lg font-bold ${raw ? 'text-white' : getMetricColor(value)}`}>
+                          <div key={label} className="bg-slate-50 rounded-lg p-3">
+                            <p className="text-xs text-slate-500">{label}</p>
+                            <p className={`text-lg font-bold ${raw ? 'text-slate-900' : getMetricColor(value)}`}>
                               {raw ? (value ?? '—') : formatMetric(value)}
                             </p>
                           </div>
@@ -255,23 +255,23 @@ export default function MLModelManagement() {
                       {/* Confusion Matrix */}
                       {metrics.confusion_matrix && (
                         <div className="mb-4">
-                          <h4 className="text-sm font-medium text-white/70 mb-2">Confusion Matrix</h4>
+                          <h4 className="text-sm font-medium text-slate-600 mb-2">Confusion Matrix</h4>
                           <div className="grid grid-cols-2 gap-1 max-w-xs">
-                            <div className="bg-emerald-500/10 rounded p-2 text-center">
-                              <p className="text-xs text-white/50">True Negative</p>
-                              <p className="font-bold text-emerald-400">{metrics.confusion_matrix.true_negative}</p>
+                            <div className="bg-emerald-50 rounded p-2 text-center">
+                              <p className="text-xs text-slate-500">True Negative</p>
+                              <p className="font-bold text-emerald-700">{metrics.confusion_matrix.true_negative}</p>
                             </div>
-                            <div className="bg-red-500/10 rounded p-2 text-center">
-                              <p className="text-xs text-white/50">False Positive</p>
-                              <p className="font-bold text-red-400">{metrics.confusion_matrix.false_positive}</p>
+                            <div className="bg-red-50 rounded p-2 text-center">
+                              <p className="text-xs text-slate-500">False Positive</p>
+                              <p className="font-bold text-red-600">{metrics.confusion_matrix.false_positive}</p>
                             </div>
-                            <div className="bg-orange-500/10 rounded p-2 text-center">
-                              <p className="text-xs text-white/50">False Negative</p>
-                              <p className="font-bold text-orange-400">{metrics.confusion_matrix.false_negative}</p>
+                            <div className="bg-orange-50 rounded p-2 text-center">
+                              <p className="text-xs text-slate-500">False Negative</p>
+                              <p className="font-bold text-orange-600">{metrics.confusion_matrix.false_negative}</p>
                             </div>
-                            <div className="bg-emerald-500/10 rounded p-2 text-center">
-                              <p className="text-xs text-white/50">True Positive</p>
-                              <p className="font-bold text-emerald-400">{metrics.confusion_matrix.true_positive}</p>
+                            <div className="bg-emerald-50 rounded p-2 text-center">
+                              <p className="text-xs text-slate-500">True Positive</p>
+                              <p className="font-bold text-emerald-700">{metrics.confusion_matrix.true_positive}</p>
                             </div>
                           </div>
                         </div>
@@ -280,7 +280,7 @@ export default function MLModelManagement() {
                       {/* Feature Importances */}
                       {model.featureImportances && Object.keys(model.featureImportances).length > 0 && (
                         <div>
-                          <h4 className="text-sm font-medium text-white/70 mb-2 flex items-center gap-1">
+                          <h4 className="text-sm font-medium text-slate-600 mb-2 flex items-center gap-1">
                             <BarChart3 className="w-4 h-4" /> Feature Importances
                           </h4>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -289,12 +289,12 @@ export default function MLModelManagement() {
                               .slice(0, 10)
                               .map(([feature, value]) => (
                                 <div key={feature} className="flex items-center gap-2">
-                                  <span className="text-xs text-white/50 w-40 truncate">{feature.replace(/_/g, ' ')}</span>
-                                  <div className="flex-1 bg-white/10 rounded-full h-1.5">
+                                  <span className="text-xs text-slate-500 w-40 truncate">{feature.replace(/_/g, ' ')}</span>
+                                  <div className="flex-1 bg-slate-100 rounded-full h-1.5">
                                     <div className="bg-indigo-500 h-1.5 rounded-full"
                                       style={{ width: `${Math.min(value * 100 * 5, 100)}%` }} />
                                   </div>
-                                  <span className="text-xs font-mono text-white/60 w-12 text-right">
+                                  <span className="text-xs font-mono text-slate-600 w-12 text-right">
                                     {(value * 100).toFixed(1)}%
                                   </span>
                                 </div>
@@ -304,7 +304,7 @@ export default function MLModelManagement() {
                       )}
 
                       {/* Metadata */}
-                      <div className="mt-4 text-xs text-white/50">
+                      <div className="mt-4 text-xs text-slate-500">
                         <p>File: {model.fileKey}</p>
                         {model.trainingSamples && <p>Training Samples: {model.trainingSamples}</p>}
                         {model.featureCount && <p>Features: {model.featureCount}</p>}
