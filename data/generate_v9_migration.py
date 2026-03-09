@@ -7,8 +7,8 @@ import os
 DATA_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT = os.path.join(DATA_DIR, '..', 'backend', 'src', 'main', 'resources', 'db', 'migration', 'V9__seed_synthetic_data.sql')
 
-ADMIN_HASH = "$2b$12$w2onbXUhHDjen/E7GsuWyeTrGsuu4YFh0JhZ/vR74jsXGoOx4AklW"  # Admin@123
-USER_HASH  = "$2a$12$LQv3c1yqBo9SkvXS7QTJPOoqkMYKOb3tECLbuGHPHiFm12kf5GNiC"  # Test@1234
+ADMIN_HASH = "$2b$12$mGxG0hTM5WRCaMMFbgW5E.YUEMk06RSo4DLNCo1AQCSnCsySCRl1C"  # Admin@123
+USER_HASH  = "$2b$12$5BuVdc1nYnl51qCPi8DNDeOjbvXXxi04uuwGTAFVw5YNzpgH3r4dK"  # Test@1234
 
 def escape(val):
     if val is None or val == '':

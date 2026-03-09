@@ -3,15 +3,16 @@ import { motion } from 'framer-motion';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
   LineChart, Line, PieChart, Pie, Cell, RadarChart, Radar, PolarGrid,
-  PolarAngleAxis, PolarRadiusAxis,
+  PolarAngleAxis, PolarRadiusAxis, AreaChart, Area,
 } from 'recharts';
 import {
-  BarChart3, Users, Award, TrendingUp, BookOpen, RefreshCw, Building2,
+  BarChart3, Users, Award, TrendingUp, BookOpen, RefreshCw, Building2, Sparkles,
 } from 'lucide-react';
 import api from '../../services/api';
 import { useAuthStore } from '../../store/authStore';
+import CountUp from '../../components/ui/CountUp';
 
-const COLORS = ['#4f46e5', '#0ea5e9', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+const COLORS = ['#4f46e5', '#0ea5e9', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6'];
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -120,10 +121,10 @@ export default function AnalyticsDashboard() {
       {overview && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { label: 'Total Students', value: overview.totalStudents, icon: Users, color: 'bg-blue-50 text-blue-700' },
-            { label: 'Approved', value: overview.approvedStudents, icon: Award, color: 'bg-emerald-50 text-emerald-700' },
+            { label: 'Total Students', value: overview.totalStudents, icon: Users, color: 'bg-blue-50 text-blue-700', isNum: true },
+            { label: 'Approved', value: overview.approvedStudents, icon: Award, color: 'bg-emerald-50 text-emerald-700', isNum: true },
             { label: 'Avg Merit Score', value: overview.averageCompositeScore?.toFixed(4) ?? '—', icon: TrendingUp, color: 'bg-purple-50 text-purple-700' },
-            { label: isGovOrAdmin ? 'Institutions' : 'Pending Verification', value: isGovOrAdmin ? overview.totalInstitutions : overview.pendingVerification, icon: isGovOrAdmin ? Building2 : BookOpen, color: 'bg-amber-50 text-amber-700' },
+            { label: isGovOrAdmin ? 'Institutions' : 'Pending Verification', value: isGovOrAdmin ? overview.totalInstitutions : overview.pendingVerification, icon: isGovOrAdmin ? Building2 : BookOpen, color: 'bg-amber-50 text-amber-700', isNum: true },
           ].map((stat, i) => {
             const Icon = stat.icon;
             return (
@@ -134,7 +135,9 @@ export default function AnalyticsDashboard() {
                   </div>
                   <div>
                     <p className="text-sm text-slate-500">{stat.label}</p>
-                    <p className="text-xl font-bold text-slate-900">{stat.value}</p>
+                    <p className="text-xl font-bold text-slate-900">
+                      {stat.isNum && typeof stat.value === 'number' ? <CountUp to={stat.value} duration={1.2} /> : stat.value}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -216,14 +219,20 @@ export default function AnalyticsDashboard() {
           <h3 className="text-lg font-semibold text-slate-900 mb-4">Attendance Trends ({academicYear})</h3>
           {attendanceTrends.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={attendanceTrends}>
+              <AreaChart data={attendanceTrends}>
+                <defs>
+                  <linearGradient id="attendGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity={0.3} />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity={0.02} />
+                  </linearGradient>
+                </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                 <XAxis tick={{ fill: "#64748b" }} axisLine={{ stroke: "#e2e8f0" }} dataKey="month" fontSize={12} />
                 <YAxis tick={{ fill: "#64748b" }} axisLine={{ stroke: "#e2e8f0" }} domain={[0, 100]} />
                 <Tooltip contentStyle={{ backgroundColor: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "12px", color: "#1e293b" }} />
                 <Legend wrapperStyle={{ color: "#64748b" }} />
-                <Line type="monotone" dataKey="avgAttendancePercent" name="Avg Attendance %" stroke="#10b981" strokeWidth={2} dot={{ r: 4 }} />
-              </LineChart>
+                <Area type="monotone" dataKey="avgAttendancePercent" name="Avg Attendance %" stroke="#10b981" fill="url(#attendGrad)" strokeWidth={2} dot={{ r: 4, fill: '#10b981' }} />
+              </AreaChart>
             </ResponsiveContainer>
           ) : (
             <p className="text-slate-400 text-center py-12">No attendance data available</p>
@@ -302,6 +311,56 @@ export default function AnalyticsDashboard() {
           <p className="text-slate-400 text-center py-8">No performers data available. Run a merit calculation first.</p>
         )}
       </motion.div>
+
+      {/* AI Insights */}
+      {overview && (
+        <motion.div custom={10} initial="hidden" animate="visible" variants={cardVariants}
+          className="bg-gradient-to-br from-indigo-50 via-purple-50 to-sky-50 border border-indigo-100 rounded-2xl p-6"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center">
+              <Sparkles className="w-4 h-4 text-indigo-600" />
+            </div>
+            <h3 className="font-semibold text-indigo-900">AI Analytics Insights</h3>
+          </div>
+          <div className="space-y-3">
+            {(() => {
+              const ins = [];
+              const approvalRate = overview.totalStudents > 0 ? (overview.approvedStudents / overview.totalStudents * 100) : 0;
+              ins.push({ type: approvalRate >= 80 ? 'success' : approvalRate >= 50 ? 'warning' : 'danger',
+                text: `Verification rate is ${approvalRate.toFixed(0)}% (${overview.approvedStudents} of ${overview.totalStudents} students).${approvalRate < 80 ? ' Consider prioritizing the verification queue.' : ' Healthy pipeline.'}` });
+              if (overview.averageCompositeScore != null) {
+                const avg = overview.averageCompositeScore;
+                ins.push({ type: avg > 0.6 ? 'success' : avg > 0.3 ? 'info' : 'danger',
+                  text: `Platform average composite score is ${avg.toFixed(4)}.${avg < 0.3 ? ' Broad academic interventions may be needed.' : ''}` });
+              }
+              if (gradeDistribution.length > 0) {
+                const best = gradeDistribution.reduce((a, b) => (a.avgCompositeScore || 0) > (b.avgCompositeScore || 0) ? a : b);
+                ins.push({ type: 'info', text: `Grade ${best.grade} has the highest average composite score at ${best.avgCompositeScore?.toFixed(4) ?? '—'}.` });
+              }
+              if (topPerformers.length > 0) {
+                ins.push({ type: 'success', text: `Top performer is ${topPerformers[0].studentName} with a composite score of ${topPerformers[0].compositeScore?.toFixed(4)}.` });
+              }
+              if (isGovOrAdmin && institutionComparison.length > 1) {
+                const scores = institutionComparison.map(i => i.avgCompositeScore).filter(Boolean);
+                const gap = Math.max(...scores) - Math.min(...scores);
+                ins.push({ type: gap > 0.3 ? 'warning' : 'info',
+                  text: `Score gap across institutions: ${gap.toFixed(4)}.${gap > 0.3 ? ' Significant disparity detected — consider equity measures.' : ' Fairly uniform performance.'}` });
+              }
+              return ins.map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span className={`mt-1.5 w-2 h-2 rounded-full flex-shrink-0 ${
+                    item.type === 'success' ? 'bg-emerald-500' :
+                    item.type === 'warning' ? 'bg-amber-500' :
+                    item.type === 'danger'  ? 'bg-red-500'    : 'bg-indigo-500'
+                  }`} />
+                  <p className="text-sm text-slate-700 leading-relaxed">{item.text}</p>
+                </div>
+              ));
+            })()}
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 }

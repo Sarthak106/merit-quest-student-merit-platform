@@ -321,13 +321,13 @@ def generate_users(institutions):
             "phone": unique_phone(),
         })
 
-    # STUDENT users — 30
-    for i in range(1, 31):
+    # STUDENT users — 60 (linked to first 60 students later)
+    for i in range(1, 61):
         gender = random.choice(["M", "F"])
         fn = random.choice(MALE_NAMES if gender == "M" else FEMALE_NAMES)
         ln = random.choice(LAST_NAMES)
         rows.append({
-            "email": unique_email(f"{fn.lower()}.{ln.lower()}@meritquest.test"),
+            "email": unique_email(f"student.{fn.lower()}.{ln.lower()}@meritquest.test"),
             "first_name": fn,
             "last_name": ln,
             "role": "STUDENT",
@@ -336,8 +336,8 @@ def generate_users(institutions):
             "phone": unique_phone(),
         })
 
-    # PARENT users — 15
-    for i in range(1, 16):
+    # PARENT users — 40 (linked to students' guardians)
+    for i in range(1, 41):
         gender = random.choice(["M", "F"])
         fn = random.choice(GUARDIAN_MALE_NAMES if gender == "M" else GUARDIAN_FEMALE_NAMES)
         ln = random.choice(LAST_NAMES)
@@ -484,20 +484,23 @@ def generate_academic_records(students):
         else:
             mean_marks, std = 27, 8
 
-        # Each student gets 7 subject records across exams
+        # Each student gets 7 subjects across multiple exams and years
         selected_subjects = subjects[:]
+        academic_years = ["2024-2025"]
+        if random.random() < 0.5:
+            academic_years.append("2023-2024")
+
         for subj in selected_subjects:
-            exam = random.choice(exam_types)
-            # Most students get 2 academic years for some subjects
-            academic_years = ["2024-2025"]
-            if random.random() < 0.3:
-                academic_years.append("2025-2026")
+            # Give each student 2-3 exams per subject per year
+            num_exams = random.choice([2, 2, 3])
+            chosen_exams = random.sample(exam_types, min(num_exams, len(exam_types)))
 
             for ay in academic_years:
-                combo = (sid, subj, exam, ay)
-                if combo in used_combos:
-                    continue
-                used_combos.add(combo)
+                for exam in chosen_exams:
+                    combo = (sid, subj, exam, ay)
+                    if combo in used_combos:
+                        continue
+                    used_combos.add(combo)
 
                 marks = round(max(0, min(100, random.gauss(mean_marks, std))), 2)
 
@@ -719,8 +722,15 @@ def generate_activities(students):
         elif pct <= 0.60:
             num_activities = random.choice([0, 1, 1])
             ach_pool = achievements_avg
+        elif pct <= 0.85:
+            num_activities = random.choice([0, 0, 1])
+            ach_pool = achievements_avg
         else:
-            continue  # No activities for bottom 40%
+            num_activities = 0
+            ach_pool = achievements_avg
+
+        if num_activities == 0:
+            continue
 
         for _ in range(num_activities):
             for attempt in range(20):

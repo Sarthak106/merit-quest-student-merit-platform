@@ -21,6 +21,7 @@ import MLModelManagement from './pages/ml/MLModelManagement';
 import UserManagement from './pages/admin/UserManagement';
 import InstitutionManagement from './pages/admin/InstitutionManagement';
 import CertificateManagement from './pages/school/CertificateManagement';
+import StudentDetail from './pages/school/StudentDetail';
 
 export default function App() {
   return (
@@ -57,6 +58,7 @@ export default function App() {
 
         {/* School Admin */}
         <Route path="/students" element={<ProtectedRoute roles={['SCHOOL_ADMIN','SYSTEM_ADMIN']}><StudentManagement /></ProtectedRoute>} />
+        <Route path="/students/:id" element={<ProtectedRoute roles={['SCHOOL_ADMIN','SYSTEM_ADMIN']}><StudentDetail /></ProtectedRoute>} />
         <Route path="/upload" element={<ProtectedRoute roles={['SCHOOL_ADMIN','SYSTEM_ADMIN']}><BulkUpload /></ProtectedRoute>} />
         <Route path="/certificates" element={<ProtectedRoute roles={['SCHOOL_ADMIN','SYSTEM_ADMIN']}><CertificateManagement /></ProtectedRoute>} />
         <Route path="/alerts" element={<ProtectedRoute roles={['STUDENT','PARENT','SCHOOL_ADMIN','SYSTEM_ADMIN']}><AlertPanel /></ProtectedRoute>} />

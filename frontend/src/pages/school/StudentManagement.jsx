@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Search, Edit2, Trash2, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Plus, Search, Edit2, Trash2, X, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 import api from '../../services/api';
 import TextCaptcha from '../../components/TextCaptcha';
 
@@ -13,6 +14,7 @@ const emptyForm = {
 };
 
 export default function StudentManagement() {
+  const navigate = useNavigate();
   const [students, setStudents] = useState([]);
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
@@ -173,6 +175,7 @@ export default function StudentManagement() {
                   <td className="px-4 py-3 text-slate-500">{s.guardianName || '—'}</td>
                   <td className="px-4 py-3">
                     <div className="flex gap-2">
+                      <button onClick={() => navigate(`/students/${s.id}`)} className="p-1.5 text-slate-400 hover:text-indigo-600 rounded-md hover:bg-indigo-50" title="View Details"><Eye className="w-4 h-4" /></button>
                       <button onClick={() => openEdit(s)} className="p-1.5 text-slate-400 hover:text-indigo-600 rounded-md hover:bg-indigo-50"><Edit2 className="w-4 h-4" /></button>
                       <button onClick={() => handleDelete(s.id)} className="p-1.5 text-slate-400 hover:text-red-600 rounded-md hover:bg-red-50"><Trash2 className="w-4 h-4" /></button>
                     </div>
