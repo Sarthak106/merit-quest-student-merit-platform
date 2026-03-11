@@ -13,9 +13,15 @@ export default function MeritLists() {
   const { user } = useAuthStore();
   const isAdmin = ['SYSTEM_ADMIN', 'GOV_AUTHORITY'].includes(user?.role);
   const canTrigger = ['SCHOOL_ADMIN', 'SYSTEM_ADMIN', 'GOV_AUTHORITY'].includes(user?.role);
+  const canViewBatches = ['SCHOOL_ADMIN', 'SYSTEM_ADMIN', 'GOV_AUTHORITY'].includes(user?.role);
 
   // Calculation form
-  const [calcForm, setCalcForm] = useState({ scope: 'SCHOOL', academicYear: '2025-2026', scopeId: '' });
+  const [calcForm, setCalcForm] = useState(() => {
+    const now = new Date();
+    const y = now.getFullYear();
+    const yr = now.getMonth() >= 5 ? `${y - 1}-${y}` : `${y - 2}-${y - 1}`;
+    return { scope: 'SCHOOL', academicYear: yr, scopeId: '' };
+  });
   const [triggering, setTriggering] = useState(false);
 
   // Batches
@@ -36,15 +42,39 @@ export default function MeritLists() {
   // Polling for active batches
   const [pollingBatchId, setPollingBatchId] = useState(null);
 
-  // Fetch batches
+  // Academic year for non-admin direct listing
+  const academicYear = calcForm.academicYear;
+
+  // Fetch batches (admin roles only)
   const fetchBatches = useCallback(async () => {
+    if (!canViewBatches) return;
     try {
       const { data } = await api.get('/merit/batches', { params: { size: 10 } });
       setBatches(data.data?.content || []);
     } catch { /* ignore */ }
-  }, []);
+  }, [canViewBatches]);
 
   useEffect(() => { fetchBatches(); }, [fetchBatches]);
+
+  // For non-admin users, fetch merit list directly by academic year
+  const fetchDirectMeritList = useCallback(async () => {
+    if (canViewBatches) return;
+    setLoading(true);
+    try {
+      const { data } = await api.get('/merit/lists', {
+        params: { academicYear, scope: 'SCHOOL', page, size: 20 },
+      });
+      const pg = data.data;
+      setScores(pg.content || []);
+      setTotalPages(pg.totalPages || 0);
+    } catch {
+      setScores([]);
+    } finally {
+      setLoading(false);
+    }
+  }, [canViewBatches, academicYear, page]);
+
+  useEffect(() => { fetchDirectMeritList(); }, [fetchDirectMeritList]);
 
   // Poll batch status
   useEffect(() => {
@@ -212,7 +242,7 @@ export default function MeritLists() {
               <label className="label">Academic Year</label>
               <input type="text" value={calcForm.academicYear}
                      onChange={e => setCalcForm(p => ({ ...p, academicYear: e.target.value }))}
-                     className="input w-40" placeholder="2025-2026" />
+                     className="input w-40" placeholder="e.g. 2024-2025" />
             </div>
             {calcForm.scope !== 'SCHOOL' && (
               <div>
@@ -231,8 +261,8 @@ export default function MeritLists() {
         </div>
       )}
 
-      {/* Batch list */}
-      {batches.length > 0 && (
+      {/* Batch list (admin only) */}
+      {canViewBatches && batches.length > 0 && (
         <div className="card">
           <h2 className="text-lg font-semibold mb-4">Calculation Batches</h2>
           <div className="space-y-2">
@@ -246,7 +276,7 @@ export default function MeritLists() {
                 <div className="flex items-center gap-3">
                   <BatchStatusBadge status={b.status} />
                   <div>
-                    <span className="font-medium text-sm">{b.scope} — {b.scopeId}</span>
+                    <span className="font-medium text-sm text-slate-900">{b.scope} — {b.scopeId}</span>
                     <span className="text-xs text-slate-500 ml-2">{b.academicYear}</span>
                   </div>
                 </div>
@@ -261,15 +291,19 @@ export default function MeritLists() {
       )}
 
       {/* Merit list table */}
-      {selectedBatch && selectedBatch.status === 'COMPLETED' && (
+      {(selectedBatch && selectedBatch.status === 'COMPLETED') || !canViewBatches ? (
         <div className="card">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold">
-              Merit List — {selectedBatch.scope} ({selectedBatch.academicYear})
+            <h2 className="text-lg font-semibold text-slate-900">
+              {selectedBatch
+                ? `Merit List — ${selectedBatch.scope} (${selectedBatch.academicYear})`
+                : `Merit List — ${academicYear}`}
             </h2>
-            <button onClick={exportCSV} className="btn-secondary flex items-center gap-2 text-sm">
-              <Download className="w-4 h-4" /> Export CSV
-            </button>
+            {selectedBatch && (
+              <button onClick={exportCSV} className="btn-secondary flex items-center gap-2 text-sm">
+                <Download className="w-4 h-4" /> Export CSV
+              </button>
+            )}
           </div>
 
           {loading ? (
@@ -348,7 +382,7 @@ export default function MeritLists() {
             </>
           )}
         </div>
-      )}
+      ) : null}
 
       {/* Progress indicator for running batches */}
       {selectedBatch && (selectedBatch.status === 'RUNNING' || selectedBatch.status === 'PENDING') && (

@@ -101,11 +101,11 @@ function generateInsights(role, d) {
     if (approvalRate < 70) out.push({ type: 'warning', text: `Only ${approvalRate.toFixed(0)}% of students are verified. Consider expediting the verification queue.` });
     else out.push({ type: 'success', text: `${approvalRate.toFixed(0)}% student verification rate — healthy pipeline.` });
 
-    if (ov.averageCompositeScore != null) {
-      const avg = ov.averageCompositeScore;
-      if (avg > 0.7) out.push({ type: 'success', text: `Average composite score of ${avg.toFixed(2)} indicates strong overall performance.` });
-      else if (avg < 0.4) out.push({ type: 'danger', text: `Average composite score ${avg.toFixed(2)} is below threshold — investigate attendance & academics.` });
-      else out.push({ type: 'info', text: `Average composite score is ${avg.toFixed(2)}. Targeted interventions could push this higher.` });
+    if (ov.highestCompositeScore != null) {
+      const top = ov.highestCompositeScore;
+      if (top > 1.0) out.push({ type: 'success', text: `Top composite score of ${top.toFixed(2)} — outstanding performers in the system.` });
+      else if (top > 0.5) out.push({ type: 'info', text: `Top composite score is ${top.toFixed(2)}. Encourage high-performing students to maintain momentum.` });
+      else out.push({ type: 'warning', text: `Highest composite score is only ${top.toFixed(2)} — review merit calculation inputs for data quality.` });
     }
 
     if (ov.pendingVerification > 10) out.push({ type: 'warning', text: `${ov.pendingVerification} records await verification — delays may impact merit calculations.` });
@@ -132,8 +132,9 @@ function generateInsights(role, d) {
   }
 
   if (role === 'SYSTEM_ADMIN') {
-    if (d.mlHealth?.healthy) out.push({ type: 'success', text: 'ML prediction service is healthy and responsive.' });
-    else out.push({ type: 'danger', text: 'ML prediction service is DOWN. Model training and predictions will fail.' });
+    if (d.mlHealth?.healthy === true) out.push({ type: 'success', text: 'ML prediction service is healthy and responsive.' });
+    else if (d.mlHealth?.healthy === false) out.push({ type: 'warning', text: 'ML prediction service is offline. Predictions use rule-based fallback.' });
+    else out.push({ type: 'info', text: 'ML prediction service status pending — models available on demand.' });
     if (ov?.totalInstitutions) out.push({ type: 'info', text: `${ov.totalInstitutions} institutions onboarded across the platform.` });
   }
 
@@ -359,6 +360,10 @@ export default function Dashboard() {
     if (role === 'STUDENT') {
       ps.push(api.get('/scholarships?size=100').then(r => { d.scholarships = r.data.data; }).catch(() => {}));
       ps.push(api.get('/scholarships/my-applications?size=100').then(r => { d.myApplications = r.data.data; }).catch(() => {}));
+      const now = new Date();
+      const y = now.getFullYear();
+      const ay = now.getMonth() >= 5 ? `${y - 1}-${y}` : `${y - 2}-${y - 1}`;
+      ps.push(api.get('/merit/lists', { params: { academicYear: ay, scope: 'SCHOOL', size: 1 } }).then(r => { d.meritLists = r.data.data; }).catch(() => {}));
     }
     if (role === 'PARENT') {
       ps.push(api.get('/scholarships?size=100').then(r => { d.scholarships = r.data.data; }).catch(() => {}));
@@ -395,7 +400,7 @@ export default function Dashboard() {
       case 'STUDENT': return [
         { label: 'Available Scholarships', value: dashData.scholarships?.totalElements ?? 0, icon: BookOpen,       colorClass: 'bg-indigo-50 text-indigo-700' },
         { label: 'My Applications',        value: dashData.myApplications?.totalElements ?? 0, icon: ClipboardCheck,colorClass: 'bg-emerald-50 text-emerald-700' },
-        { label: 'Merit Lists Available',  value: '—',                                     icon: Award,          colorClass: 'bg-purple-50 text-purple-700' },
+        { label: 'Merit Rankings',         value: dashData.meritLists?.totalElements ?? 0,  icon: Award,          colorClass: 'bg-purple-50 text-purple-700' },
         { label: 'Profile Status',         value: 'Active',                                 icon: CheckCircle,    colorClass: 'bg-sky-50 text-sky-700' },
       ];
       case 'PARENT': return [
@@ -407,32 +412,32 @@ export default function Dashboard() {
       case 'SCHOOL_ADMIN': return [
         { label: 'Total Students',      value: ov?.totalStudents ?? 0,                    icon: Users,          colorClass: 'bg-blue-50 text-blue-700' },
         { label: 'Verified Students',   value: ov?.approvedStudents ?? 0,                 icon: CheckCircle,    colorClass: 'bg-emerald-50 text-emerald-700' },
-        { label: 'Avg Merit Score',     value: ov?.averageCompositeScore?.toFixed(3) ?? '—', icon: TrendingUp,  colorClass: 'bg-purple-50 text-purple-700' },
+        { label: 'Top Score',           value: ov?.highestCompositeScore?.toFixed(3) ?? '—', icon: TrendingUp,  colorClass: 'bg-purple-50 text-purple-700' },
         { label: 'Pending Verification',value: ov?.pendingVerification ?? 0,              icon: Clock,          colorClass: 'bg-amber-50 text-amber-700' },
       ];
       case 'DATA_VERIFIER': return [
         { label: 'Pending Review',   value: dashData.verifications?.totalElements ?? 0, icon: Clock,          colorClass: 'bg-amber-50 text-amber-700' },
         { label: 'Total Students',   value: ov?.totalStudents ?? 0,                     icon: Users,          colorClass: 'bg-blue-50 text-blue-700' },
         { label: 'Approved',         value: ov?.approvedStudents ?? 0,                  icon: CheckCircle,    colorClass: 'bg-emerald-50 text-emerald-700' },
-        { label: 'Avg Score',        value: ov?.averageCompositeScore?.toFixed(3) ?? '—', icon: Target,       colorClass: 'bg-purple-50 text-purple-700' },
+        { label: 'Top Score',        value: ov?.highestCompositeScore?.toFixed(3) ?? '—', icon: Target,       colorClass: 'bg-purple-50 text-purple-700' },
       ];
       case 'NGO_REP': return [
         { label: 'My Scholarships',    value: dashData.myScholarships?.totalElements ?? 0, icon: BookOpen,     colorClass: 'bg-green-50 text-green-700' },
         { label: 'Total Students',     value: ov?.totalStudents ?? 0,                      icon: Users,        colorClass: 'bg-blue-50 text-blue-700' },
-        { label: 'Avg Merit Score',    value: ov?.averageCompositeScore?.toFixed(3) ?? '—', icon: TrendingUp,  colorClass: 'bg-purple-50 text-purple-700' },
+        { label: 'Top Score',          value: ov?.highestCompositeScore?.toFixed(3) ?? '—', icon: TrendingUp,  colorClass: 'bg-purple-50 text-purple-700' },
         { label: 'Top Performers',     value: dashData.topPerformers?.length ?? 0,         icon: Award,        colorClass: 'bg-amber-50 text-amber-700' },
       ];
       case 'GOV_AUTHORITY': return [
         { label: 'Institutions',    value: ov?.totalInstitutions ?? 0,                     icon: Building2,    colorClass: 'bg-indigo-50 text-indigo-700' },
         { label: 'Total Students',  value: ov?.totalStudents ?? 0,                         icon: Users,        colorClass: 'bg-blue-50 text-blue-700' },
-        { label: 'Avg Score',       value: ov?.averageCompositeScore?.toFixed(3) ?? '—',   icon: TrendingUp,   colorClass: 'bg-purple-50 text-purple-700' },
+        { label: 'Top Score',       value: ov?.highestCompositeScore?.toFixed(3) ?? '—',   icon: TrendingUp,   colorClass: 'bg-purple-50 text-purple-700' },
         { label: 'Pending Verification', value: ov?.pendingVerification ?? 0,              icon: Clock,        colorClass: 'bg-amber-50 text-amber-700' },
       ];
       case 'SYSTEM_ADMIN': return [
         { label: 'Institutions',    value: ov?.totalInstitutions ?? 0,                     icon: Building2,    colorClass: 'bg-indigo-50 text-indigo-700' },
         { label: 'Total Students',  value: ov?.totalStudents ?? 0,                         icon: Users,        colorClass: 'bg-blue-50 text-blue-700' },
-        { label: 'Avg Score',       value: ov?.averageCompositeScore?.toFixed(3) ?? '—',   icon: TrendingUp,   colorClass: 'bg-purple-50 text-purple-700' },
-        { label: 'ML Service',      value: dashData.mlHealth?.healthy ? 'Healthy' : 'Down', icon: Activity,    colorClass: dashData.mlHealth?.healthy ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700' },
+        { label: 'Top Score',       value: ov?.highestCompositeScore?.toFixed(3) ?? '—',   icon: TrendingUp,   colorClass: 'bg-purple-50 text-purple-700' },
+        { label: 'Merit Batches',   value: ov?.completedBatches ?? 0,                      icon: Activity,     colorClass: 'bg-emerald-50 text-emerald-700' },
       ];
       default: return [];
     }
@@ -455,6 +460,22 @@ export default function Dashboard() {
         <button onClick={fetchData} className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-colors">
           <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> Refresh
         </button>
+      </motion.div>
+
+      {/* ── Welcome Banner ── */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}
+        className="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden"
+      >
+        <div className={`absolute inset-0 bg-gradient-to-r ${meta.gradient} opacity-[0.04]`} />
+        <div className="relative z-10">
+          <h2 className="text-xl font-bold text-slate-900">
+            Welcome, <span className="text-indigo-700">{user?.firstName} {user?.lastName}</span>!
+          </h2>
+          <p className="mt-2 text-slate-500">
+            Signed in as <strong className="text-slate-700">{user?.role?.replace(/_/g, ' ')}</strong>.
+            Use the sidebar or quick actions below to navigate.
+          </p>
+        </div>
       </motion.div>
 
       {/* ── Loading skeleton ── */}
@@ -533,22 +554,6 @@ export default function Dashboard() {
               })}
             </div>
           </div>
-
-          {/* ── Welcome Banner ── */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
-            className="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden"
-          >
-            <div className={`absolute inset-0 bg-gradient-to-r ${meta.gradient} opacity-[0.04]`} />
-            <div className="relative z-10">
-              <h2 className="text-xl font-bold text-slate-900">
-                Welcome, <span className="text-indigo-700">{user?.firstName} {user?.lastName}</span>!
-              </h2>
-              <p className="mt-2 text-slate-500">
-                Signed in as <strong className="text-slate-700">{user?.role?.replace(/_/g, ' ')}</strong>.
-                Use the sidebar or quick actions above to navigate.
-              </p>
-            </div>
-          </motion.div>
         </>
       )}
     </PageTransition>

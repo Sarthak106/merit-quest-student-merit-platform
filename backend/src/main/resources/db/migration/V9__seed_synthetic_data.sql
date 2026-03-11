@@ -100,7 +100,7 @@ INSERT INTO users (email, password_hash, first_name, last_name, role, status, in
 ('demo.verifier@meritquest.dev', '$2b$12$pzZoIMUppEs0d0J5U00s5u4QacT5Kmc2FDGMXvF9wdDO.ikBAMPei', 'Vikram', 'Patel', 'DATA_VERIFIER', 'ACTIVE', NULL, '+91 9876543213'),
 ('demo.ngorep@meritquest.dev', '$2b$12$pzZoIMUppEs0d0J5U00s5u4QacT5Kmc2FDGMXvF9wdDO.ikBAMPei', 'Ananya', 'Desai', 'NGO_REP', 'ACTIVE', NULL, '+91 9876543214'),
 ('demo.govauthority@meritquest.dev', '$2b$12$pzZoIMUppEs0d0J5U00s5u4QacT5Kmc2FDGMXvF9wdDO.ikBAMPei', 'Sanjay', 'Gupta', 'GOV_AUTHORITY', 'ACTIVE', NULL, '+91 9876543215'),
-('demo.sysadmin@meritquest.dev', '$2b$12$pzZoIMUppEs0d0J5U00s5u4QacT5Kmc2FDGMXvF9wdDO.ikBAMPei', 'Neha', 'Kumar', 'SYSTEM_ADMIN', 'ACTIVE', 1, '+91 9876543216');
+('demo.sysadmin@meritquest.dev', '$2b$12$pzZoIMUppEs0d0J5U00s5u4QacT5Kmc2FDGMXvF9wdDO.ikBAMPei', 'Ayush', 'Mishra', 'SYSTEM_ADMIN', 'ACTIVE', 1, '+91 9876543216');
 
 -- Users (165 rows, password: Test@1234)
 INSERT INTO users (email, password_hash, first_name, last_name, role, status, institution_id, phone) VALUES
@@ -12041,3 +12041,18 @@ INSERT INTO scholarships (title, organization_name, organization_type, amount, c
 ('L&T Build India Scholarship', 'Larsen & Toubro', 'PRIVATE', 80000, 'INR', 20, '2025-12-20', 'ACTIVE', 1),
 ('Mahindra All India Talent Scholarship', 'Mahindra Group', 'PRIVATE', 55000, 'INR', 35, '2025-10-10', 'ACTIVE', 1),
 ('Kotak Kanya Scholarship', 'Kotak Mahindra Bank', 'PRIVATE', 30000, 'INR', 60, '2025-11-25', 'ACTIVE', 1);
+
+-- ═══════════════════════════════════════════════════════════════════
+-- POST-SEED: Merit config & student approval for demo readiness
+-- ═══════════════════════════════════════════════════════════════════
+
+-- Reseed merit_config (weights for composite score calculation)
+INSERT INTO merit_config (config_key, config_value, description) VALUES
+('weight_academics', '0.50', 'Weight for academic z-score'),
+('weight_attendance', '0.20', 'Weight for attendance z-score'),
+('weight_activities', '0.20', 'Weight for activity z-score'),
+('weight_certificates', '0.10', 'Weight for certificate z-score')
+ON CONFLICT (config_key) DO UPDATE SET config_value = EXCLUDED.config_value;
+
+-- Approve all students for demo (enables merit calculation)
+UPDATE students SET verification_status = 'APPROVED' WHERE verification_status != 'APPROVED';

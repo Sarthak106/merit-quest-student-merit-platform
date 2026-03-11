@@ -21,14 +21,29 @@ const cardVariants = {
 export default function StudentPerformance() {
   const { studentId: paramId } = useParams();
   const { user } = useAuthStore();
+  const [resolvedStudentId, setResolvedStudentId] = useState(paramId || user?.studentId || null);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [academicYear] = useState('2025-2026');
+  const [academicYear] = useState(() => {
+    const now = new Date();
+    const y = now.getFullYear();
+    return now.getMonth() >= 5 ? `${y - 1}-${y}` : `${y - 2}-${y - 1}`;
+  });
 
-  // If no studentId in URL, use the logged-in user's linked student ID
-  // For students viewing their own performance, the backend resolves via auth
-  const studentId = paramId || user?.studentId;
+  // If no studentId available, try fetching from /auth/me
+  useEffect(() => {
+    if (resolvedStudentId) return;
+    let cancelled = false;
+    api.get('/auth/me').then(res => {
+      if (!cancelled && res.data?.data?.studentId) {
+        setResolvedStudentId(res.data.data.studentId);
+      }
+    }).catch(() => {});
+    return () => { cancelled = true; };
+  }, [resolvedStudentId]);
+
+  const studentId = resolvedStudentId;
 
   const fetchPerformance = useCallback(async () => {
     if (!studentId) {

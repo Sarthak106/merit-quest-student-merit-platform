@@ -1,5 +1,6 @@
 package com.meritquest.merit.service;
 
+import com.meritquest.analytics.service.AnalyticsService;
 import com.meritquest.common.exception.ResourceNotFoundException;
 import com.meritquest.common.model.VerificationStatus;
 import com.meritquest.merit.dto.BatchResponse;
@@ -40,6 +41,7 @@ public class MeritCalculationService {
     private final AttendanceRecordRepository attendanceRecordRepository;
     private final ActivityRepository activityRepository;
     private final CertificateRepository certificateRepository;
+    private final AnalyticsService analyticsService;
 
     private static final MathContext MC = new MathContext(10, RoundingMode.HALF_UP);
     private static final int SCALE = 6;
@@ -149,6 +151,9 @@ public class MeritCalculationService {
             batch.setStatus("COMPLETED");
             batch.setCompletedAt(LocalDateTime.now());
             batchRepository.save(batch);
+
+            // Evict analytics caches so fresh data is served
+            analyticsService.evictAllCaches();
 
             log.info("Merit calculation completed for batch {} — {} students processed", batchId, students.size());
 

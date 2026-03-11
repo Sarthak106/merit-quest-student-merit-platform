@@ -64,7 +64,7 @@ public class AnalyticsController {
     @PreAuthorize("hasAnyRole('SCHOOL_ADMIN', 'SYSTEM_ADMIN', 'GOV_AUTHORITY', 'DATA_VERIFIER')")
     public ApiResponse<List<SubjectPerformance>> getSubjectPerformance(
             @AuthenticationPrincipal User user,
-            @RequestParam(defaultValue = "2025-2026") String academicYear) {
+            @RequestParam(defaultValue = "2024-2025") String academicYear) {
         Long institutionId = resolveInstitutionId(user);
         if (institutionId == null) return ApiResponse.error("No institution assigned");
 
@@ -99,7 +99,7 @@ public class AnalyticsController {
     @PreAuthorize("hasAnyRole('SCHOOL_ADMIN', 'SYSTEM_ADMIN', 'GOV_AUTHORITY', 'DATA_VERIFIER')")
     public ApiResponse<List<AttendanceTrend>> getAttendanceTrends(
             @AuthenticationPrincipal User user,
-            @RequestParam(defaultValue = "2025-2026") String academicYear) {
+            @RequestParam(defaultValue = "2024-2025") String academicYear) {
         Long institutionId = resolveInstitutionId(user);
         if (institutionId == null) return ApiResponse.error("No institution assigned");
 
@@ -141,7 +141,7 @@ public class AnalyticsController {
     @PreAuthorize("isAuthenticated()")
     public ApiResponse<StudentPerformanceDetail> getStudentPerformance(
             @PathVariable Long studentId,
-            @RequestParam(defaultValue = "2025-2026") String academicYear) {
+            @RequestParam(defaultValue = "2024-2025") String academicYear) {
         return ApiResponse.success("Student performance retrieved",
                 analyticsService.getStudentPerformance(studentId, academicYear));
     }

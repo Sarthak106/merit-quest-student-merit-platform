@@ -12,8 +12,6 @@ import api from '../../services/api';
 import { useAuthStore } from '../../store/authStore';
 import CountUp from '../../components/ui/CountUp';
 
-const COLORS = ['#4f46e5', '#0ea5e9', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6'];
-
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: (i) => ({
@@ -33,7 +31,17 @@ export default function AnalyticsDashboard() {
   const [institutionComparison, setInstitutionComparison] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [academicYear] = useState('2025-2026');
+  const [academicYear] = useState(() => {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = now.getMonth(); // 0-indexed
+    // Academic year runs Jun–May
+    // Before June: latest completed year is (y-2)-(y-1), current is (y-1)-y
+    // Jun onwards: latest completed is (y-1)-y, current is y-(y+1)
+    // Use previous completed year for analytics (data must exist)
+    if (m >= 5) return `${y - 1}-${y}`;
+    return `${y - 2}-${y - 1}`;
+  });
 
   const isGovOrAdmin = ['SYSTEM_ADMIN', 'GOV_AUTHORITY'].includes(user?.role);
   const isSchoolLevel = ['SCHOOL_ADMIN', 'DATA_VERIFIER'].includes(user?.role);
@@ -123,7 +131,7 @@ export default function AnalyticsDashboard() {
           {[
             { label: 'Total Students', value: overview.totalStudents, icon: Users, color: 'bg-blue-50 text-blue-700', isNum: true },
             { label: 'Approved', value: overview.approvedStudents, icon: Award, color: 'bg-emerald-50 text-emerald-700', isNum: true },
-            { label: 'Avg Merit Score', value: overview.averageCompositeScore?.toFixed(4) ?? '—', icon: TrendingUp, color: 'bg-purple-50 text-purple-700' },
+            { label: 'Top Merit Score', value: overview.highestCompositeScore?.toFixed(4) ?? '—', icon: TrendingUp, color: 'bg-purple-50 text-purple-700' },
             { label: isGovOrAdmin ? 'Institutions' : 'Pending Verification', value: isGovOrAdmin ? overview.totalInstitutions : overview.pendingVerification, icon: isGovOrAdmin ? Building2 : BookOpen, color: 'bg-amber-50 text-amber-700', isNum: true },
           ].map((stat, i) => {
             const Icon = stat.icon;
@@ -180,9 +188,13 @@ export default function AnalyticsDashboard() {
                 <YAxis tick={{ fill: "#64748b" }} axisLine={{ stroke: "#e2e8f0" }} />
                 <Tooltip contentStyle={{ backgroundColor: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "12px", color: "#1e293b" }} />
                 <Bar dataKey="count" name="Students" fill="#8b5cf6" radius={[4,4,0,0]}>
-                  {scoreHistogram.map((_, idx) => (
-                    <Cell key={idx} fill={COLORS[idx % COLORS.length]} />
-                  ))}
+                  {scoreHistogram.map((_, idx) => {
+                    const t = scoreHistogram.length > 1 ? idx / (scoreHistogram.length - 1) : 0;
+                    const r = Math.round(79 + t * (139 - 79));
+                    const g = Math.round(70 + t * (92 - 70));
+                    const b = Math.round(229 + t * (246 - 229));
+                    return <Cell key={idx} fill={`rgb(${r},${g},${b})`} />;
+                  })}
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
@@ -329,10 +341,11 @@ export default function AnalyticsDashboard() {
               const approvalRate = overview.totalStudents > 0 ? (overview.approvedStudents / overview.totalStudents * 100) : 0;
               ins.push({ type: approvalRate >= 80 ? 'success' : approvalRate >= 50 ? 'warning' : 'danger',
                 text: `Verification rate is ${approvalRate.toFixed(0)}% (${overview.approvedStudents} of ${overview.totalStudents} students).${approvalRate < 80 ? ' Consider prioritizing the verification queue.' : ' Healthy pipeline.'}` });
-              if (overview.averageCompositeScore != null) {
-                const avg = overview.averageCompositeScore;
-                ins.push({ type: avg > 0.6 ? 'success' : avg > 0.3 ? 'info' : 'danger',
-                  text: `Platform average composite score is ${avg.toFixed(4)}.${avg < 0.3 ? ' Broad academic interventions may be needed.' : ''}` });
+              if (overview.highestCompositeScore != null && overview.totalMeritBatches > 0) {
+                const top = overview.highestCompositeScore;
+                const batches = overview.completedBatches;
+                ins.push({ type: top > 1.0 ? 'success' : top > 0.5 ? 'info' : 'warning',
+                  text: `Top composite score is ${top.toFixed(4)} across ${batches} completed batch${batches !== 1 ? 'es' : ''}. Scores are z-score normalized (mean ≈ 0).` });
               }
               if (gradeDistribution.length > 0) {
                 const best = gradeDistribution.reduce((a, b) => (a.avgCompositeScore || 0) > (b.avgCompositeScore || 0) ? a : b);
